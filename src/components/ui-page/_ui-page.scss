@@ -1,0 +1,32 @@
+.ui-page {
+  &__wrapper {
+    box-sizing: border-box;
+    max-width: 1440px;
+    padding: 30px 30px 145px;
+    margin: 0 auto;
+  }
+  &__section {
+    margin-top: 67px;
+    display: flex;
+    @media screen and (max-width: $screen-lg) {
+      display: block;
+    }
+  }
+  &__box {
+    box-sizing: border-box;
+    width: 50%;
+    padding-left: 120px;
+    @media screen and (max-width: $screen-lg) {
+      max-width: 50%;
+      margin: 0 auto;
+      padding: 0;
+    }
+    &_right {
+      margin-left: 11px;
+      @media screen and (max-width: $screen-lg) {
+        margin: 50px auto;
+      }
+    }
+  }
+
+}

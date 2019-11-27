@@ -1,0 +1,38 @@
+// Fonts
+$font-title             : 'Quicksand', Helvetica, Arial, sans-serif;
+$font-base              : 'Montserrat', Helvetica, Arial, sans-serif;
+
+// Sizes
+$font-base-color        :#1F2041;
+$font-base-size         : 18px;
+$line-height            : 1.2;
+
+$screen-xl              : 1280px;
+$screen-lg              : 980px;
+$screen-md              : 768px;
+$screen-sm              : 480px;
+$screen-xs              : 320px;
+
+// Main colors
+$default-color          : #ffffff;
+$primary-color          : #BC9CFF;
+$success-color          : #6FCF97;
+$dark-color             : #1F2041;
+
+// Derived colors
+$dark-color-op75        : rgba(31, 32, 65, 0.75);
+$dark-color-op50        : rgba(31, 32, 65, 0.50);
+$dark-color-op25        : rgba(31, 32, 65, 0.25);
+$dark-color-op5         : rgba(31, 32, 65, 0.05);
+
+// Neutral colors
+$neutral-primary         : #303133;
+$neutral-regular         : #606266;
+$neutral-secondary       : #909399;
+$neutral-placeholder     : #C0C4CC;
+
+// Border colors
+$border-base             : #DCDFE6;
+$border-light            : #E4E7ED;
+$border-lighter          : #EBEEF5;
+$border-lightex          : #F2F6FC;

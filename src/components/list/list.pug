@@ -1,0 +1,4 @@
+mixin list(classname,...items)
+    ul(class= ""+classname)
+      each item in items
+        li(class="social-link social-link__" +item)= item

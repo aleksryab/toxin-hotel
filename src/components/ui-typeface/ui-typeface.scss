@@ -1,0 +1,63 @@
+.ui-typeface {
+  &__row {
+    margin-bottom: 50px;
+    display: flex;
+  }
+  &__alias {
+    min-width: 37px;
+    margin-right: 30px;
+    text-align: right;
+    color: $dark-color-op25;
+    font-family: $font-base;
+    font-weight: normal;
+    &_title {
+      font-size: 24px;
+      line-height: 29px;
+    }
+    &_subtitle {
+      font-size: 19px;
+      line-height: 23px;
+    }
+    &_small-subtitle {
+      font-size: 12px;
+      line-height: 15px;
+    }
+    &_text {
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
+  &__title {
+    margin: 0;
+    color: $font-base-color;
+    font-family: $font-title;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+  }
+  &__subtitle {
+    margin: 0;
+    color: $font-base-color;
+    font-family: $font-title;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 24px;
+  }
+  &__small-subtitle {
+    margin: 0;
+    color: $font-base-color;
+    font-family: $font-base;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+  }
+  &__text {
+    margin: 0;
+    color: $dark-color-op75;
+    font-family: $font-base;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+  }
+}

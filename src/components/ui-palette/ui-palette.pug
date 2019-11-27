@@ -1,0 +1,25 @@
+mixin ui-palette
+
+  mixin paletteItem(options)
+    -
+      var squareClass = "ui-palette__square"
+      squareClass += options.colorClass ? " ui-palette__square_color_" + options.colorClass : ""
+      squareClass += options.opacityClass ? " ui-palette__square_" + options.opacityClass : ""
+
+    div.ui-palette__item
+      div(class = squareClass)
+      div.ui-palette__descr
+        h3.ui-palette__title= options.title
+        span.ui-palette__color-hex= options.colorHex
+
+  div.ui-palette
+    +paletteItem({title: "Dark Shade 100%", colorHex: "#1F2041", colorClass: "dark"})
+    +paletteItem({title: "Dark Shade 75%", colorHex: "#1F2041", colorClass: "dark", opacityClass: "op75"})
+    +paletteItem({title: "Dark Shade 50%", colorHex: "#1F2041", colorClass: "dark", opacityClass: "op50"})
+    +paletteItem({title: "Dark Shade 25%", colorHex: "#1F2041", colorClass: "dark", opacityClass: "op25"})
+    +paletteItem({title: "Dark Shade 5%", colorHex: "#1F2041", colorClass: "dark", opacityClass: "op5"})
+    +paletteItem({title: "Purple", colorHex: "#BC9CFF", colorClass: "purple"})
+    +paletteItem({title: "Green", colorHex: "#6FCF97", colorClass: "green"})
+
+
+
