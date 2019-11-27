@@ -8,56 +8,45 @@
     margin-right: 30px;
     text-align: right;
     color: $dark-color-op25;
-    font-family: $font-base;
+    font-family: $base-font;
     font-weight: normal;
     &_title {
-      font-size: 24px;
-      line-height: 29px;
+      @include font-rem(24, 29, false);
     }
     &_subtitle {
-      font-size: 19px;
-      line-height: 23px;
+      @include font-rem(19, 23, false);
     }
     &_small-subtitle {
-      font-size: 12px;
-      line-height: 15px;
+      @include font-rem(12, 15, false);
     }
     &_text {
-      font-size: 14px;
-      line-height: 24px;
+      @include font-rem(14, 24, false);
     }
   }
   &__title {
     margin: 0;
-    color: $font-base-color;
-    font-family: $font-title;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 30px;
+    color: $base-font-color;
+    font-family: $title-font;
+    @include font-rem(24, 30, bold);
   }
   &__subtitle {
     margin: 0;
-    color: $font-base-color;
-    font-family: $font-title;
-    font-weight: bold;
-    font-size: 19px;
-    line-height: 24px;
+    color: $base-font-color;
+    font-family: $title-font;
+    @include font-rem(19, 24, bold);
   }
   &__small-subtitle {
     margin: 0;
-    color: $font-base-color;
-    font-family: $font-base;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
+    color: $base-font-color;
+    font-family: $base-font;
     text-transform: uppercase;
+    @include font-rem(12, 15, bold);
   }
   &__text {
     margin: 0;
     color: $dark-color-op75;
-    font-family: $font-base;
+    font-family: $base-font;
     font-weight: normal;
-    font-size: 14px;
-    line-height: 24px;
+    @include font-rem(14, 24, bold);
   }
 }

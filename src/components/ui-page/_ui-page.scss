@@ -1,4 +1,8 @@
+html {
+  font-size: $base-font-size;
+}
 .ui-page {
+  font-size: $base-font-size;
   &__wrapper {
     box-sizing: border-box;
     max-width: 1440px;

@@ -48,21 +48,17 @@
   }
   &__title {
     margin: 8px 0 0;
-    color: $font-base-color;
-    font-family: $font-title;
-    font-size: 19px;
-    line-height: 29px;
-    font-weight: bold;
+    color: $base-font-color;
+    font-family: $title-font;
+    @include font-rem(19, 29, bold);
     @media screen and (max-width: $screen-md) {
       margin: 0;
     }
   }
   &__color-hex {
     margin: 0;
-    color: $font-base-color;
-    font-family: $font-title;
-    font-size: 19px;
-    line-height: 29px;
-    font-weight: normal;
+    color: $base-font-color;
+    font-family: $title-font;
+    @include font-rem(19, 29, normal);
   }
 }

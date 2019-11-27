@@ -1,5 +1,5 @@
 // px to rem
-@function rem($pixels, $context: $mainFontSize) {
+@function rem($pixels, $context: $base-font-size) {
   @if (unitless($pixels)) {
     $pixels: $pixels * 1px;
   }
@@ -8,15 +8,33 @@
   }
   @return $pixels / $context * 1rem;
 }
-
-@mixin size($width,$height: $width) {
-  width: $width;
-  height: $height;
+// Convert font-size from px to rem, line-height to fraction or 1, and optional set font-weight
+@mixin font-rem($size, $line, $weight: normal) {
+  @if $weight { font-weight: $weight; }
+  @if $line == 1 {
+    line-height: 1;
+  } @else if $line {
+    line-height: $line / $size;
+  }
+  font-size: rem($size);
 }
 
-@mixin placeholder {
-  ::-webkit-input-placeholder {@content}
-  :-moz-placeholder           {@content}
-  ::-moz-placeholder          {@content}
-  :-ms-input-placeholder      {@content}
+/// Vertically centers the element inside of its first non-static parent
+@mixin vertical-center {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+/// Horizontally centers the element inside of its first non-static parent
+@mixin horizontal-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/// Absolutely centers the element inside of its first non-static parent
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
