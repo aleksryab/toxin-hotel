@@ -2,7 +2,12 @@
 @import 'utils/vars';
 @import 'utils/mixins';
 @import 'utils/fonts';
+
 @import '../components/ui-page/ui-page';
 @import '../components/ui-palette/ui-palette';
 @import '../components/ui-logo/ui-logo';
 @import '../components/ui-typeface/ui-typeface';
+
+@import '../components/header/header';
+@import '../components/logo/logo';
+@import '../components/button/button';

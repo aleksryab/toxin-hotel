@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development  webpack-dev-server --config ./webpack.dev.conf.js",
-    "build": "cross-env NODE_ENV=production  webpack --config ./webpack.build.conf.js",
+    "build": "cross-env NODE_ENV=production  webpack --config ./webpack.prod.conf.js",
     "test": "webpack --json > stats.json --config ./webpack.build.conf.js"
   },
   "browserslist": [

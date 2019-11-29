@@ -27,7 +27,7 @@
     margin: 0;
     color: $base-font-color;
     font-family: $title-font;
-    @include font-rem(24, 30, bold);
+    @include font-rem(24, 30px, bold);
   }
   &__subtitle {
     margin: 0;
@@ -46,7 +46,6 @@
     margin: 0;
     color: $dark-color-op75;
     font-family: $base-font;
-    font-weight: normal;
-    @include font-rem(14, 24, bold);
+    @include font-rem(14, 24, normal);
   }
 }

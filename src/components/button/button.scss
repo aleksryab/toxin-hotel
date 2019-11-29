@@ -1,0 +1,35 @@
+.btn {
+  box-sizing: border-box;
+  padding: 11px 20px;
+  height: 34px;
+  font-family: $base-font;
+  color: #fff;
+  @include font-rem(12, 1, bold);
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  border-radius: 22px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+
+  &_light {
+    color: $primary-color;
+    background: #fff;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left:0;
+      right: 0;
+      bottom: 0;
+      margin: -2px;
+      border-radius: inherit;
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      z-index: -1;
+    }
+
+  }
+}

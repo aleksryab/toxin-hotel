@@ -1,8 +1,14 @@
 html {
-  font-size: $base-font-size;
+  font-size: $default-font-size;
 }
 .ui-page {
-  font-size: $base-font-size;
+  color: $base-font-color;
+  font-family: $base-font;
+  @include font-rem(14, 24, normal);
+  &_bg_gray {
+    background-color: #E5E5E5;
+  }
+
   &__wrapper {
     box-sizing: border-box;
     max-width: 1440px;
@@ -10,7 +16,7 @@ html {
     margin: 0 auto;
   }
   &__section {
-    margin-top: 67px;
+    margin-top: 66px;
     display: flex;
     @media screen and (max-width: $screen-lg) {
       display: block;
@@ -33,4 +39,9 @@ html {
     }
   }
 
+  &__container {
+    box-sizing: border-box;
+    max-width: 1160px;
+    margin: 0 auto;
+  }
 }

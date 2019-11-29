@@ -3,9 +3,7 @@ $title-font             : 'Quicksand', Helvetica, Arial, sans-serif;
 $base-font              : 'Montserrat', Helvetica, Arial, sans-serif;
 
 // Sizes
-$base-font-color        :#1F2041;
-$base-font-size         : 14px;
-$bade-line-height       : 1.15;
+$default-font-size      : 16px; // font size for html
 
 $screen-xl              : 1280px;
 $screen-lg              : 980px;
@@ -14,12 +12,14 @@ $screen-sm              : 480px;
 $screen-xs              : 320px;
 
 // Main colors
-$default-color          : #ffffff;
+$default-color          : #FFFFFF;
+$base-font-color        : #1F2041;
+$background-color       : #E5E5E5;
 $primary-color          : #BC9CFF;
 $success-color          : #6FCF97;
-$dark-color             : #1F2041;
 
 // Derived colors
+$dark-color             : #1F2041;
 $dark-color-op75        : rgba(31, 32, 65, 0.75);
 $dark-color-op50        : rgba(31, 32, 65, 0.50);
 $dark-color-op25        : rgba(31, 32, 65, 0.25);
