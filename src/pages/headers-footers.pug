@@ -1,15 +1,69 @@
-extends ./layout/main
+extends ./layout/head
 include ../components/ui-logo/ui-logo
 include ../components/header/header
+include ../components/footer/footer
 
-block pageOptions
+
+block headOptions
   - var pageTitle = "Header & footers"
   - var cssLink = "css/ui.css"
-  - var pageClass = "ui-page ui-page_bg_gray"
+
+
+  -
+    var menuItems = [
+      {name: 'Home', href: '/', active: true},
+      {name: 'About Us', href: '/'},
+      {name: 'Services', href: '/'},
+      {name: 'Careers', href: '/'},
+      {name: 'News', href: '/'},
+      {name: 'Documentation', href: '/'}
+    ]
+
+  -
+    var footerOptions = {
+      slogan: 'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.',
+      lists: [
+        {
+          title: 'Navigation',
+          items: [
+            {name: 'About Us', href: '/'},
+            {name: 'News', href: '/'},
+            {name: 'Support', href: '/'},
+            {name: 'Products', href: '/'}
+        ]},
+        {
+          title: 'About us',
+          items: [
+            {name: 'Who we are', href: '/'},
+            {name: 'Our team', href: '/'},
+            {name: 'Careers', href: '/'},
+            {name: 'Investors', href: '/'}
+          ]},
+        {title: 'Support',
+          items: [
+            {name: 'Documentation', href: '/'},
+            {name: 'Community', href: '/'},
+            {name: 'Get in Touch', href: '/'}
+        ]}
+      ],
+      subscribe: {
+        title: 'Subscribe to our newsletter',
+        text: 'Receive our latest news and promotions in your inbox!',
+        palaceholder: 'Your email address'
+      },
+      copyright: 'Copyright © 2018 Toxin UI Kit. All rights reserved.'
+    }
 
 
 block content
-  .ui-page__wrapper
-    +ui-logo
-  .ui-page__container
-    +header
+  body(class="ui-page ui-page_bg_gray")
+    .ui-page__header
+      +ui-logo
+    section.ui-page__section
+      +header({menuItems: menuItems})
+    section.ui-page__section
+      +header({menuItems: menuItems, login: true})
+    section.ui-page__section
+      +footer(footerOptions)
+
+

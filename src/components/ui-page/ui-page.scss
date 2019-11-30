@@ -1,6 +1,3 @@
-html {
-  font-size: $default-font-size;
-}
 .ui-page {
   color: $base-font-color;
   font-family: $base-font;
@@ -12,16 +9,30 @@ html {
   &__wrapper {
     box-sizing: border-box;
     max-width: 1440px;
-    padding: 30px 30px 145px;
+    padding: 30px 30px 0;
     margin: 0 auto;
   }
-  &__section {
+
+  &__header {
+    box-sizing: border-box;
+    max-width: 1440px;
+    height: 150px;
+    padding: 30px 30px 0;
+    margin: 0 auto;
+  }
+
+  &__big-section {
     margin-top: 66px;
     display: flex;
     @media screen and (max-width: $screen-lg) {
       display: block;
     }
   }
+
+  &__section {
+    margin-bottom: 40px;;
+  }
+
   &__box {
     box-sizing: border-box;
     width: 50%;
@@ -31,6 +42,7 @@ html {
       margin: 0 auto;
       padding: 0;
     }
+
     &_right {
       margin-left: 11px;
       @media screen and (max-width: $screen-lg) {
@@ -39,9 +51,4 @@ html {
     }
   }
 
-  &__container {
-    box-sizing: border-box;
-    max-width: 1160px;
-    margin: 0 auto;
-  }
 }

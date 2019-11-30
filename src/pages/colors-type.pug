@@ -1,20 +1,19 @@
-extends ./layout/main
+extends ./layout/head
 include ../components/ui-logo/ui-logo
 include ../components/ui-palette/ui-palette
 include ../components/ui-typeface/ui-typeface
 
 
-block pageOptions
+block headOptions
   - var pageTitle = "Colors & type"
   - var cssLink = "css/ui.css"
-  - var pageClass = "ui-page"
-
 
 block content
-  .ui-page__wrapper
-    +ui-logo
-    section.ui-page__section
-      .ui-page__box
-        +ui-palette
-      .ui-page__box.ui-page__box_right
-        +ui-typeface
+  body(class="ui-page")
+    .ui-page__wrapper
+      +ui-logo
+      section.ui-page__section
+        .ui-page__box
+          +ui-palette
+        .ui-page__box.ui-page__box_right
+          +ui-typeface

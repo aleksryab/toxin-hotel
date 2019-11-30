@@ -1,6 +1,7 @@
 mixin button(options)
   -
-    var btnClass = "btn"
-    btnClass += options.theme == "light" ? " btn_light" : ""
+    var classes = "btn"
+    classes += options.theme == "light" ? " btn_light" : ""
+    classes += options.type ? " btn_" + options.type : ""
 
-  button(class= btnClass)= options.value
+  button(class= classes)= options.name

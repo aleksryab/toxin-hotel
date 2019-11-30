@@ -1,0 +1,48 @@
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 80%;
+
+  &__link {
+    margin: 0 rem(15px);
+    color: $dark-color-op50;
+    font-family: $base-font;
+    @include font-rem(14, 17, normal);
+    text-decoration: none;
+
+    &_active {
+      color: $dark-color-op75;
+      font-weight: bold;
+    }
+  }
+
+  &__user-bar {
+    min-width: 200px;
+    margin-left: rem(13px);
+
+    &_login {
+      display: flex;
+      align-items: center;
+      min-width: auto;
+      min-height: rem(30px);
+      margin-left: rem(15px);
+      padding-left: rem(30px);
+      text-align: right;
+      border-left: 1px solid rgba(31, 32, 65, 0.1);
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__user-link {
+    color: $dark-color-op50;
+    font-family: $base-font;
+    @include font-rem(14, 17, normal);
+    text-decoration: none;
+  }
+}

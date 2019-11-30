@@ -1,18 +1,11 @@
 include ../logo/logo
-include ../button/button
+include ../menu/menu
 
+mixin header(options)
 
-mixin header
   header.header
-    +logo
-    nav.menu
-      a(href="/") Home
-      a(href="/") About Us
-      a(href="/") Services
-      a(href="/") Careers
-      a(href="/") Documentation
-    div.header__buttons
-      +button({value: 'login', theme: 'light'})
-      +button({value: 'register', theme: 'fill',})
+    .container.header__container
+      +logo
+      +menu(options)
 
 

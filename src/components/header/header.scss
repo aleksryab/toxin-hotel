@@ -1,6 +1,15 @@
 .header {
-  display: flex;
   background-color: #fff;
   position: relative;
   z-index: 1;
+
+  &__container {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 70px;
+  }
+
 }

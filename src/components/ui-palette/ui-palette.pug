@@ -2,12 +2,12 @@ mixin ui-palette
 
   mixin paletteItem(options)
     -
-      var squareClass = "ui-palette__square"
-      squareClass += options.colorClass ? " ui-palette__square_color_" + options.colorClass : ""
-      squareClass += options.opacityClass ? " ui-palette__square_" + options.opacityClass : ""
+      var classes = "ui-palette__square"
+      classes += options.colorClass ? " ui-palette__square_color_" + options.colorClass : ""
+      classes += options.opacityClass ? " ui-palette__square_" + options.opacityClass : ""
 
     div.ui-palette__item
-      div(class = squareClass)
+      div(class = classes)
       div.ui-palette__descr
         h3.ui-palette__title= options.title
         span.ui-palette__color-hex= options.colorHex

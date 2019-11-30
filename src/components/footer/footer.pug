@@ -1,0 +1,32 @@
+include ../logo/logo
+
+mixin footer(options)
+  if !options
+    - options = {}
+
+  footer.footer
+    .container
+      .footer__main-section
+
+        .footer__side-column
+          +logo
+          p.footer__slogan= options.slogan
+
+        .footer__column
+          each list in options.lists
+              h3.footer__title= list.title
+              ul.footer__list
+                each item in list.items
+                  li.footer__item
+                    a(href = item.href class= 'footer__link')= item.name
+
+        .footer__side-column
+          h3.footer__title= options.subscribe.title
+          p.footer__subscribe-text= options.subscribe.text
+          form(action="")
+            input(type="email", name="email", palaceholder=options.subscribe.text)
+
+
+      .footer__copyright-bar
+        span.footer__copyright-text= options.copyright
+        div.footer__social-bar

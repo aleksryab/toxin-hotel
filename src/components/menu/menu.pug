@@ -1,4 +1,23 @@
-mixin menu(...items)
-  nav
-    each item in items
-      a(class="menu__link" href="/")= item
+include ../button/button
+
+mixin menu(options)
+
+  .menu
+    nav.menu__list
+      each item in options.menuItems
+        -
+          var classes = 'menu__link'
+          classes += item.active ? ' menu__link_active' : ''
+
+        a(class = classes href = item.href)= item.name
+
+
+    if options.login
+      .menu__user-bar.menu__user-bar_login
+        a(href="/" class = 'menu__user-link') Cosmin Negoita
+    else
+      .menu__user-bar
+        .menu__buttons
+            +button({name: 'login', theme: 'light', type: 'login'})
+            +button({name: 'register', theme: 'fill', type: 'reg'})
+

@@ -1,9 +1,9 @@
-extends ./layout/main
+extends ./layout/head
 
-block pageOptions
+block headOptions
   - var pageTitle = "Главная"
   - var cssLink = "css/main.css"
-  - var pageClass = "page"
 
 block content
-  h1 Hello world!!!
+  body(class="page")
+    h1 Hello world!!!

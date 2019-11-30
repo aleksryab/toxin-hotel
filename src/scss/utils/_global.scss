@@ -1,0 +1,9 @@
+html {
+  font-size: $default-font-size;
+}
+.container {
+  box-sizing: border-box;
+  max-width: 1190px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
