@@ -5,17 +5,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 const globImporter = require('node-sass-glob-importer');
 
-
 const devMode = process.env.NODE_ENV !== 'production';
 const PATHS = {
   src: path.join(__dirname, './src'),
   dist: path.join(__dirname, './dist')
 };
+
 // Pages const for HtmlWebpackPlugin
-// see more: https://github.com/vedees/webpack-template/blob/master/README.md#html-dir-folder
 const fs = require('fs');
 const PAGES_DIR = `${PATHS.src}/pages/`;
-const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'));
+const PAGES = fs.readdirSync(PAGES_DIR).filter(file => file.endsWith('.pug'));
+
 
 module.exports = {
   externals: {
@@ -44,7 +44,10 @@ module.exports = {
     },{
       test: /\.pug$/,
       loader: 'pug-loader',
-      query: { pretty: true }
+      options: {
+        pretty: true,
+        self: true
+      }
     },{
       test: /\.(scss|sass)$/,
       use: [
@@ -109,10 +112,18 @@ module.exports = {
       { from: `${PATHS.src}/static`, to: '' }
     ]),
     ...PAGES.map(page => new HtmlWebpackPlugin({
+      getData: () => {
+       try {
+         return JSON.parse(fs.readFileSync(`${PAGES_DIR}/data/${page.replace(/\.pug/,'')}.json`, 'utf8'));
+       } catch (e) {
+         console.warn(`data.json was not provided for page`);
+         return {};
+       }
+     },
        template: `${PAGES_DIR}/${page}`,
        filename: `./${page.replace(/\.pug/,'.html')}`,
        inject: devMode,
-       minifyminify: false
+       minifyminify: false,
      }))
   ]
 };

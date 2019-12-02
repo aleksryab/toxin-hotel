@@ -3,5 +3,17 @@
 
   &__main-section {
     padding: 100px 0;
+    display: flex;
+    justify-content: space-between;
   }
+
+  &__side-column {
+    width: 24.4%;
+  }
+
+  &__central-column {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
 }

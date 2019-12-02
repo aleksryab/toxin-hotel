@@ -3,10 +3,10 @@ include ../components/ui-logo/ui-logo
 include ../components/ui-palette/ui-palette
 include ../components/ui-typeface/ui-typeface
 
-
-block headOptions
-  - var pageTitle = "Colors & type"
-  - var cssLink = "css/ui.css"
+block title
+  title= "Colors & type"
+block styles
+  link(rel="stylesheet", href="css/ui.css")
 
 block content
   body(class="ui-page")
