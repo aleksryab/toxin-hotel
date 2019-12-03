@@ -13,12 +13,23 @@
   outline: none;
   cursor: pointer;
   position: relative;
+  &:hover, &:focus {
+    opacity: 0.5;
+  }
 
   &_light {
     color: $primary-color;
     background: #fff;
     border: 2px solid transparent;
     background-clip: padding-box;
+    &:hover, &:focus {
+      opacity: 1;
+      color: rgba($primary-color, 0.5);
+    }
+    &:hover:after, &:focus:after{
+      opacity: 0.5;
+    }
+
     &:after {
       content: '';
       position: absolute;
@@ -30,6 +41,7 @@
       border-radius: inherit;
       background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
       z-index: -1;
+
     }
   }
 

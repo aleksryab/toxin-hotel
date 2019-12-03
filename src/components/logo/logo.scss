@@ -1,7 +1,10 @@
 .logo {
-  display: block;
+  display: inline-block;
   width: 106px;
   height: 40px;
+  .logo__img{
+    max-width: 100%;
+  }
   & img {
     max-width: 100%;
   }

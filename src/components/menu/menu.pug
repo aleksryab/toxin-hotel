@@ -1,20 +1,39 @@
+//-
+  option.login - вид меню для залогиненного пользоавателя (boolean)
+  options.menuItems - массив с элементами меню (array)
+  options.items[0].name - имя элемента меню (string)
+  options.items[0].href - ссылка элемента меню (string)
+  options.items[0].active - активная ссылка элемента меню (boolean)
+
 include ../button/button
 
 mixin menu(options)
 
   .menu
-    nav.menu__list
-      each item in options.menuItems
-        -
-          var classes = 'menu__link'
-          classes += item.active ? ' menu__link_active' : ''
+    nav
+      ul.menu__list
+        each item in options.menuItems
+          -
+            var linkClasses = 'menu__link'
+            linkClasses += item.active ? ' menu__link_active' : ''
 
-        a(class = classes href = item.href)= item.name
+          if item.submenu
+            li.menu__item.menu__item_with-more
+              a(class = linkClasses href = item.href)= item.name
+                i.menu_expand-icon
+                  include ./img/expand-icon.svg
+                ul.menu__submenu
+                  each subitem in item.submenu
+                    li
+                      a(href = subitem.href class= 'menu__link')= subitem.name
+          else
+            li.menu__item
+              a(class = linkClasses href = item.href)= item.name
 
 
     if options.login
       .menu__user-bar.menu__user-bar_login
-        a(href="/" class = 'menu__user-link') Cosmin Negoita
+        a(href="/" class = 'menu__link menu__user-link') Cosmin Negoita
     else
       .menu__user-bar
         .menu__buttons
