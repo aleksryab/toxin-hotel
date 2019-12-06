@@ -13,6 +13,7 @@
 @function strip-units($number) {
   @return $number / ($number * 0 + 1);
 }
+
 // Convert font-size to rem, line-height to fraction or 1, and optional set font-weight
 @mixin font-rem($size, $line, $weight: normal) {
   @if $weight { font-weight: $weight; }

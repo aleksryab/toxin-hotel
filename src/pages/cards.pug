@@ -1,0 +1,18 @@
+extends ./layout/head
+include ../components/ui-logo/ui-logo
+include ../components/search-room/search-room
+
+
+block title
+  title= "Cards"
+block styles
+  link(rel="stylesheet", href="css/ui.css")
+
+block content
+  body(class="ui-page ui-page_bg_gray")
+    .ui-page__header
+      +ui-logo()
+
+    .ui-page__cards-container
+      +search-room()
+    script(src="js/main.js")

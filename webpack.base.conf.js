@@ -1,11 +1,12 @@
 const path = require('path');
+const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 const globImporter = require('node-sass-glob-importer');
 
-const devMode = process.env.NODE_ENV !== 'production';
+// const devMode = process.env.NODE_ENV !== 'production';
 const PATHS = {
   src: path.join(__dirname, './src'),
   dist: path.join(__dirname, './dist')
@@ -31,16 +32,12 @@ module.exports = {
     filename: 'js/[name].js',
     // publicPath: '/'
   },
-  optimization: {
-    splitChunks: {
-      chunks: 'all'
-    }
-  },
   module: {
     rules: [{
       test: /\.js$/,
       exclude: /node_modules/,
-      loader: 'babel-loader'
+      loader: 'babel-loader',
+      options: { presets: ['@babel/preset-env'] }
     },{
       test: /\.pug$/,
       loader: 'pug-loader',
@@ -122,9 +119,15 @@ module.exports = {
      },
        template: `${PAGES_DIR}/${page}`,
        filename: `./${page.replace(/\.pug/,'.html')}`,
-       inject: devMode,
+       inject: false,
        minifyminify: false,
-     }))
+     })),
+     new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.$': 'jquery',
+      'window.jQuery': 'jquery'
+    }),
   ]
 };
 

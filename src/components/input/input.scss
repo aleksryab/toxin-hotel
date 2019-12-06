@@ -1,0 +1,39 @@
+.input {
+
+  &__label {
+    @include small-subtitle;
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__button {
+    position: absolute;
+    top:0;
+    right: 0;
+    width: rem(44px);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__field {
+    box-sizing: border-box;
+    width: 100%;
+    height: rem(44px);
+    padding: 0 45px 0 15px;
+    @include text;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 4px;
+
+    &::placeholder {
+      color: $dark-color-op75;
+      @include font-rem(14, 18, normal);
+    }
+  }
+
+
+}

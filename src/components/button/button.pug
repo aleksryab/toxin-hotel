@@ -1,7 +1,19 @@
+//-
+  options.iverted - инвертированаая тема (boolean)
+  options.type - тип кнопки (string)
+
+
 mixin button(options)
   -
-    var classes = "btn"
-    classes += options.theme == "light" ? " btn_light" : ""
-    classes += options.type ? " btn_" + options.type : ""
+    var classes = 'btn'
+    classes += options.inverted ? ' btn_inverted' : ''
+    classes += options.type ? ' btn_' + options.type : ''
 
-  button(class= classes)= options.name
+  if options.type == 'submit'
+    button(class= classes)= options.name
+      include ./img/arrow_forward.svg
+  else
+    button(class= classes)= options.name
+
+
+

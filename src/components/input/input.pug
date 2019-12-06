@@ -1,0 +1,42 @@
+//-
+  options.label - label (string)
+  options.name - name (string)
+  options.required - required (boolean)
+  options.placeholder - placeholder (string)
+  options.date - input is datepicker (string)
+  options.dropdown - добавляет кнопку для выпадающего контента (boolean)
+
+mixin input(options)
+  if !options
+    - options = {}
+
+  -
+    var classes = 'input__field'
+    classes += options.date ? ' js-datepicker' : ''
+    var pattern = options.date ? '[0-9]{2}\.[0-9]{2}\.[0-9]{4}' : ''
+
+  div.input
+    if options.label
+      label.input__label= options.label
+        div.input__wrapper
+          input(
+                type="text",
+                autocomplete="off",
+                name= options.name,
+                placeholder= options.placeholder,
+                required= options.required,
+                class= classes,
+                pattern= pattern
+              )
+          if options.dropdown
+            span.input__button
+             include ./img/expand_more.svg
+    else
+      input.input__field(
+                  type="text",
+                  name= options.name,
+                  placeholder= options.placeholder,
+                  required= options.required,
+                  class= classes
+                )
+

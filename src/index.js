@@ -1,2 +1,5 @@
-// import 'normalize.css';
-// import './scss/main.scss';
+import searchRoom from './components/search-room/search-room';
+
+$(document).ready(() => {
+  searchRoom();
+});
