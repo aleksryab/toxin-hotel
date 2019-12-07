@@ -11,7 +11,7 @@ mixin button(options)
 
   if options.type == 'submit'
     button(class= classes)= options.name
-      include ./img/arrow_forward.svg
+      i.btn__icon.material-icons arrow_forward
   else
     button(class= classes)= options.name
 

@@ -30,7 +30,7 @@
   .datepicker--cell.-current- {
     color: #fff;
     font-weight: bold;
-    background: $second-gradient; }
+    background: $secondary-gradient; }
     .datepicker--cell.-current-.-in-range- {
       color: $primary-color; }
   .datepicker--cell.-in-range- {
@@ -78,10 +78,10 @@
   .datepicker--cell.-selected- {
     color: #fff;
     font-weight: bold;
-    background: $base-gradient; }
+    background: $primary-gradient; }
     .datepicker--cell.-selected-.-current- {
       color: #fff;
-      background: $base-gradient; }
+      background: $primary-gradient; }
   .datepicker--cell:empty {
     cursor: default; }
 
@@ -272,6 +272,7 @@
           justify-content: center; }
 
 .datepicker--nav-action {
+  color: $primary-color;
   width: rem(24px);
   border-radius: 4px;
   -webkit-user-select: none;

@@ -14,6 +14,7 @@
 
   &__left-column {
     width: 22.42%;
+
     @media screen and (max-width: $screen-lg) {
       width: 100%;
       text-align: center;
@@ -23,6 +24,7 @@
 
   &__right-column {
     width: 22.42%;
+
     @media screen and (max-width: $screen-lg) {
       display: none;
     }
@@ -33,6 +35,7 @@
     justify-content: space-between;
     flex-grow: 1;
     padding: 0 40px;
+
     @media screen and (max-width: $screen-lg) {
       display: none;
     }
@@ -87,6 +90,7 @@
     font-size: rem(14px);
     border: 1px solid rgba(31, 32, 65, 0.25);
     border-radius: 4px;
+
     &::placeholder {
       color: $dark-color-op25;
     }
@@ -99,11 +103,13 @@
     right: 0;
     width: rem(44px);
     height: rem(44px);
+    color: $primary-color;
     background: none;
     border: none;
-    cursor: pointer;
     outline: none;
+    cursor: pointer;
     transition: all 0.3s;
+
     &:hover {
       padding-left: rem(10px);
     }

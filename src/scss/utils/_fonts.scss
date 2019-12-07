@@ -11,6 +11,7 @@
        url('../fonts/quicksand-regular.ttf') format('truetype'), /* Safari, Android, iOS */
        url('../fonts/quicksand-regular.svg#Quicksand') format('svg'); /* Legacy iOS */
 }
+
 /* quicksand-600 - latin_latin-ext */
 @font-face {
   font-family: 'Quicksand';
@@ -38,6 +39,7 @@
        url('../fonts/montserrat-regular.ttf') format('truetype'), /* Safari, Android, iOS */
        url('../fonts/montserrat-regular.svg#Montserrat') format('svg'); /* Legacy iOS */
 }
+
 /* montserrat-700 - cyrillic-ext_latin */
 @font-face {
   font-family: 'Montserrat';
@@ -50,4 +52,18 @@
        url('../fonts/montserrat-700.woff') format('woff'), /* Modern Browsers */
        url('../fonts/montserrat-700.ttf') format('truetype'), /* Safari, Android, iOS */
        url('../fonts/montserrat-700.svg#Montserrat') format('svg'); /* Legacy iOS */
+}
+
+/* Material Icons */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/MaterialIcons-Regular.eot'); /* For IE6-8 */
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url('../fonts/MaterialIcons-Regular.woff2') format('woff2'),
+       url('../fonts/MaterialIcons-Regular.woff') format('woff'),
+       url('../fonts/MaterialIcons-Regular.ttf') format('truetype'),
+       url('../fonts/MaterialIcons-Regular.svg') format('svg');
 }
