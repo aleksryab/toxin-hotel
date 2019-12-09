@@ -4,7 +4,7 @@
     @include small-subtitle;
   }
 
-  &__wrapper {
+  &__inner {
     position: relative;
   }
 
@@ -19,6 +19,7 @@
     align-items: center;
     color: $dark-color-op50;
     cursor: pointer;
+    user-select: none;
   }
 
   &__field {
@@ -27,8 +28,23 @@
     height: rem(44px);
     padding: 0 rem(45px) 0 rem(15px);
     @include text;
-    border: 1px solid rgba(31, 32, 65, 0.25);
+    border: $light-border;
     border-radius: 4px;
+    outline: none;
+
+    &:hover, &:focus {
+      border: $bold-border;
+    }
+
+    &_dropdown {
+      cursor: pointer;
+      user-select : none;
+    }
+
+    &_expanded {
+      border: $bold-border;
+      border-radius: 4px 4px 0 0;
+    }
 
     &::placeholder {
       color: $dark-color-op75;

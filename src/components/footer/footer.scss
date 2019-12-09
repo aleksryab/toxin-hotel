@@ -88,11 +88,12 @@
     padding: 0 45px 0 15px;
     color: $base-font-color;
     font-size: rem(14px);
-    border: 1px solid rgba(31, 32, 65, 0.25);
+    border: $light-border;
     border-radius: 4px;
 
     &::placeholder {
       color: $dark-color-op25;
+      border: $bold-border;
     }
   }
 
@@ -140,5 +141,4 @@
     margin-left: rem(20px);
     text-decoration: none;
   }
-
 }

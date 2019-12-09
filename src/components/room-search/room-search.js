@@ -1,10 +1,23 @@
 import '../input/input';
 import './datepicker/datepicker';
+import '../dropdown/dropdown';
 
-export default function searchRoom(){
+export default function roomSearch(){
 
-  let $checkIn = $('.js-datepicker[name="check-in"]'),
-      $checkOut = $('.js-datepicker[name="check-out"]');
+  const $checkIn = $('.js-datepicker[name="check-in"]'),
+      $checkOut = $('.js-datepicker[name="check-out"]'),
+      $guests = $('.js-dropdown[name="number-guests"]');
+
+  $guests.dropdown();
+
+  $('.js-datepicker').inputmask({
+    alias: 'datetime',
+    inputFormat: 'dd.mm.yyyy',
+    placeholder: 'ДД.ММ.ГГГГ',
+    oncomplete: function() {
+      select($(this).val());
+    }
+  });
 
   let calendar = $checkIn.datepicker({
     language: 'ru',
@@ -35,15 +48,6 @@ export default function searchRoom(){
     }
   );
 
-  $('.js-datepicker').inputmask({
-    alias: 'datetime',
-    inputFormat: 'dd.mm.yyyy',
-    placeholder: 'ДД.ММ.ГГГГ',
-    oncomplete: (opt) => {
-      select(opt.target.value);
-    }
-  });
-
   function select(value) {
 
     if (value.match(/^\d\d\.\d\d\.\d\d\d\d$/)) {
@@ -56,8 +60,12 @@ export default function searchRoom(){
 
       if(date >= new Date().setHours(0, 0, 0, 0)) {
         calendar.data('datepicker').selectDate(date);
+        $checkOut.focus();
       }
     }
   }
+
+
+
 }
 

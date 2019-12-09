@@ -1,7 +1,6 @@
 extends ./layout/head
 include ../components/ui-logo/ui-logo
-include ../components/search-room/search-room
-
+include ../components/room-search/room-search
 
 block title
   title= "Cards"
@@ -14,5 +13,5 @@ block content
       +ui-logo()
 
     .ui-page__cards-container
-      +search-room()
+      +room-search()
     script(src="js/main.js")

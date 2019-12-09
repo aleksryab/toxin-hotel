@@ -1,0 +1,28 @@
+
+mixin dropdown()
+
+  .dropdown
+    .dropdown__item
+      .dropdown__title взрослые
+      .dropdown__controls
+        span.dropdown__button(data-action="minus") -
+        input.dropdown__value(type="text" name="adults" value="0" readonly)
+        span.dropdown__button(data-action="plus") +
+
+    .dropdown__item
+      .dropdown__title дети
+      .dropdown__controls
+        spand.dropdown__button(data-action="minus") -
+        input.dropdown__value(type="text" name="children" value="0" readonly)
+        span.dropdown__button(data-action="plus") +
+
+    .dropdown__item
+      .dropdown__title младенцы
+      .dropdown__controls
+        span.dropdown__button(data-action="minus") -
+        input.dropdown__value(type="text" name="infants" value="0" readonly)
+        span.dropdown__button(data-action="plus") +
+
+    .dropdown__menu
+      span.dropdown__menu-button.dropdown__menu-button_inverted(data-action="clear") oчистить
+      span.dropdown__menu-button(data-action="apply") применить

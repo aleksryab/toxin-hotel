@@ -3,8 +3,9 @@
   options.name - name (string)
   options.required - required (boolean)
   options.placeholder - placeholder (string)
-  options.date - input is datepicker (string)
-  options.dropdown - добавляет кнопку для выпадающего контента (boolean)
+  options.date - добавить классы для datepicker и паттерн (boolean)
+  options.more - добавить только кнопку для выпадающего контента (boolean)
+  options.dropdown - добавить кнопку, классы и атрибуты для dropdown (boolean)
 
 mixin input(options)
   if !options
@@ -13,12 +14,13 @@ mixin input(options)
   -
     var classes = 'input__field'
     classes += options.date ? ' js-datepicker' : ''
-    var pattern = options.date ? '[0-9]{2}\.[0-9]{2}\.[0-9]{4}' : ''
+    classes += options.dropdown ? ' js-dropdown input__field_dropdown' : ''
+    var pattern = options.date ? '[0-9]{2}\.[0-9]{2}\.[0-9]{4}' : false
 
   div.input
     if options.label
       label.input__label= options.label
-        div.input__wrapper
+        div.input__inner
           input(
                 type="text",
                 autocomplete="off",
@@ -26,11 +28,13 @@ mixin input(options)
                 placeholder= options.placeholder,
                 required= options.required,
                 class= classes,
-                pattern= pattern
+                pattern= pattern,
+                readonly= options.dropdown
               )
-          if options.dropdown
+          if options.more || options.dropdown
             span.input__button
              i.material-icons expand_more
+      block
     else
       input.input__field(
                   type="text",

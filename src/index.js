@@ -1,5 +1,5 @@
-import searchRoom from './components/search-room/search-room';
+import roomSearch from './components/room-search/room-search';
 
 $(document).ready(() => {
-  searchRoom();
+  roomSearch();
 });

@@ -3,15 +3,15 @@
   options.type - тип кнопки (string)
 
 
-mixin button(options)
+mixin button(options= {})
   -
-    var classes = 'btn'
-    classes += options.inverted ? ' btn_inverted' : ''
-    classes += options.type ? ' btn_' + options.type : ''
+    var classes = 'button'
+    classes += options.inverted ? ' button_inverted' : ''
+    classes += options.type ? ' button_' + options.type : ''
 
   if options.type == 'submit'
     button(class= classes)= options.name
-      i.btn__icon.material-icons arrow_forward
+      i.button__icon.material-icons arrow_forward
   else
     button(class= classes)= options.name
 

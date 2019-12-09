@@ -1,14 +1,14 @@
-.btn {
+.button {
   box-sizing: border-box;
   display: block;
   padding: 0 rem(20px);
   height: rem(44px);
-  font-family: $base-font;
   color: #fff;
+  font-family: $base-font;
   @include font-rem(12, 1, bold);
   text-align: center;
   text-transform: uppercase;
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  background: $primary-gradient;
   border-radius: rem(22px);
   border: none;
   outline: none;
@@ -40,7 +40,7 @@
       bottom: 0;
       margin: -2px;
       border-radius: inherit;
-      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      background: $primary-gradient;
       z-index: -1;
     }
   }

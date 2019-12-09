@@ -156,7 +156,7 @@
   font-family: $base-font;
   @include font-rem(12, 15, normal);
   color: $dark-color-op50;
-  width: 320px;
+  width: rem(318px);
   position: absolute;
   left: -100000px;
   opacity: 0;
