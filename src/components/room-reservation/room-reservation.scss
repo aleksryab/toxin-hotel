@@ -1,0 +1,126 @@
+.room-reservation {
+  box-sizing: border-box;
+  max-width: 380px;
+  padding: 40px 30px 30px;
+  background: $default-color;
+  border-radius: $border-radius;
+  border: $thin-border;
+  box-shadow: $thin-shadow;
+  font-family: $base-font;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__number {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+  }
+
+  &__title {
+    @include title;
+
+    &_smaller {
+      @include font-rem(14, 17, bold);
+    }
+  }
+
+  &__class {
+    @include small-subtitle;
+    color: $primary-color;
+    margin-left: rem(5px);
+  }
+
+  &__price {
+    @include font-rem(14, 18, bold);
+    color: $dark-color-op50;
+    display: flex;
+    align-items: center;
+  }
+
+  &__price-descr {
+    font-weight: normal;
+    margin-left: rem(5px);
+  }
+
+  &__dates {
+    display: flex;
+    justify-content: space-between;
+    margin-top: rem(20px);
+  }
+
+  &__box {
+    width: 47.17%;
+  }
+
+  &__guests {
+    margin-top: rem(20px);
+  }
+
+  &__bill {
+    padding: rem(10px) 0;
+    @include text;
+  }
+
+  &__bill-item {
+    display: flex;
+    justify-content: space-between;
+    margin-top: rem(10px);
+  }
+
+  &__bill-descr {
+    display: flex;
+    justify-content: space-between;
+    width: 75.5%;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(20px);
+    height: rem(20px);
+    border-radius: 50%;
+    border: $light-border;
+    color: $dark-color-op25;
+    font-size: rem(12px);
+    font-weight: bold;
+    line-height: 1;
+    user-select: none;
+    cursor: pointer;
+  }
+
+  &__total {
+    @include subtitle;
+    margin-top: rem(30px);
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+
+    &:after {
+      content: '';
+      display: block;
+      border-bottom: 1px dashed rgba(31, 32, 65, 0.25);
+      flex: 1;
+      flex-grow: 1;
+      order: 2;
+      margin: 0 rem(5px);
+    }
+  }
+
+  &__total-descr {
+    order: 1;
+  }
+
+  &__total-sum {
+    order: 3;
+  }
+
+
+
+  &__button{
+    margin-top: rem(20px);
+  }
+}

@@ -3,16 +3,16 @@ include ../button/button
 include ../dropdown/dropdown
 
 mixin room-search()
-  form.search-room
-    h2.search-room__title Найдём номера под ваши пожелания
-    div.search-room__dates
-      div.search-room__box
+  form.room-search
+    h2.room-search__title Найдём номера под ваши пожелания
+    div.room-search__dates
+      div.room-search__box
         +input({label: 'прибытие', name: 'check-in', placeholder: 'ДД.ММ.ГГГГ', required: true, more: true, date: true})
-      div.search-room__box
+      div.room-search__box
         +input({label: 'выезд', name: 'check-out', placeholder: 'ДД.ММ.ГГГГ', required: true, more: true, date: true})
-    div.search-room__guests
+    div.room-search__guests
       +input({label: 'гости', name: 'number-guests', placeholder: 'Сколько гостей', required: true, dropdown: true})
         block dropdown
           +dropdown()
-    div.search-room__button
+    div.room-search__button
       +button({name: 'подобрать номер', type: 'submit'})

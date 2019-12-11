@@ -15,11 +15,11 @@ export default function roomSearch(){
     inputFormat: 'dd.mm.yyyy',
     placeholder: 'ДД.ММ.ГГГГ',
     oncomplete: function() {
-      select($(this).val());
+      select($(this));
     }
   });
 
-  let calendar = $checkIn.datepicker({
+ $checkIn.datepicker({
     language: 'ru',
     range: true,
     minDate: new Date(),
@@ -27,8 +27,8 @@ export default function roomSearch(){
     applyButton: true,
     multipleDates: 2,
     twoInputs: true,
-    inputMin: $checkIn,
-    inputMax: $checkOut,
+    minInput: $checkIn,
+    maxInput: $checkOut,
     dateFormat: 'dd.mm.yyyy',
     keyboardNav: false,
     offset: 5,
@@ -39,16 +39,20 @@ export default function roomSearch(){
     nextHtml: '<i class="material-icons">arrow_forward</i>'
   });
 
-  $checkOut.click( () => {
-    calendar.data('datepicker').show();
-    }
-  );
-  $checkOut.focus( () => {
-    calendar.data('datepicker').show();
-    }
-  );
 
-  function select(value) {
+
+  $checkOut.click( function() {
+    $(this).parents('form').find($checkIn).data('datepicker').show();
+  });
+
+  $checkOut.focus( function() {
+    $(this).parents('form').find($checkIn).data('datepicker').show();
+  });
+
+  function select(input) {
+    console.log(input);
+
+    let value = input.val();
 
     if (value.match(/^\d\d\.\d\d\.\d\d\d\d$/)) {
 
@@ -59,13 +63,13 @@ export default function roomSearch(){
       date.setFullYear(value[2]);
 
       if(date >= new Date().setHours(0, 0, 0, 0)) {
-        calendar.data('datepicker').selectDate(date);
-        $checkOut.focus();
+        input.parents('form').find($checkIn).data('datepicker').selectDate(date);
+        input.parents('form').find($checkOut).focus();
+      } else {
+        input.attr('placeholder', '30');
       }
     }
   }
-
-
 
 }
 

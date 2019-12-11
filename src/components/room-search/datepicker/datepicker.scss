@@ -42,7 +42,8 @@
     cursor: default;
     color: $dark-color-op25; }
     .datepicker--cell.-disabled-.-focus- {
-      color:  $dark-color-op25; }
+      color:  $dark-color-op25;
+      background: none; }
     .datepicker--cell.-disabled-.-in-range- {
       color:  $dark-color-op25; }
     .datepicker--cell.-disabled-.-current-.-focus- {

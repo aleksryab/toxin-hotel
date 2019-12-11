@@ -45,8 +45,8 @@
             multipleDatesSeparator: ',',
             range: false,
             twoInputs: false,
-            inputMin: '',
-            inputMax: '',
+            minInput: '',
+            maxInput: '',
 
             todayButton: false,
             clearButton: false,
@@ -126,11 +126,11 @@
             this.$altField = typeof this.opts.altField == 'string' ? $(this.opts.altField) : this.opts.altField;
         }
 
-        if (this.opts.inputMin) {
-            this.$inputMin = typeof this.opts.inputMin == 'string' ? $(this.opts.inputMin) : this.opts.inputMin;
+        if (this.opts.minInput) {
+            this.$minInput = typeof this.opts.minInput == 'string' ? $(this.opts.minInput) : this.opts.minInput;
         }
-        if (this.opts.inputMax) {
-            this.$inputMax = typeof this.opts.inputMax == 'string' ? $(this.opts.inputMax) : this.opts.inputMax;
+        if (this.opts.maxInput) {
+            this.$maxInput = typeof this.opts.maxInput == 'string' ? $(this.opts.maxInput) : this.opts.maxInput;
         }
 
         this.inited = false;
@@ -710,15 +710,12 @@
             }
 
             if (this.opts.twoInputs) {
-              this.$inputMin.val(value[0]);
-              this.$inputMax.val(value[1]);
+              this.$el.val(value[0]);
+              this.$el.parents('form').find(this.$maxInput).val(value[1]);
             } else {
               value = value.join(this.opts.multipleDatesSeparator);
               this.$el.val(value);
             }
-
-
-
         },
 
         /**

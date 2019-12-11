@@ -1,7 +1,9 @@
 .ui-page {
+  padding-bottom: 140px;
   color: $base-font-color;
   font-family: $base-font;
   @include font-rem(14, 24, normal);
+
   &_bg_gray {
     background-color: #E5E5E5;
   }
@@ -54,9 +56,9 @@
   &__cards-container{
     max-width: 1160px;
     margin: 0 auto;
-    background: #fff;
-    min-height: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
-
 
 }

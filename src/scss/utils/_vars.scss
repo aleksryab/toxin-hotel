@@ -30,5 +30,10 @@ $primary-gradient       : linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 $secondary-gradient     : linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 
 // Borders
+$thin-border            : 1px solid rgba(0, 0, 0, 0.12);
 $light-border           : 1px solid rgba(31, 32, 65, 0.25);
 $bold-border            : 1px solid rgba(31, 32, 65, 0.5);
+$border-radius          : 4px;
+
+// Shadows
+$thin-shadow            : 0px 0px 25px rgba(0, 0, 0, 0.2);

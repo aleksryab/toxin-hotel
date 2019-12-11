@@ -1,41 +1,49 @@
 (function ($) {
   $.fn.dropdown = function (options) {
-    this.each( () => {
+
+    this.each(function () {
       const $mainInput = $(this);
-      const $dropdownContent = $(this).parents('.input').find('.dropdown');
-      const $inputButton = $(this).parents('.input').find('.input__button');
+      const $dropdownContent = $mainInput.parents('.input').find('.dropdown');
+      const $inputButton = $mainInput.parents('.input').find('.input__button');
       const $items = $dropdownContent.find('.dropdown__item');
+      const $itemInputs = $items.find('.dropdown__value');
+      const $controlButtons = $dropdownContent.find('.dropdown__button');
+      const $decrementButtons = $dropdownContent.find('.dropdown__button[data-action="minus"]');
+      const $menuButtons = $dropdownContent.find('.dropdown__menu-button');
       const $clearButton = $dropdownContent.find('.dropdown__menu-button[data-action="clear"]');
-      let totalValue = '';
+      let totalValue = $mainInput.val();
 
       updateControls();
 
-      $('body').click(function(event) {
+      $mainInput.click(event => {
+        event.preventDefault();
+        $mainInput.toggleClass('input__field_expanded');
+        $dropdownContent.toggleClass('dropdown_expanded');
+      });
 
-        let target = $(event.target);
+      $controlButtons.click(function() {
+        actionHandler($(this));
+      });
 
-        if (target.closest($mainInput).length || target.closest($inputButton).length) {
-          event.preventDefault();
-          $mainInput.toggleClass('input__field_expanded');
-          $dropdownContent.toggleClass('dropdown_expanded');
+      $menuButtons.click(function() {
+        actionHandler($(this));
+      });
 
-        } else if (target.is('.dropdown__button') || target.is('.dropdown__menu-button')) {
-          event.preventDefault();
-          calculation(target, target.attr('data-action'));
+      $('body').click(event => {
+        if(!$(event.target).closest($dropdownContent).length &&
+            !$(event.target).closest($mainInput).length &&
+            !$(event.target).closest($inputButton).length){
 
-        } else if (!target.closest($dropdownContent).length) {
-          hide();
+           hide();
         }
       });
 
-      function hide() {
-        $mainInput.removeClass('input__field_expanded').focusout();
-        $dropdownContent.removeClass('dropdown_expanded');
-      }
 
-      function calculation(button, action){
-        let itemInput = button.parent().children('.dropdown__value'),
-            itemValue =  itemInput.val();
+      function actionHandler(button){
+        const itemInput = button.parent().children('.dropdown__value');
+        let action = button.data('action');
+        let itemValue =  itemInput.val();
+
         totalValue = $mainInput.val().replace(/\D+/g,'');
 
         if (action === 'minus' && itemValue != 0) {
@@ -70,19 +78,18 @@
           totalValue += declension(totalValue);
         } else {
          totalValue = '';
-       }
-       $mainInput.val(totalValue);
-       updateControls();
+        }
+        $mainInput.val(totalValue);
+        updateControls();
       }
 
       function updateControls() {
-        $items.each(function () {
-          let itemVal = $(this).find('.dropdown__value').val();
-          let minusBtn = $(this).find('.dropdown__button[data-action="minus"]');
+        $items.each(function(index) {
+          let itemVal = $itemInputs.eq(index).val();
           if(itemVal <= 0) {
-            minusBtn.addClass('dropdown__button_disabled');
+            $decrementButtons.eq(index).addClass('dropdown__button_disabled');
           } else {
-            minusBtn.removeClass('dropdown__button_disabled');
+            $decrementButtons.eq(index).removeClass('dropdown__button_disabled');
           }
         });
 
@@ -91,6 +98,11 @@
         } else {
           $clearButton.addClass('dropdown__menu-button_disabled');
         }
+      }
+
+      function hide() {
+        $mainInput.removeClass('input__field_expanded').focusout();
+        $dropdownContent.removeClass('dropdown_expanded');
       }
 
       function declension(val) {
@@ -113,7 +125,6 @@
             return ' гостей';
         }
       }
-
     });
     return this;
   };
