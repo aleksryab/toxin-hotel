@@ -1,0 +1,37 @@
+include ../input/input
+include ../button/button
+include ../radio-button/radio-button
+include ../toggle-button/toggle-button
+
+mixin registration-form()
+  form.registration-form
+    h2.registration-form__title Регистрация аккаунта
+
+    div.registration-form__input
+      +input({name: 'name', placeholder: 'Имя', required: true})
+    div.registration-form__input
+      +input({name: 'surname', placeholder: 'Фамилия', required: true})
+
+    span.registration-form__radio-button
+      +radio-button({name: 'sex', value: 'male', checked: true, label: 'Мужчина'})
+    span.registration-form__radio-button
+      +radio-button({name: 'sex', value: 'female', label: 'Женщина'})
+
+
+    div.registration-form__input.registration-form__input_with-paddings
+      +input({name: 'birthday', label: 'Дата рождения', placeholder: 'ДД.ММ.ГГГГ', required: true, date: true})
+
+    div.registration-form__input
+      +input({type: 'email', name: 'email', label: 'Данные для входа в сервис', placeholder: 'Email', required: true})
+
+    div.registration-form__input
+      +input({type: 'password', name: 'password', placeholder: 'Пароль', required: true})
+
+    +toggle-button({name: 'subscription', label: 'Получать спецпредложения'})
+
+    div.registration-form__button
+      +button({name: 'Перейти к оплате', type: 'submit'})
+
+    div.registration-form__user-bar
+      span Уже есть аккаунт на Toxin
+      +button({name: 'Войти', inverted: true, type: 'link'})

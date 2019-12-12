@@ -1,0 +1,43 @@
+.registration-form{
+  box-sizing: border-box;
+  width: 380px;
+  padding: 40px 30px 30px;
+  background: $default-color;
+  border-radius: $border-radius;
+  border: $thin-border;
+  box-shadow: $thin-shadow;
+  font-family: $base-font;
+
+  &__title {
+    @include title;
+    margin-bottom: rem(20px);
+  }
+
+  &__input {
+    margin-bottom: rem(10px);
+
+    &_with-paddings {
+      padding: rem(24px) 0 rem(10px);
+    }
+  }
+
+  &__radio-button {
+    margin-right: rem(20px);
+  }
+
+  &__button{
+    margin-top: rem(24px);
+  }
+
+  &__user-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: rem(30px);
+    color: #000;
+    @include font-rem(14, 18, normal);
+  }
+
+
+}
+
