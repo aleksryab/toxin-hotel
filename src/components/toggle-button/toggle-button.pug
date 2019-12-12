@@ -1,0 +1,10 @@
+//-
+    options.name - name (string)
+    options.value - value (string)
+    options.label - подпись кнопки (string)
+    options.checked - checked (boolean)
+
+mixin toggle-button(options = {})
+  label.toggle-button
+    input.toggle-button__input(type= "checkbox", name= options.name, value= options.value, checked= options.checked)
+    span.toggle-button__label= options.label

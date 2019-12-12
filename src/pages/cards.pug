@@ -2,6 +2,8 @@ extends ./layout/head
 include ../components/ui-logo/ui-logo
 include ../components/room-search/room-search
 include ../components/room-reservation/room-reservation
+include ../components/registration-form/registration-form
+
 
 block title
   title= "Cards"
@@ -19,6 +21,8 @@ block content
       div
         +room-reservation()
       div.calendar
+      div
+        +registration-form()
 
     script(src="js/main.js")
     script

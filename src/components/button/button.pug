@@ -1,6 +1,6 @@
 //-
   options.iverted - инвертированаая тема (boolean)
-  options.type - тип кнопки (string)
+  options.type - тип кнопки (string): submit, login, reg, link
 
 
 mixin button(options= {})
@@ -9,11 +9,18 @@ mixin button(options= {})
     classes += options.inverted ? ' button_inverted' : ''
     classes += options.type ? ' button_' + options.type : ''
 
-  if options.type == 'submit'
+  if options.type == 'link'
+    a(href="/" class= classes)
+      span.button__inner= options.name
+
+
+  else if options.type == 'submit'
     button(class= classes)= options.name
       i.button__icon.material-icons arrow_forward
+
   else
-    button(class= classes)= options.name
+    button(class= classes)
+      span.button__inner= options.name
 
 
 

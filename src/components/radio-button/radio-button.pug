@@ -1,0 +1,10 @@
+//-
+    options.name - name (string)
+    options.value - value (string)
+    options.label - подпись кнопки (string)
+    options.checked - checked (boolean)
+
+mixin radio-button(options = {})
+  label.radio-button
+      input.radio-button__input(type= "radio", name= options.name, value= options.value, checked= options.checked)
+      span.radio-button__label= options.label

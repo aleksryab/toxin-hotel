@@ -1,7 +1,7 @@
 .button {
   box-sizing: border-box;
-  display: block;
-  padding: 0 rem(20px);
+  display: inline-block;
+  width: rem(99px);
   height: rem(44px);
   color: #fff;
   font-family: $base-font;
@@ -14,44 +14,38 @@
   outline: none;
   cursor: pointer;
   position: relative;
+  text-decoration: none;
+
   &:hover, &:focus {
     opacity: 0.5;
   }
 
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0 rem(20px);
+    border-radius: inherit;
+  }
+
+
   &_inverted {
     color: $primary-color;
-    background: #fff;
-    border: 2px solid transparent;
-    background-clip: padding-box;
-    &:hover, &:focus {
-      opacity: 1;
-      color: rgba($primary-color, 0.5);
-    }
-    &:hover:after, &:focus:after{
-      opacity: 0.5;
-    }
+    background: $primary-gradient;
+    padding: 2px;
 
-    &:after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left:0;
-      right: 0;
-      bottom: 0;
-      margin: -2px;
-      border-radius: inherit;
-      background: $primary-gradient;
-      z-index: -1;
+    & .button__inner {
+      background: #fff;
     }
   }
 
   &_login {
-    padding: 0;
     min-width: rem(79px);
     height: rem(34px);
   }
   &_reg {
-    padding: 0;
+
     min-width: rem(101px);
     height: rem(34px);
   }

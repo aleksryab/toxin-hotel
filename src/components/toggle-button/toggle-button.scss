@@ -1,0 +1,53 @@
+.toggle-button {
+  display: inline-block;
+
+  &__input {
+    display: none;
+  }
+
+  &__label {
+    position: relative;
+    padding: 0 0 0 rem(50px);
+    display: flex;
+    align-items: center;
+    color: $dark-color-op75;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: rem(40px);
+      height: rem(20px);
+      border-radius: rem(10px);
+      border: $light-border;
+      box-sizing: border-box;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: rem(4px);
+      top: 50%;
+      transform: translateY(-50%);
+      width: rem(12px);
+      height: rem(12px);
+      border-radius: 50%;
+      background: $dark-color-op25;
+      transition: 0.3s;
+      box-sizing: border-box;
+    }
+  }
+  &__input:checked + &__label {
+    color: $dark-color-op75;
+  }
+  &__input:checked + &__label:after {
+    left: rem(24px);
+    background: $primary-gradient;
+  }
+  &__input:checked + &__label:before {
+    border-color: $primary-color;
+  }
+}
