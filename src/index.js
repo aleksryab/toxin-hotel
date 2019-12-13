@@ -1,7 +1,9 @@
 import roomSearch from './components/room-search/room-search';
+import carousel from './components/room-preview/room-preview';
 
 $(document).ready(() => {
   roomSearch();
+  carousel();
 
   $('.calendar').datepicker({
     language: 'ru',

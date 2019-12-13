@@ -1,6 +1,6 @@
 // Fonts
-$title-font             : 'Quicksand', Helvetica, Arial, sans-serif;
-$base-font              : 'Montserrat', Helvetica, Arial, sans-serif;
+$title-font             : 'Quicksand', 'Open Sans', Helvetica, Arial, sans-serif;
+$base-font              : 'Montserrat', 'Open Sans', Helvetica, Arial, sans-serif;
 
 // Sizes
 $default-font-size      : 16px; // font size for html
@@ -36,4 +36,5 @@ $bold-border            : 1px solid rgba(31, 32, 65, 0.5);
 $border-radius          : 4px;
 
 // Shadows
-$thin-shadow            : 0px 0px 25px rgba(0, 0, 0, 0.2);
+$thin-shadow            : 0px 10px 20px rgba(31, 32, 65, 0.05);;
+$bold-shadow            : 0px 0px 25px rgba(0, 0, 0, 0.2);

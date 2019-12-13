@@ -5,7 +5,7 @@
   background: $default-color;
   border-radius: $border-radius;
   border: $thin-border;
-  box-shadow: $thin-shadow;
+  box-shadow: $bold-shadow;
   font-family: $base-font;
 
   &__header {
@@ -37,7 +37,7 @@
     @include font-rem(14, 18, bold);
     color: $dark-color-op50;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
   }
 
   &__price-descr {

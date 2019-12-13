@@ -75,7 +75,7 @@
     }
   }
   .datepicker--cell.-range-from-.-range-to- {
-    border-radius: 4px; }
+    border-radius: $border-radius; }
   .datepicker--cell.-selected- {
     color: #fff;
     font-weight: bold;
@@ -123,7 +123,7 @@
 .datepicker--cell-month {
   width: 33.33%;
   height: 25%;
-  border-radius: 4px;}
+  border-radius: $border-radius;}
 
 .datepicker--years {
   height: 170px; }
@@ -134,7 +134,7 @@
 .datepicker--cell-year {
   width: 25%;
   height: 33.33%;
-  border-radius: 4px;}
+  border-radius: $border-radius;}
 
 /* -------------------------------------------------
     Datepicker
@@ -150,9 +150,9 @@
 .datepicker {
   box-sizing: border-box;
   background: #fff;
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-  border-radius: 4px;
+  border: $light-border;
+  box-shadow: $thin-shadow;
+  border-radius: $border-radius;
   padding: rem(20px);
   font-family: $base-font;
   @include font-rem(12, 15, normal);

@@ -1,0 +1,38 @@
+mixin room-preview()
+  div.room-preview
+
+    div.room-preview__carousel.js-carousel
+      div.room-preview__slide
+        img(src=require("../components/room-preview/img/rooms/room-1.jpg"), alt="room photo")
+      div.room-preview__slide
+        img(src=require("../components/room-preview/img/rooms/room-2.jpg"), alt="room photo")
+      div.room-preview__slide
+        img(src=require("../components/room-preview/img/rooms/room-3.jpg"), alt="room photo")
+      div.room-preview__slide
+        img(src=require("../components/room-preview/img/rooms/room-4.jpg"), alt="room photo")
+      div.room-preview__prev
+        i.material-icons.room-preview__prev-icon expand_more
+      div.room-preview__next
+        i.material-icons.room-preview__next-icon expand_more
+
+    div.room-preview__info
+      div.room-preview__number
+        a.room-preview__title(href = "/")
+          span.room-preview__title_smaller &#8470;
+          |  888
+        span.room-preview__class люкс
+      div.room-preview__price
+        span.room-preview__price-digit 9 990&#8381;
+        span.room-preview__price-descr в сутки
+
+    div.room-preview__rating
+      div.room-preview__reviews
+        span.room-preview__reviews-digit 145
+        span.room-preview__reviews-descr Отзывов
+
+
+
+
+
+
+

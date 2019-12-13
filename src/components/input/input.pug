@@ -8,17 +8,13 @@
   options.more - добавить только кнопку для выпадающего контента (boolean)
   options.dropdown - добавить кнопку, классы и атрибуты для dropdown (boolean)
 
-mixin input(options)
-  if !options
-    - options = {}
-
+mixin input(options = {})
   -
     var classes = 'input__field';
     classes += options.date ? ' js-datepicker' : '';
     classes += options.dropdown ? ' js-dropdown input__field_dropdown' : '';
     var pattern = options.date ? '[0-9]{2}\.[0-9]{2}\.[0-9]{4}' : false;
     var type = options.type ? options.type : 'text';
-    var inner = options.more || options.dropdown ? 'div' : false
 
   div.input
     if options.label
