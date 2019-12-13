@@ -1,0 +1,19 @@
+include ../input/input
+include ../button/button
+
+mixin login-form()
+  form.login-form
+    h2.login-form__title Войти
+
+    div.login-form__input
+      +input({type: 'email', name: 'email', placeholder: 'Email', required: true})
+
+    div.login-form__input
+      +input({type: 'password', name: 'password', placeholder: 'Пароль', required: true})
+
+    div.login-form__button
+      +button({name: 'Войти', type: 'submit'})
+
+    div.login-form__user-bar
+      span Нет аккаунта на Toxin?
+      +button({name: 'Создать', inverted: true, type: 'link'})

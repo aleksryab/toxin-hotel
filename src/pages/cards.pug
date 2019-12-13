@@ -3,6 +3,8 @@ include ../components/ui-logo/ui-logo
 include ../components/room-search/room-search
 include ../components/room-reservation/room-reservation
 include ../components/registration-form/registration-form
+include ../components/login-form/login-form
+include ../components/room-preview/room-preview
 
 
 block title
@@ -17,12 +19,21 @@ block content
 
     .ui-page__cards-container
       div
-        +room-search()
+        div.ui-page__card
+          +room-search()
+        div.ui-page__card
+          +registration-form()
       div
-        +room-reservation()
-      div.calendar
+        div.ui-page__card
+          +room-reservation()
+        div.ui-page__card
+          +login-form()
       div
-        +registration-form()
+        div.ui-page__card.calendar
+        div.ui-page__card
+          +room-preview()
+
+
 
     script(src="js/main.js")
     script

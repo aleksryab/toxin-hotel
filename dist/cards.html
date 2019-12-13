@@ -14,199 +14,235 @@
     <link rel="stylesheet" href="css/ui.css">
   </head>
   <body class="ui-page ui-page_bg_gray">
-    <div class="ui-page__header"><img class="ui-logo" src="img/ui-logo.svg">
+    <div class="ui-page__header"><img class="ui-logo" src="img/ui-logo/ui-logo.svg">
     </div>
     <div class="ui-page__cards-container">
       <div>
-        <form class="room-search">
-          <h2 class="room-search__title">Найдём номера под ваши пожелания</h2>
-          <div class="room-search__dates">
-            <div class="room-search__box">
+        <div class="ui-page__card">
+          <form class="room-search">
+            <h2 class="room-search__title">Найдём номера под ваши пожелания</h2>
+            <div class="room-search__dates">
+              <div class="room-search__box">
+                <div class="input">
+                  <label class="input__label">прибытие
+                    <div class="input__inner">
+                      <input class="input__field js-datepicker" type="text" autocomplete="off" name="check-in" placeholder="ДД.ММ.ГГГГ" required pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}"><span class="input__button"><i class="material-icons">expand_more</i></span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div class="room-search__box">
+                <div class="input">
+                  <label class="input__label">выезд
+                    <div class="input__inner">
+                      <input class="input__field js-datepicker" type="text" autocomplete="off" name="check-out" placeholder="ДД.ММ.ГГГГ" required pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}"><span class="input__button"><i class="material-icons">expand_more</i></span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="room-search__guests">
               <div class="input">
-                <label class="input__label">прибытие
+                <label class="input__label">гости
                   <div class="input__inner">
-                    <input class="input__field js-datepicker" type="text" autocomplete="off" name="check-in" placeholder="ДД.ММ.ГГГГ" required pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}"><span class="input__button"><i class="material-icons">expand_more</i></span>
+                    <input class="input__field js-dropdown input__field_dropdown" type="text" autocomplete="off" name="number-guests" placeholder="Сколько гостей" required readonly><span class="input__button"><i class="material-icons">expand_more</i></span>
+                  </div>
+                </label>
+                <div class="dropdown">
+                  <div class="dropdown__item">
+                    <div class="dropdown__title">взрослые</div>
+                    <div class="dropdown__controls"><span class="dropdown__button" data-action="minus">-</span>
+                      <input class="dropdown__value" type="text" name="adults" value="0" readonly><span class="dropdown__button" data-action="plus">+</span>
+                    </div>
+                  </div>
+                  <div class="dropdown__item">
+                    <div class="dropdown__title">дети</div>
+                    <div class="dropdown__controls">
+                      <spand class="dropdown__button" data-action="minus">-</spand>
+                      <input class="dropdown__value" type="text" name="children" value="0" readonly><span class="dropdown__button" data-action="plus">+</span>
+                    </div>
+                  </div>
+                  <div class="dropdown__item">
+                    <div class="dropdown__title">младенцы</div>
+                    <div class="dropdown__controls"><span class="dropdown__button" data-action="minus">-</span>
+                      <input class="dropdown__value" type="text" name="infants" value="0" readonly><span class="dropdown__button" data-action="plus">+</span>
+                    </div>
+                  </div>
+                  <div class="dropdown__menu"><span class="dropdown__menu-button dropdown__menu-button_inverted" data-action="clear">oчистить</span><span class="dropdown__menu-button" data-action="apply">применить</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="room-search__button">
+              <button class="button button_submit">подобрать номер<i class="button__icon material-icons">arrow_forward</i></button>
+            </div>
+          </form>
+        </div>
+        <div class="ui-page__card">
+          <form class="registration-form">
+            <h2 class="registration-form__title">Регистрация аккаунта</h2>
+            <div class="registration-form__input">
+              <div class="input">
+                <input class="input__field input__field" type="text" name="name" placeholder="Имя" required>
+              </div>
+            </div>
+            <div class="registration-form__input">
+              <div class="input">
+                <input class="input__field input__field" type="text" name="surname" placeholder="Фамилия" required>
+              </div>
+            </div><span class="registration-form__radio-button">
+              <label class="radio-button">
+                <input class="radio-button__input" type="radio" name="sex" value="male" checked><span class="radio-button__label">Мужчина</span>
+              </label></span><span class="registration-form__radio-button">
+              <label class="radio-button">
+                <input class="radio-button__input" type="radio" name="sex" value="female"><span class="radio-button__label">Женщина</span>
+              </label></span>
+            <div class="registration-form__input registration-form__input_with-paddings">
+              <div class="input">
+                <label class="input__label">Дата рождения
+                  <div class="input__inner">
+                    <input class="input__field js-datepicker" type="text" autocomplete="off" name="birthday" placeholder="ДД.ММ.ГГГГ" required pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}">
                   </div>
                 </label>
               </div>
             </div>
-            <div class="room-search__box">
+            <div class="registration-form__input">
               <div class="input">
-                <label class="input__label">выезд
+                <label class="input__label">Данные для входа в сервис
                   <div class="input__inner">
-                    <input class="input__field js-datepicker" type="text" autocomplete="off" name="check-out" placeholder="ДД.ММ.ГГГГ" required pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}"><span class="input__button"><i class="material-icons">expand_more</i></span>
+                    <input class="input__field" type="email" autocomplete="off" name="email" placeholder="Email" required>
                   </div>
                 </label>
               </div>
             </div>
-          </div>
-          <div class="room-search__guests">
-            <div class="input">
-              <label class="input__label">гости
-                <div class="input__inner">
-                  <input class="input__field js-dropdown input__field_dropdown" type="text" autocomplete="off" name="number-guests" placeholder="Сколько гостей" required readonly><span class="input__button"><i class="material-icons">expand_more</i></span>
-                </div>
-              </label>
-              <div class="dropdown">
-                <div class="dropdown__item">
-                  <div class="dropdown__title">взрослые</div>
-                  <div class="dropdown__controls"><span class="dropdown__button" data-action="minus">-</span>
-                    <input class="dropdown__value" type="text" name="adults" value="0" readonly><span class="dropdown__button" data-action="plus">+</span>
-                  </div>
-                </div>
-                <div class="dropdown__item">
-                  <div class="dropdown__title">дети</div>
-                  <div class="dropdown__controls">
-                    <spand class="dropdown__button" data-action="minus">-</spand>
-                    <input class="dropdown__value" type="text" name="children" value="0" readonly><span class="dropdown__button" data-action="plus">+</span>
-                  </div>
-                </div>
-                <div class="dropdown__item">
-                  <div class="dropdown__title">младенцы</div>
-                  <div class="dropdown__controls"><span class="dropdown__button" data-action="minus">-</span>
-                    <input class="dropdown__value" type="text" name="infants" value="0" readonly><span class="dropdown__button" data-action="plus">+</span>
-                  </div>
-                </div>
-                <div class="dropdown__menu"><span class="dropdown__menu-button dropdown__menu-button_inverted" data-action="clear">oчистить</span><span class="dropdown__menu-button" data-action="apply">применить</span></div>
+            <div class="registration-form__input">
+              <div class="input">
+                <input class="input__field input__field" type="password" name="password" placeholder="Пароль" required>
               </div>
             </div>
-          </div>
-          <div class="room-search__button">
-            <button class="button button_submit">подобрать номер<i class="button__icon material-icons">arrow_forward</i></button>
-          </div>
-        </form>
+            <label class="toggle-button">
+              <input class="toggle-button__input" type="checkbox" name="subscription"><span class="toggle-button__label">Получать спецпредложения</span>
+            </label>
+            <div class="registration-form__button">
+              <button class="button button_submit">Перейти к оплате<i class="button__icon material-icons">arrow_forward</i></button>
+            </div>
+            <div class="registration-form__user-bar"><span>Уже есть аккаунт на Toxin</span><a class="button button_inverted button_link" href="/"><span class="button__inner">Войти</span></a>
+            </div>
+          </form>
+        </div>
       </div>
       <div>
-        <form class="room-reservation">
-          <div class="room-reservation__header">
-            <div class="room-reservation__number">
-              <h2 class="room-reservation__title"><span class="room-reservation__title_smaller">&#8470;</span> 888</h2><span class="room-reservation__class">люкс</span>
+        <div class="ui-page__card">
+          <form class="room-reservation">
+            <div class="room-reservation__header">
+              <div class="room-reservation__number">
+                <h2 class="room-reservation__title"><span class="room-reservation__title_smaller">&#8470;</span> 888</h2><span class="room-reservation__class">люкс</span>
+              </div>
+              <div class="room-reservation__price"><span class="room-reservation__price-digit">9 990&#8381;</span><span class="room-reservation__price-descr"> в сутки</span></div>
             </div>
-            <div class="room-reservation__price"><span class="room-reservation__price-digit">9 990&#8381;</span><span class="room-reservation__price-descr"> в сутки</span></div>
-          </div>
-          <div class="room-reservation__dates">
-            <div class="room-reservation__box">
+            <div class="room-reservation__dates">
+              <div class="room-reservation__box">
+                <div class="input">
+                  <label class="input__label">прибытие
+                    <div class="input__inner">
+                      <input class="input__field js-datepicker" type="text" autocomplete="off" name="check-in" placeholder="ДД.ММ.ГГГГ" required pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}"><span class="input__button"><i class="material-icons">expand_more</i></span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div class="room-reservation__box">
+                <div class="input">
+                  <label class="input__label">выезд
+                    <div class="input__inner">
+                      <input class="input__field js-datepicker" type="text" autocomplete="off" name="check-out" placeholder="ДД.ММ.ГГГГ" required pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}"><span class="input__button"><i class="material-icons">expand_more</i></span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="room-reservation__guests">
               <div class="input">
-                <label class="input__label">прибытие
+                <label class="input__label">гости
                   <div class="input__inner">
-                    <input class="input__field js-datepicker" type="text" autocomplete="off" name="check-in" placeholder="ДД.ММ.ГГГГ" required pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}"><span class="input__button"><i class="material-icons">expand_more</i></span>
+                    <input class="input__field js-dropdown input__field_dropdown" type="text" autocomplete="off" name="number-guests" placeholder="Сколько гостей" required readonly><span class="input__button"><i class="material-icons">expand_more</i></span>
                   </div>
                 </label>
+                <div class="dropdown">
+                  <div class="dropdown__item">
+                    <div class="dropdown__title">взрослые</div>
+                    <div class="dropdown__controls"><span class="dropdown__button" data-action="minus">-</span>
+                      <input class="dropdown__value" type="text" name="adults" value="0" readonly><span class="dropdown__button" data-action="plus">+</span>
+                    </div>
+                  </div>
+                  <div class="dropdown__item">
+                    <div class="dropdown__title">дети</div>
+                    <div class="dropdown__controls">
+                      <spand class="dropdown__button" data-action="minus">-</spand>
+                      <input class="dropdown__value" type="text" name="children" value="0" readonly><span class="dropdown__button" data-action="plus">+</span>
+                    </div>
+                  </div>
+                  <div class="dropdown__item">
+                    <div class="dropdown__title">младенцы</div>
+                    <div class="dropdown__controls"><span class="dropdown__button" data-action="minus">-</span>
+                      <input class="dropdown__value" type="text" name="infants" value="0" readonly><span class="dropdown__button" data-action="plus">+</span>
+                    </div>
+                  </div>
+                  <div class="dropdown__menu"><span class="dropdown__menu-button dropdown__menu-button_inverted" data-action="clear">oчистить</span><span class="dropdown__menu-button" data-action="apply">применить</span></div>
+                </div>
               </div>
             </div>
-            <div class="room-reservation__box">
+            <div class="room-reservation__bill">
+              <div class="room-reservation__bill-item">
+                <div class="room-reservation__bill-descr">9 990&#8381; х 4 суток</div>
+                <div>39 960&#8381;</div>
+              </div>
+              <div class="room-reservation__bill-item">
+                <div class="room-reservation__bill-descr">Сбор за услуги: скидка 2 179&#8381;<span class="room-reservation__info">i</span></div>
+                <div>0&#8381;</div>
+              </div>
+              <div class="room-reservation__bill-item">
+                <div class="room-reservation__bill-descr">Сбор за дополнительные услуги<span class="room-reservation__info">i</span></div>
+                <div>300&#8381;</div>
+              </div>
+              <div class="room-reservation__total"><span class="room-reservation__total-descr">Итого</span><span class="room-reservation__total-sum">38 081&#8381;</span></div>
+            </div>
+            <div class="room-reservation__button">
+              <button class="button button_submit">забронировать<i class="button__icon material-icons">arrow_forward</i></button>
+            </div>
+          </form>
+        </div>
+        <div class="ui-page__card">
+          <form class="login-form">
+            <h2 class="login-form__title">Войти</h2>
+            <div class="login-form__input">
               <div class="input">
-                <label class="input__label">выезд
-                  <div class="input__inner">
-                    <input class="input__field js-datepicker" type="text" autocomplete="off" name="check-out" placeholder="ДД.ММ.ГГГГ" required pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}"><span class="input__button"><i class="material-icons">expand_more</i></span>
-                  </div>
-                </label>
+                <input class="input__field input__field" type="email" name="email" placeholder="Email" required>
               </div>
             </div>
-          </div>
-          <div class="room-reservation__guests">
-            <div class="input">
-              <label class="input__label">гости
-                <div class="input__inner">
-                  <input class="input__field js-dropdown input__field_dropdown" type="text" autocomplete="off" name="number-guests" placeholder="Сколько гостей" required readonly><span class="input__button"><i class="material-icons">expand_more</i></span>
-                </div>
-              </label>
-              <div class="dropdown">
-                <div class="dropdown__item">
-                  <div class="dropdown__title">взрослые</div>
-                  <div class="dropdown__controls"><span class="dropdown__button" data-action="minus">-</span>
-                    <input class="dropdown__value" type="text" name="adults" value="0" readonly><span class="dropdown__button" data-action="plus">+</span>
-                  </div>
-                </div>
-                <div class="dropdown__item">
-                  <div class="dropdown__title">дети</div>
-                  <div class="dropdown__controls">
-                    <spand class="dropdown__button" data-action="minus">-</spand>
-                    <input class="dropdown__value" type="text" name="children" value="0" readonly><span class="dropdown__button" data-action="plus">+</span>
-                  </div>
-                </div>
-                <div class="dropdown__item">
-                  <div class="dropdown__title">младенцы</div>
-                  <div class="dropdown__controls"><span class="dropdown__button" data-action="minus">-</span>
-                    <input class="dropdown__value" type="text" name="infants" value="0" readonly><span class="dropdown__button" data-action="plus">+</span>
-                  </div>
-                </div>
-                <div class="dropdown__menu"><span class="dropdown__menu-button dropdown__menu-button_inverted" data-action="clear">oчистить</span><span class="dropdown__menu-button" data-action="apply">применить</span></div>
+            <div class="login-form__input">
+              <div class="input">
+                <input class="input__field input__field" type="password" name="password" placeholder="Пароль" required>
               </div>
             </div>
-          </div>
-          <div class="room-reservation__bill">
-            <div class="room-reservation__bill-item">
-              <div class="room-reservation__bill-descr">9 990&#8381; х 4 суток</div>
-              <div>39 960&#8381;</div>
+            <div class="login-form__button">
+              <button class="button button_submit">Войти<i class="button__icon material-icons">arrow_forward</i></button>
             </div>
-            <div class="room-reservation__bill-item">
-              <div class="room-reservation__bill-descr">Сбор за услуги: скидка 2 179&#8381;<span class="room-reservation__info">i</span></div>
-              <div>0&#8381;</div>
+            <div class="login-form__user-bar"><span>Нет аккаунта на Toxin?</span><a class="button button_inverted button_link" href="/"><span class="button__inner">Создать</span></a>
             </div>
-            <div class="room-reservation__bill-item">
-              <div class="room-reservation__bill-descr">Сбор за дополнительные услуги<span class="room-reservation__info">i</span></div>
-              <div>300&#8381;</div>
-            </div>
-            <div class="room-reservation__total"><span class="room-reservation__total-descr">Итого</span><span class="room-reservation__total-sum">38 081&#8381;</span></div>
-          </div>
-          <div class="room-reservation__button">
-            <button class="button button_submit">забронировать<i class="button__icon material-icons">arrow_forward</i></button>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
-      <div class="calendar"></div>
       <div>
-        <form class="registration-form">
-          <h2 class="registration-form__title">Регистрация аккаунта</h2>
-          <div class="registration-form__input">
-            <div class="input">
-              <input class="input__field input__field" type="text" name="name" placeholder="Имя" required>
+        <div class="ui-page__card calendar"></div>
+        <div class="ui-page__card">
+          <div class="room-preview">
+            <div class="room-preview__carousel js-carousel">
+              <div class="room-preview__item"><img src="img/rooms/room-1.jpg" alt="room photo"></div>
+              <div class="room-preview__item"><img src="img/rooms/room-2.jpg" alt="room photo"></div>
+              <div class="room-preview__item"><img src="img/rooms/room-3.jpg" alt="room photo"></div>
+              <div class="room-preview__item"><img src="img/rooms/room-4.jpg" alt="room photo"></div>
             </div>
           </div>
-          <div class="registration-form__input">
-            <div class="input">
-              <input class="input__field input__field" type="text" name="surname" placeholder="Фамилия" required>
-            </div>
-          </div><span class="registration-form__radio-button">
-            <label class="radio-button">
-              <input class="radio-button__input" type="radio" name="sex" value="male" checked><span class="radio-button__label">Мужчина</span>
-            </label></span><span class="registration-form__radio-button">
-            <label class="radio-button">
-              <input class="radio-button__input" type="radio" name="sex" value="female"><span class="radio-button__label">Женщина</span>
-            </label></span>
-          <div class="registration-form__input registration-form__input_with-paddings">
-            <div class="input">
-              <label class="input__label">Дата рождения
-                <div class="input__inner">
-                  <input class="input__field js-datepicker" type="text" autocomplete="off" name="birthday" placeholder="ДД.ММ.ГГГГ" required pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}">
-                </div>
-              </label>
-            </div>
-          </div>
-          <div class="registration-form__input">
-            <div class="input">
-              <label class="input__label">Данные для входа в сервис
-                <div class="input__inner">
-                  <input class="input__field" type="email" autocomplete="off" name="email" placeholder="Email" required>
-                </div>
-              </label>
-            </div>
-          </div>
-          <div class="registration-form__input">
-            <div class="input">
-              <input class="input__field input__field" type="password" name="password" placeholder="Пароль" required>
-            </div>
-          </div>
-          <label class="toggle-button">
-            <input class="toggle-button__input" type="checkbox" name="subscription"><span class="toggle-button__label">Получать спецпредложения</span>
-          </label>
-          <div class="registration-form__button">
-            <button class="button button_submit">Перейти к оплате<i class="button__icon material-icons">arrow_forward</i></button>
-          </div>
-          <div class="registration-form__user-bar"><span>Уже есть аккаунт на Toxin</span><a class="button button_inverted button_link" href="/"><span class="button__inner">Войти</span></a>
-          </div>
-        </form>
+        </div>
       </div>
     </div>
     <script src="js/main.js"></script>

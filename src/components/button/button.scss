@@ -1,7 +1,7 @@
 .button {
   box-sizing: border-box;
   display: inline-block;
-  width: rem(99px);
+  min-width: rem(99px);
   height: rem(44px);
   color: #fff;
   font-family: $base-font;

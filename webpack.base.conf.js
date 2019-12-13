@@ -84,7 +84,7 @@ module.exports = {
       exclude: /fonts/,
       loader: 'file-loader',
       options: {
-        name: 'img/[name].[ext]',
+        name: 'img/[folder]/[name].[ext]',
       }
     }, {
       test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
@@ -113,7 +113,7 @@ module.exports = {
        try {
          return JSON.parse(fs.readFileSync(`${PAGES_DIR}/data/${page.replace(/\.pug/,'')}.json`, 'utf8'));
        } catch (e) {
-         console.warn(`data.json was not provided for page`);
+         console.warn(`${page}.json was not provided for this page`);
          return {};
        }
      },
