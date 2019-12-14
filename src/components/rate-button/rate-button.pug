@@ -1,0 +1,19 @@
+mixin rate-button()
+
+  div.rate-button
+    form
+      fieldset().rate-button__inner
+        input(type="radio", name="rating", value="5")
+        span.rate-button__label
+
+        input(type="radio", name="rating", value="4")
+        span.rate-button__label
+
+        input(type="radio", name="rating", value="3" )
+        span.rate-button__label
+
+        input(type="radio", name="rating", value="2", checked)
+        span.rate-button__label
+
+        input(type="radio", name="rating", value="1")
+        span.rate-button__label

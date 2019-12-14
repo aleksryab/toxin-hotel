@@ -1,3 +1,5 @@
+include ../rate-button/rate-button
+
 mixin room-preview()
   div.room-preview
 
@@ -26,6 +28,7 @@ mixin room-preview()
         span.room-preview__price-descr в сутки
 
     div.room-preview__rating
+      +rate-button()
       div.room-preview__reviews
         span.room-preview__reviews-digit 145
         span.room-preview__reviews-descr Отзывов
