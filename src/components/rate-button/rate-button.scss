@@ -15,37 +15,47 @@
     padding: 0;
     border: none;
 
-    &:hover .rate-button__label{
+    &:enabled:hover .rate-button__label{
       opacity: 0.5;
     }
   }
 
 
-  & input {
+  &__input {
     box-sizing: border-box;
-    width: rem(21px);
-    height: rem(21px);
+    width: rem(24px);
+    height: rem(24px);
+    display: block;
     position: absolute;
-    top: 50%;
-    right: 1px;
-    transform: translateY(-50%);
+    right: 0;
+    border-radius: 0;
+
+
     opacity: 0;
     z-index: 10;
     cursor: pointer;
 
-    @for $i from 1 through 5 {
+    @for $i from 1 through 4 {
       &:nth-of-type(#{$i + 1}) {
-        right: #{$i * 24px + 1px};
+        right: #{$i * rem(24px)};
       }
     }
 
     &:checked ~ .rate-button__label:after,
-    &:hover ~ .rate-button__label:after {
+    &:enabled:hover ~ .rate-button__label:after {
       content: 'star';
     }
 
-    &:hover ~ .rate-button__label {
+    &:enabled:hover ~ .rate-button__label {
       opacity: 1;
+    }
+
+    &:active + .rate-button__label {
+      transform: scale(1.5);
+    }
+
+    &:disabled {
+      cursor: default;
     }
   }
 
@@ -55,20 +65,17 @@
     display: block;
     float: right;
     overflow: hidden;
-    color: blue;
+    transition: opacity 0.3s ease, scale 0.5s ease-out;
     cursor: pointer;
-    transition: all 0.3s ease;
 
     &:after {
       content: 'star_border';
-    }
-
-    &:hover ~ .rate-button__label:after{
-      content: 'star';
-      opacity: 1;
+      background: $primary-gradient;
+      background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
     }
   }
-
 }
 
 

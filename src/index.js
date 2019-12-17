@@ -1,3 +1,6 @@
+import 'normalize.css';
+import './scss/main.scss';
+
 import roomSearch from './components/room-search/room-search';
 import carousel from './components/room-preview/room-preview';
 
