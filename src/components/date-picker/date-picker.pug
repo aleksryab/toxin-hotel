@@ -1,0 +1,6 @@
+mixin date-picker(options = {})
+  div.date-picker
+    div.date-picker__box
+      +input({label: 'Прибытие', name: 'check-in', placeholder: 'ДД.ММ.ГГГГ', required: true, more: true, date: true, value: options.checkIn})
+    div.date-picker__box
+      +input({label: 'Выезд', name: 'check-out', placeholder: 'ДД.ММ.ГГГГ', required: true, more: true, date: true, value: options.checkOut})

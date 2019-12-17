@@ -1,28 +1,30 @@
+//-
+    options.label - label для основного поля (string)
+    options.inputName - mame основного поля (string)
 
-mixin dropdown()
 
-  .dropdown
-    .dropdown__item
-      .dropdown__title взрослые
-      .dropdown__controls
-        span.dropdown__button(data-action="minus") -
-        input.dropdown__value(type="text" name="adults" value="0" readonly)
-        span.dropdown__button(data-action="plus") +
+include ../input/input
 
-    .dropdown__item
-      .dropdown__title дети
-      .dropdown__controls
-        spand.dropdown__button(data-action="minus") -
-        input.dropdown__value(type="text" name="children" value="0" readonly)
-        span.dropdown__button(data-action="plus") +
+mixin dropdown(options = {})
+  - options.items = options.items ? options.items : [];
 
-    .dropdown__item
-      .dropdown__title младенцы
-      .dropdown__controls
-        span.dropdown__button(data-action="minus") -
-        input.dropdown__value(type="text" name="infants" value="0" readonly)
-        span.dropdown__button(data-action="plus") +
+  .dropdown.js-dropdown
+    +input({label: options.label,
+            name: options.inputName,
+            placeholder: options.placeholder,
+            required: true,
+            dropdown: true,
+            value: options.totalValue
+          })
+    .dropdown__content
+      each item in options.items
+        .dropdown__item= item.title
+          .dropdown__title
+          .dropdown__controls
+            span.dropdown__button(data-action="minus") -
+            input.dropdown__value(type="text" name= item.inputName value=item.value readonly)
+            span.dropdown__button(data-action="plus") +
 
-    .dropdown__menu
-      span.dropdown__menu-button.dropdown__menu-button_inverted(data-action="clear") oчистить
-      span.dropdown__menu-button(data-action="apply") применить
+      .dropdown__menu
+        span.dropdown__menu-button.dropdown__menu-button_inverted(data-action="clear") oчистить
+        span.dropdown__menu-button(data-action="apply") применить

@@ -1,11 +1,16 @@
 import 'normalize.css';
 import './scss/main.scss';
 
-import roomSearch from './components/room-search/room-search';
+import './components/input/input';
+import './components/date-picker/date-picker.js';
+import './components/dropdown/dropdown.js';
+
+
 import carousel from './components/room-preview/room-preview';
 
+
 $(document).ready(() => {
-  roomSearch();
+
   carousel();
 
   $('.calendar').datepicker({

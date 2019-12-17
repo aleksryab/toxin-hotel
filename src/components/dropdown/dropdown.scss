@@ -1,15 +1,19 @@
 .dropdown {
-  box-sizing: border-box;
-  width: rem(318px);
-  padding: rem(7px) rem(7px) rem(13px) rem(15px);
-  border: $bold-border;
-  box-shadow: $thin-shadow;
-  border-radius: 0 0 4px 4px;
-  @include small-subtitle();
-  background: #fff;
-  position: absolute;
-  display: none;
-  z-index: 10;
+  position: relative;
+
+  &__content {
+    box-sizing: border-box;
+    width: 100%;
+    padding: rem(7px) rem(7px) rem(13px) rem(15px);
+    border: $bold-border;
+    box-shadow: $thin-shadow;
+    border-radius: 0 0 4px 4px;
+    @include small-subtitle();
+    background: #fff;
+    position: absolute;
+    display: none;
+    z-index: 10;
+  }
 
   &_expanded {
     display: block;

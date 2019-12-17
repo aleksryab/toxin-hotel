@@ -1,18 +1,19 @@
 include ../input/input
 include ../button/button
+include ../date-picker/date-picker
 include ../dropdown/dropdown
 
 mixin room-search()
   form.room-search
     h2.room-search__title Найдём номера под ваши пожелания
     div.room-search__dates
-      div.room-search__box
-        +input({label: 'прибытие', name: 'check-in', placeholder: 'ДД.ММ.ГГГГ', required: true, more: true, date: true})
-      div.room-search__box
-        +input({label: 'выезд', name: 'check-out', placeholder: 'ДД.ММ.ГГГГ', required: true, more: true, date: true})
+      +date-picker()
     div.room-search__guests
-      +input({label: 'гости', name: 'number-guests', placeholder: 'Сколько гостей', required: true, dropdown: true})
-        block dropdown
-          +dropdown()
+      +dropdown({label: 'Гости', inputName: 'total-guests', placeholder: 'Сколько гостей',
+                items: [
+                  {title: 'Взрослые', inputName: 'adults', value: 0},
+                  {title: 'Дети', inputName: 'children', value: 0},
+                  {title: 'Младенцы', inputName: 'infants', value: 0}
+                ]})
     div.room-search__button
       +button({name: 'подобрать номер', type: 'submit'})

@@ -1,10 +1,9 @@
 (function ($) {
   $.fn.dropdown = function (options) {
-
     this.each(function () {
-      const $mainInput = $(this);
-      const $dropdownContent = $mainInput.parents('.input').find('.dropdown');
-      const $inputButton = $mainInput.parents('.input').find('.input__button');
+      const $mainInput = $(this).find('.input__field');
+      const $dropdownContent =  $(this).find('.dropdown__content');
+      const $inputButton = $(this).find('.input__button');
       const $items = $dropdownContent.find('.dropdown__item');
       const $itemInputs = $items.find('.dropdown__value');
       const $controlButtons = $dropdownContent.find('.dropdown__button');
@@ -128,4 +127,6 @@
     });
     return this;
   };
+
+  $('.js-dropdown').dropdown();
 }(jQuery));

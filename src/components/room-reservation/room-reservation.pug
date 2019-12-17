@@ -13,15 +13,17 @@ mixin room-reservation()
       div.room-reservation__price
         span.room-reservation__price-digit 9 990&#8381;
         span.room-reservation__price-descr  в сутки
+
     div.room-reservation__dates
-      div.room-reservation__box
-        +input({label: 'прибытие', name: 'check-in', placeholder: 'ДД.ММ.ГГГГ', required: true, more: true, date: true})
-      div.room-reservation__box
-        +input({label: 'выезд', name: 'check-out', placeholder: 'ДД.ММ.ГГГГ', required: true, more: true, date: true})
+      +date-picker({checkIn: '19.08.2020', checkOut: '23.08.2020'})
     div.room-reservation__guests
-      +input({label: 'гости', name: 'number-guests', placeholder: 'Сколько гостей', required: true, dropdown: true})
-        block dropdown
-          +dropdown()
+      +dropdown({label: 'Гости', inputName: 'total-guests', placeholder: 'Сколько гостей', totalValue: '3 гостя',
+                items: [
+                  {title: 'Взрослые', inputName: 'adults', value: 1},
+                  {title: 'Дети', inputName: 'children', value: 1},
+                  {title: 'Младенцы', inputName: 'infants', value: 1}
+                ]})
+
     div.room-reservation__bill
       div.room-reservation__bill-item
         div.room-reservation__bill-descr 9 990&#8381; х 4 суток
