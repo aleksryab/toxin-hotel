@@ -1,7 +1,7 @@
 .room-search{
   box-sizing: border-box;
-  width: 380px;
-  padding: 40px 30px 30px;
+  width: rem(380px);
+  padding: rem(39px) rem(29px) rem(29px);
   background: $default-color;
   border-radius: $border-radius;
   border: $thin-border;
@@ -13,15 +13,15 @@
   }
 
   &__dates {
-    margin-top: rem(20px);
+    margin-top: rem(16px);
   }
 
   &__guests {
-    margin-top: rem(20px);
+    margin-top: rem(16px);
   }
 
   &__button{
-    margin-top: rem(31px);
+    margin-top: rem(32px);
   }
 }
 

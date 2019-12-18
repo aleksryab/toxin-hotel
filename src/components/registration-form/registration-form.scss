@@ -1,7 +1,7 @@
 .registration-form{
   box-sizing: border-box;
   width: 380px;
-  padding: 40px 30px 30px;
+  padding: 39px 29px 29px;
   background: $default-color;
   border-radius: $border-radius;
   border: $thin-border;
@@ -17,8 +17,13 @@
     margin-bottom: rem(10px);
 
     &_with-paddings {
-      padding: rem(24px) 0 rem(10px);
+      padding: rem(20px) 0 rem(6px);
     }
+  }
+
+  &__sex{
+    display: flex;
+    align-items: center;
   }
 
   &__radio-button {

@@ -147,7 +147,7 @@
         this.maxRange = '';
         this._prevOnSelectValue = '';
 
-        this.init()
+        this.init();
     };
 
     datepicker = Datepicker;

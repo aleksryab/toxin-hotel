@@ -12,10 +12,12 @@ mixin registration-form()
     div.registration-form__input
       +input({name: 'surname', placeholder: 'Фамилия', required: true})
 
-    span.registration-form__radio-button
-      +radio-button({name: 'sex', value: 'male', checked: true, label: 'Мужчина'})
-    span.registration-form__radio-button
-      +radio-button({name: 'sex', value: 'female', label: 'Женщина'})
+
+    div.registration-form__sex
+      div.registration-form__radio-button
+        +radio-button({name: 'sex', value: 'male', checked: true, label: 'Мужчина'})
+      div.registration-form__radio-button
+        +radio-button({name: 'sex', value: 'female', label: 'Женщина'})
 
 
     div.registration-form__input.registration-form__input_with-paddings

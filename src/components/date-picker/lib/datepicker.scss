@@ -153,11 +153,11 @@
     border: $light-border;
     box-shadow: $thin-shadow;
     border-radius: $border-radius;
-    padding: rem(20px);
+    padding: rem(19px);
     font-family: $base-font;
     @include font-rem(12, 15, normal);
     color: $dark-color-op50;
-    width: rem(318px);
+    width: rem(320px);
     position: absolute;
     left: -100000px;
     opacity: 0;
@@ -305,6 +305,7 @@
 
   .datepicker--button {
     font-weight: bold;
+    text-transform: uppercase;
     cursor: pointer; }
   .datepicker--button[data-action="apply"] {
     color: $primary-color;

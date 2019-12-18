@@ -1,5 +1,8 @@
 .radio-button {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  min-height: rem(20px);
 
   &__input {
     display: none;

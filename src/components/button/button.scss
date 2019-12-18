@@ -1,6 +1,8 @@
 .button {
   box-sizing: border-box;
   display: inline-block;
+  margin: 0;
+  padding: 0;
   min-width: rem(99px);
   height: rem(44px);
   color: #fff;
@@ -25,7 +27,7 @@
     align-items: center;
     justify-content: center;
     height: 100%;
-    padding: 0 rem(20px);
+    padding: 0 rem(10px);
     border-radius: inherit;
   }
 
@@ -55,7 +57,7 @@
 
   &__icon {
     position: absolute;
-    right: rem(13px);
+    right: rem(10px);
     top: 50%;
     transform: translateY(-50%);
   }

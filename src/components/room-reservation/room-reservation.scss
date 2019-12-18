@@ -1,13 +1,14 @@
 .room-reservation {
   box-sizing: border-box;
-  width: 380px;
-  padding: 40px 30px 30px;
+  width: rem(380px);
+  padding: rem(39px) rem(29px) rem(29px);
   background: $default-color;
   border-radius: $border-radius;
   border: $thin-border;
   box-shadow: $bold-shadow;
   font-family: $base-font;
 
+/* header */
   &__header {
     display: flex;
     justify-content: space-between;
@@ -30,11 +31,11 @@
   &__class {
     @include small-subtitle;
     color: $primary-color;
-    margin-left: rem(5px);
+    margin-left: rem(6px);
   }
 
   &__price {
-    @include font-rem(14, 18, bold);
+    @include font-rem(14, 24, bold);
     color: $dark-color-op50;
     display: flex;
     align-items: flex-end;
@@ -42,35 +43,43 @@
 
   &__price-descr {
     font-weight: normal;
+    font-size: rem(12px);
     margin-left: rem(5px);
   }
 
+/* dates */
   &__dates {
-    margin-top: rem(20px);
+    margin-top: rem(16px);
   }
 
+/* guests */
   &__guests {
-    margin-top: rem(20px);
+    margin-top: rem(16px);
   }
 
+/* bill */
   &__bill {
-    padding: rem(10px) 0;
-    @include text;
+    padding-top: rem(23px);
+    @include font-rem(14, 18, normal);
   }
 
   &__bill-item {
     display: flex;
+    align-items: flex-start;
     justify-content: space-between;
-    margin-top: rem(10px);
+    margin-bottom: rem(15px);
+
   }
 
   &__bill-descr {
     display: flex;
+    align-items: flex-start;
     justify-content: space-between;
-    width: 75.5%;
+    width: 75%;
   }
 
   &__info {
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -88,7 +97,7 @@
 
   &__total {
     @include subtitle;
-    margin-top: rem(30px);
+    margin-top: rem(31px);
     display: flex;
     align-items: baseline;
     justify-content: space-between;
@@ -111,8 +120,6 @@
   &__total-sum {
     order: 3;
   }
-
-
 
   &__button{
     margin-top: rem(20px);

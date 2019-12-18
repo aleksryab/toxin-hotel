@@ -9,6 +9,7 @@
   &__carousel {
     position: relative;
     width: 100%;
+    max-height: rem(151px);
     display: flex;
     align-content: center;
     justify-content: center;
@@ -51,6 +52,7 @@
     user-select: none;
     opacity: 0;
     transition: opacity 0.3s ease;
+    z-index: 5;
   }
 
   &__prev {
@@ -78,15 +80,17 @@
     line-height: 1;
     display: flex;
     justify-content: flex-end;
+    z-index: 10;
   }
 
   &__dot {
     display: block;
     box-sizing: border-box;
+    margin-left: rem(3px);
     width: rem(8px);
     height: rem(8px);
+    flex-shrink: 0;
     border-radius: 50%;
-    margin-left: rem(4px);
     border: 1px solid $default-color;
     box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3);
     cursor: pointer;
@@ -101,7 +105,7 @@
   &__info {
     display: flex;
     justify-content: space-between;
-    padding: rem(20px) rem(17px) rem(10px) rem(20px);
+    padding: rem(20px) rem(17px) rem(10px) rem(21px);
   }
 
   &__number {
@@ -128,37 +132,41 @@
   }
 
   &__price {
-    @include font-rem(14, 18, bold);
     color: $dark-color-op50;
+    font-size: rem(14px);
+    line-height: 1.5;
+    font-weight: bold;
     display: flex;
     align-items: flex-end;
   }
 
   &__price-descr {
     font-weight: normal;
-    margin-left: rem(5px);
+    font-size: rem(12px);
+    margin-left: rem(6px);
   }
-
 
 /* rating */
   &__rating {
     display: flex;
     justify-content: space-between;
-    padding: rem(10px) 0 rem(20px);
+    padding: rem(8px) 0 rem(19px);
     margin: 0 rem(20px);
     border-top: 1px solid rgba(31, 32, 65, 0.1);
   }
 
   &__reviews {
-    @include font-rem(14, 18, bold);
     color: $dark-color-op50;
+    font-size: rem(14px);
+    line-height: 1.5;
+    font-weight: bold;
     display: flex;
     align-items: flex-end;
   }
 
   &__reviews-descr {
     font-weight: normal;
-    margin-left: rem(5px);
+    margin-left: rem(4px);
   }
 }
 

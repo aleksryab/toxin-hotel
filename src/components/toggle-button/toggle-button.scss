@@ -1,5 +1,8 @@
 .toggle-button {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  min-height: rem(20px);
+  line-height: 1;
 
   &__input {
     display: none;
@@ -16,6 +19,7 @@
     &:before {
       content: '';
       position: absolute;
+      display: block;
       left: 0;
       top: 50%;
       transform: translateY(-50%);
@@ -29,6 +33,7 @@
     &:after {
       content: '';
       position: absolute;
+      display: block;
       left: rem(4px);
       top: 50%;
       transform: translateY(-50%);
