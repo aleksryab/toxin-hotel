@@ -4,12 +4,23 @@
   font-style: normal;
   font-weight: bold;
   src: url('../fonts/Quicksand-Bold.eot');
-  src: local(''),
+  src: url('../fonts/Quicksand-Bold.eot?#iefix') format('embedded-opentype'),
        url('../fonts/Quicksand-Bold.woff') format('woff'),
        url('../fonts/Quicksand-Bold.ttf') format('truetype'),
-       url('../fonts/Quicksand-Bold.svg') format('svg');
-
+       url('../fonts/Quicksand-Bold.svg#Quicksand-Bold') format('svg');
 }
+
+/* quicksand-regular - latin */
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../fonts/Quicksand-Regular.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Quicksand-Regular.woff') format('woff'),
+       url('../fonts/Quicksand-Regular.ttf')  format('truetype'),
+       url('../fonts/Quicksand-Regular.svg#Quicksand-Regular') format('svg');
+}
+
 
 /* montserrat-regular - cyrillic_latin */
 @font-face {

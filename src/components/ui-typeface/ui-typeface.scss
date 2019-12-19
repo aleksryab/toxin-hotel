@@ -3,6 +3,7 @@
     margin-bottom: 50px;
     display: flex;
   }
+
   &__alias {
     min-width: 37px;
     margin-right: 30px;
@@ -10,31 +11,40 @@
     color: $dark-color-op25;
     font-family: $base-font;
     font-weight: normal;
+
     &_title {
-      @include font-rem(24, 29, false);
+      font-size: rem(24px);
+      line-height: 1.3;
     }
+
     &_subtitle {
-      @include font-rem(19, 23, false);
+      @include font-rem(19, 24, false);
     }
+
     &_small-subtitle {
       @include font-rem(12, 15, false);
     }
+
     &_text {
-      @include font-rem(14, 24, false);
+      font-size: rem(14px);
+      line-height: 1.5;
     }
   }
+
   &__title {
     margin: 0;
     color: $base-font-color;
     font-family: $title-font;
     @include font-rem(24, 30px, bold);
   }
+
   &__subtitle {
     margin: 0;
     color: $base-font-color;
     font-family: $title-font;
     @include font-rem(19, 24, bold);
   }
+
   &__small-subtitle {
     margin: 0;
     color: $base-font-color;
@@ -42,10 +52,12 @@
     text-transform: uppercase;
     @include font-rem(12, 15, bold);
   }
+
   &__text {
     margin: 0;
     color: $dark-color-op75;
     font-family: $base-font;
     @include font-rem(14, 24, normal);
+    margin-top: -3px;
   }
 }

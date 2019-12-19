@@ -4,16 +4,16 @@ include ../components/ui-palette/ui-palette
 include ../components/ui-typeface/ui-typeface
 
 block title
-  title= "Colors & type"
+  title= "Colors & Type"
 block styles
   link(rel="stylesheet", href="css/ui.css")
 
 block content
   body(class="ui-page")
     .ui-page__wrapper
-      +ui-logo
+      +ui-logo()
       section.ui-page__big-section
         .ui-page__box
-          +ui-palette
+          +ui-palette()
         .ui-page__box.ui-page__box_right
-          +ui-typeface
+          +ui-typeface()

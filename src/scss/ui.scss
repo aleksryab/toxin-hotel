@@ -28,7 +28,7 @@
   }
 
   &__big-section {
-    margin-top: 66px;
+    margin-top: 67px;
     display: flex;
   }
 
@@ -59,3 +59,41 @@
   }
 
 }
+
+.form-elements {
+  margin-top: 65px;
+  padding: 0 141px;
+  display: flex;
+  justify-content: space-between;
+
+
+  &__column {
+    width: 320px
+  }
+
+  &__item {
+    margin-bottom: 20px;
+
+    &_large-indent {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+
+  &__title {
+    @include small-subtitle();
+  }
+
+  &__descr {
+    color: $dark-color-op50;
+    @include font-rem(12, 15, normal);
+    text-transform: uppercase;
+  }
+
+}
+

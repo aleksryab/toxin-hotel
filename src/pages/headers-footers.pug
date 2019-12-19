@@ -4,7 +4,7 @@ include ../components/header/header
 include ../components/footer/footer
 
 block title
-  title= "Headers & footers"
+  title= "Headers & Footers"
 block styles
   link(rel="stylesheet", href="css/ui.css")
 
@@ -13,7 +13,7 @@ block content
 
   body(class="ui-page ui-page_bg_gray")
     .ui-page__header
-      +ui-logo
+      +ui-logo()
     section.ui-page__section
       +header({menuItems: data.header.menuItems})
     section.ui-page__section

@@ -3,18 +3,15 @@
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 20px;
-    @media screen and (max-width: $screen-md) {
-      display: block;
-    }
   }
+
   &__square {
     width: 70px;
     height: 70px;
     border-radius: 6px;
-    @media screen and (max-width: $screen-md) {
-      margin: 0 auto;
-    }
+
     &_color {
+
       &_dark {
         background: $dark-color;
       }
@@ -25,9 +22,9 @@
         background: $success-color;
       }
     }
+
     &_op75 {
       background: $dark-color-op75;
-
     }
     &_op50 {
       background: $dark-color-op50;
@@ -39,22 +36,18 @@
       background: $dark-color-op5;
     }
   }
+
   &__descr {
-    margin-left: 41px;
-    @media screen and (max-width: $screen-md) {
-      margin: 10px 0 0;
-      text-align: center;
-    }
+    margin-left: 40px;
   }
+
   &__title {
-    margin: 8px 0 0;
+    margin: 7px 0 0;
     color: $base-font-color;
     font-family: $title-font;
     @include font-rem(19, 29, bold);
-    @media screen and (max-width: $screen-md) {
-      margin: 0;
-    }
   }
+
   &__color-hex {
     margin: 0;
     color: $base-font-color;

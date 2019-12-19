@@ -710,8 +710,8 @@
             }
 
             if (this.opts.twoInputs) {
-              this.$el.val(value[0]);
-              this.$el.parents('form').find(this.$maxInput).val(value[1]);
+              this.$minInput.val(value[0]);
+              this.$maxInput.val(value[1]);
             } else {
               value = value.join(this.opts.multipleDatesSeparator);
               this.$el.val(value);
@@ -1574,7 +1574,7 @@
 
         _getCellContents: function (date, type) {
             var classes = "datepicker--cell datepicker--cell-" + type,
-                currentDate = new Date(),
+                currentDate = this.opts.startDate,
                 parent = this.d,
                 minRange = dp.resetTime(parent.minRange),
                 maxRange = dp.resetTime(parent.maxRange),
@@ -1641,7 +1641,6 @@
                     }
                 }
             }
-
 
             if (dp.isSame(currentDate, date, type)) classes += ' -current-';
             if (parent.focused && dp.isSame(date, parent.focused, type)) classes += ' -focus-';

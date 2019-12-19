@@ -1,32 +1,32 @@
 //-
-  options.type - type (string), default - text
+  options.type - type (string), default - 'text'
   options.name - name (string)
   options.label - label (string)
   options.required - required (boolean)
   options.placeholder - placeholder (string)
-  options.date - добавить классы для datepicker и паттерн (boolean)
+  options.date - добавить классы и паттерн для даты (boolean)
   options.more - добавить только кнопку для выпадающего контента (boolean)
   options.dropdown - добавить кнопку, классы и атрибуты для dropdown (boolean)
 
 mixin input(options = {})
   -
-    var classes = 'input__field';
-    classes += options.date ? ' js-datepicker' : '';
+    let classes = 'input__field';
+    classes += options.date ? ' js-date' : '';
     classes += options.dropdown ? ' input__field_dropdown' : '';
-    var pattern = options.date ? '[0-9]{2}\.[0-9]{2}\.[0-9]{4}' : false;
-    var type = options.type ? options.type : 'text';
+    let pattern = options.date ? '[0-9]{2}\.[0-9]{2}\.[0-9]{4}' : false;
+    let type = options.type ? options.type : 'text';
 
   div.input
     if options.label
       label.input__label= options.label
         div.input__inner
           input(
+                class= classes,
                 type= type,
                 autocomplete= "off",
                 name= options.name,
                 placeholder= options.placeholder,
                 required= options.required,
-                class= classes,
                 pattern= pattern,
                 readonly= options.dropdown,
                 value= options.value
@@ -35,12 +35,16 @@ mixin input(options = {})
             span.input__button
              i.material-icons expand_more
     else
-      input.input__field(
-                  type= type,
-                  name= options.name,
-                  placeholder= options.placeholder,
-                  required= options.required,
-                  class= classes,
-                  value= options.value
-                )
+      input(
+            class= classes,
+            type= type,
+            name= options.name,
+            placeholder= options.placeholder,
+            required= options.required,
+            pattern= pattern,
+            value= options.value
+          )
+      if options.more || options.dropdown
+            span.input__button
+             i.material-icons expand_more
 

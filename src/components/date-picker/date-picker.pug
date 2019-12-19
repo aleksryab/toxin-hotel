@@ -1,6 +1,20 @@
+//-
+    options.checkIn - дата прибытия (string)
+    options.checkOut - дата выезда (string)
+    options.label - label (string)
+    options.singleInput - вывод в один инпут (boolean)
+
+include ../input/input
+
 mixin date-picker(options = {})
-  div.date-picker
-    div.date-picker__box
-      +input({label: 'Прибытие', name: 'check-in', placeholder: 'ДД.ММ.ГГГГ', required: true, more: true, date: true, value: options.checkIn})
-    div.date-picker__box
-      +input({label: 'Выезд', name: 'check-out', placeholder: 'ДД.ММ.ГГГГ', required: true, more: true, date: true, value: options.checkOut})
+
+  if options.singleInput
+    .date-picker.js-date-picker-single
+      +input({label: options.label, name: 'date-range', placeholder: 'ДД.ММ.ГГГГ', required: true, dropdown: true, value: options.range})
+
+  else
+    .date-picker.js-date-picker
+      .date-picker__box
+        +input({label: 'Прибытие', name: 'check-in', placeholder: 'ДД.ММ.ГГГГ', required: true, more: true, date: true, value: options.checkIn})
+      .date-picker__box
+        +input({label: 'Выезд', name: 'check-out', placeholder: 'ДД.ММ.ГГГГ', required: true, more: true, date: true, value: options.checkOut})
