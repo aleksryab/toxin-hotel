@@ -7,12 +7,12 @@ mixin room-reservation()
     div.room-reservation__header
       div.room-reservation__number
         h2.room-reservation__title
-          span.room-reservation__title_smaller &#8470;
-          |  888
+          span.room-reservation__title_smaller &#8470;&nbsp;
+          | 888
         span.room-reservation__class люкс
       div.room-reservation__price
         span.room-reservation__price-digit 9 990&#8381;
-        span.room-reservation__price-descr  в сутки
+        span.room-reservation__price-descr &nbsp;в сутки
 
     div.room-reservation__dates
       +date-picker({checkIn: '19.08.2020', checkOut: '23.08.2020'})

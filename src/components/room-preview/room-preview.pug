@@ -29,13 +29,13 @@ mixin room-preview(options = {})
     div.room-preview__info
       div.room-preview__number
         a.room-preview__title(href = "/")
-          span.room-preview__title_smaller &#8470;
-          |  !{options.number}
+          span.room-preview__title_smaller &#8470;&nbsp;
+          | !{options.number}
         if options.class
           span.room-preview__class= options.class
       div.room-preview__price
         span.room-preview__price-digit !{options.price}&#8381;
-        span.room-preview__price-descr в сутки
+        span.room-preview__price-descr &nbsp;в сутки
 
     div.room-preview__rating
       +rate-button({rate: options.rate})

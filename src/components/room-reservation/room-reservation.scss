@@ -44,7 +44,6 @@
   &__price-descr {
     font-weight: normal;
     font-size: rem(12px);
-    margin-left: rem(5px);
   }
 
 /* dates */
@@ -59,7 +58,7 @@
 
 /* bill */
   &__bill {
-    padding-top: rem(23px);
+    padding-top: rem(22px);
     @include font-rem(14, 18, normal);
   }
 
@@ -67,8 +66,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    margin-bottom: rem(15px);
-
+    margin-bottom: rem(16px);
   }
 
   &__bill-descr {
@@ -97,7 +95,7 @@
 
   &__total {
     @include subtitle;
-    margin-top: rem(31px);
+    margin-top: rem(30px);
     display: flex;
     align-items: baseline;
     justify-content: space-between;

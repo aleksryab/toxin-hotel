@@ -6,9 +6,10 @@
   color: $base-font-color;
   font-family: $base-font;
   @include font-rem(14, 24, normal);
+  background: $default-color;
 
   &_bg_gray {
-    background-color: #E5E5E5;
+    background-color: #F4F4F6;
   }
 
   &__wrapper {

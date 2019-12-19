@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
+const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 const globImporter = require('node-sass-glob-importer');
@@ -96,16 +96,13 @@ module.exports = {
       }
     }]
   },
-  resolve: {
-    extensions: ['.js', '.jsx', '.pug', '.scss', '.sass', '.gif', '.png', '.jpg', '.jpeg', '.svg']
-  },
   plugins: [
     new FixStyleOnlyEntriesPlugin(),
     new MiniCssExtractPlugin({
       filename: 'css/[name].css'
     }),
-    new CopyWebpackPlugin([
-      { from: `${PATHS.src}/img`, to: 'img', ignore: '_dev/**/*'},
+    new CopyPlugin([
+      { from: `${PATHS.src}/img`, to: 'img', ignore: ['_dev/**/*']},
       { from: `${PATHS.src}/static`, to: '' }
     ]),
     ...PAGES.map(page => new HtmlWebpackPlugin({
