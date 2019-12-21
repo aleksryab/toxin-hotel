@@ -1,0 +1,45 @@
+.like-button {
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 0;
+  padding: 1px;
+  min-width: rem(40px);
+  height: rem(20px);
+  color: $dark-color-op25;
+  font-family: $base-font;
+  @include font-rem(10, 12, normal);
+  background: $dark-color-op25;
+  border-radius: rem(10px);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+
+  &_liked {
+    color: $primary-color;
+    background: $primary-gradient;
+
+    & .like-button__inner:before {
+      content: 'favorite';
+    }
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    border-radius: inherit;
+    background: $default-color;
+
+    &:before {
+      content: 'favorite_border';
+      font-family: 'Material Icons';
+      font-size: rem(10px);
+      width: rem(20px);
+      text-align: center;
+    }
+  }
+
+}

@@ -103,7 +103,7 @@
               </div>
             </div>
           </div>
-          <div class="form-elements__item form-elements__item_large-indent">
+          <div class="form-elements__item form-elements__item_large-indent form-elements__item_thin">
             <div class="date-picker js-date-picker-single">
               <div class="input">
                 <label class="input__label">filter date dropdown
@@ -115,20 +115,104 @@
             </div>
           </div>
         </div>
-        <div class="form-elements__column">
+        <div class="form-elements__column form-elements__column_middle">
           <div class="form-elements__item form-elements__item_large-indent">
-            <div class="form-elements__header">
+            <div class="form-elements__header form-elements__header_large-indent">
               <div class="form-elements__title">Checkbox Buttons</div>
             </div>
-            <label class="checkbox-button">
-              <input class="checkbox-button__input" type="checkbox" name="smoking-allowed"><span class="checkbox-button__label">Можно курить</span>
-            </label>
-            <label class="checkbox-button">
-              <input class="checkbox-button__input" type="checkbox" name="animals-allowed" checked><span class="checkbox-button__label">Можно с питомцами</span>
-            </label>
-            <label class="checkbox-button">
-              <input class="checkbox-button__input" type="checkbox" name="guests-allowed" checked><span class="checkbox-button__label">Можно пригласить гостей<br>(до 10 человек)</span>
-            </label>
+            <div class="form-elements__subitem">
+              <label class="checkbox-button">
+                <input class="checkbox-button__input" type="checkbox" name="smoking-allowed"><span class="checkbox-button__label">Можно курить</span>
+              </label>
+            </div>
+            <div class="form-elements__subitem">
+              <label class="checkbox-button">
+                <input class="checkbox-button__input" type="checkbox" name="animals-allowed" checked><span class="checkbox-button__label">Можно с питомцами</span>
+              </label>
+            </div>
+            <div class="form-elements__subitem">
+              <label class="checkbox-button">
+                <input class="checkbox-button__input" type="checkbox" name="guests-allowed" checked><span class="checkbox-button__label">Можно пригласить гостей<br>(до 10 человек)</span>
+              </label>
+            </div>
+          </div>
+          <div class="form-elements__item form-elements__item_large-indent">
+            <div class="form-elements__header form-elements__header_large-indent">
+              <div class="form-elements__title">Radio Buttons</div>
+            </div>
+            <div class="form-elements__subitem">
+              <div class="form-elements__box">
+                <label class="radio-button">
+                  <input class="radio-button__input" type="radio" name="sex" value="male" checked><span class="radio-button__label">Мужчина</span>
+                </label>
+              </div>
+              <div class="form-elements__box">
+                <label class="radio-button">
+                  <input class="radio-button__input" type="radio" name="sex" value="female"><span class="radio-button__label">Женщина</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-elements__item form-elements__item_large-indent">
+            <div class="form-elements__header form-elements__header_large-indent">
+              <div class="form-elements__title">Toggle</div>
+            </div>
+            <div class="form-elements__subitem form-elements__subitem_large-indent">
+              <label class="toggle-button">
+                <input class="toggle-button__input" type="checkbox" name="subscription" checked><span class="toggle-button__label">Получать спецпредложения</span>
+              </label>
+            </div>
+            <div class="form-elements__subitem form-elements__subitem_large-indent">
+              <label class="toggle-button">
+                <input class="toggle-button__input" type="checkbox" name="subscription"><span class="toggle-button__label">Получать спецпредложения</span>
+              </label>
+            </div>
+          </div>
+          <div class="form-elements__item form-elements__item_large-indent">
+            <div class="form-elements__header form-elements__header_large-indent">
+              <div class="form-elements__title">like button</div>
+            </div>
+            <div class="form-elements__subitem form-elements__subitem_large-indent">
+              <div class="form-elements__box form-elements__box_small-margin">
+                <button class="like-button js-like-button"><span class="like-button__inner">2</span></button>
+              </div>
+              <div class="form-elements__box form-elements__box_small-margin">
+                <button class="like-button js-like-button  like-button_liked"><span class="like-button__inner">12</span></button>
+              </div>
+            </div>
+          </div>
+          <div class="form-elements__item form-elements__item_large-indent">
+            <div class="form-elements__header form-elements__header_large-indent">
+              <div class="form-elements__title">Rate button</div>
+            </div>
+            <div class="form-elements__subitem">
+              <div class="form-elements__box">
+                <div class="rate-button">
+                  <form>
+                    <fieldset class="rate-button__inner">
+                      <input class="rate-button__input" type="radio" name="rating" value="5"><span class="rate-button__label"></span>
+                      <input class="rate-button__input" type="radio" name="rating" value="4" checked="checked"><span class="rate-button__label"></span>
+                      <input class="rate-button__input" type="radio" name="rating" value="3"><span class="rate-button__label"></span>
+                      <input class="rate-button__input" type="radio" name="rating" value="2"><span class="rate-button__label"></span>
+                      <input class="rate-button__input" type="radio" name="rating" value="1"><span class="rate-button__label"></span>
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+              <div class="form-elements__box">
+                <div class="rate-button">
+                  <form>
+                    <fieldset class="rate-button__inner">
+                      <input class="rate-button__input" type="radio" name="rating" value="5" checked="checked"><span class="rate-button__label"></span>
+                      <input class="rate-button__input" type="radio" name="rating" value="4"><span class="rate-button__label"></span>
+                      <input class="rate-button__input" type="radio" name="rating" value="3"><span class="rate-button__label"></span>
+                      <input class="rate-button__input" type="radio" name="rating" value="2"><span class="rate-button__label"></span>
+                      <input class="rate-button__input" type="radio" name="rating" value="1"><span class="rate-button__label"></span>
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="form-elements__column">column 3</div>

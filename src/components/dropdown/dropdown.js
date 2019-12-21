@@ -18,7 +18,6 @@
         event.preventDefault();
         $mainInput.toggleClass('input__field_expanded');
         $dropdownContent.toggleClass('dropdown_expanded');
-        console.log('click');
       });
 
       $controlButtons.click(function() {

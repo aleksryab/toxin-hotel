@@ -1,9 +1,10 @@
 import 'normalize.css';
 import './scss/main.scss';
 
-import './components/input/input';
+import './components/input/input.js';
 import './components/date-picker/date-picker.js';
 import './components/dropdown/dropdown.js';
+import './components/like-button/like-button.js';
 
 
 import carousel from './components/room-preview/room-preview';

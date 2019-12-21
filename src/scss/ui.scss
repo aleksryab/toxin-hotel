@@ -62,13 +62,16 @@
 
 .form-elements {
   margin-top: 65px;
-  padding: 0 141px;
+  padding: 0 111px;
   display: flex;
   justify-content: space-between;
 
-
   &__column {
-    width: 320px
+    width: 320px;
+
+    &_middle {
+      padding-left: 54px;
+    }
   }
 
   &__item {
@@ -77,12 +80,20 @@
     &_large-indent {
       margin-bottom: 40px;
     }
+
+    &_thin {
+      width: 266px;
+    }
   }
 
   &__header {
     display: flex;
     justify-content: space-between;
     margin-bottom: 5px;
+
+    &_large-indent {
+      margin-bottom: 16px;
+    }
   }
 
   &__title {
@@ -95,5 +106,26 @@
     text-transform: uppercase;
   }
 
+  &__subitem {
+    margin-bottom: 10px;
+    display: flex;
+
+    &_large-indent {
+      margin-bottom: 14px;
+    }
+  }
+
+  &__radio-buttons{
+    display: flex;
+    align-items: center;
+  }
+
+  &__box {
+    margin-right: 20px;
+
+    &_small-margin {
+      margin-right: 10px;
+    }
+  }
 }
 
