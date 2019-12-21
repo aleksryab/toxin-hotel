@@ -1,58 +1,56 @@
-.radio-button {
+.checkbox-button {
   display: flex;
   align-items: center;
   line-height: 1;
-  min-height: rem(20px);
 
   &__input {
     display: none;
   }
 
   &__label {
-    position: relative;
     padding: 0 0 0 rem(30px);
+    min-height: rem(20px);
     display: flex;
     align-items: center;
+    position: relative;
     color: $dark-color-op50;
+    @include font-rem(14, 18, normal);
     cursor: pointer;
 
     &:before {
       content: '';
+      box-sizing: border-box;
       position: absolute;
+      display: block;
       left: 0;
-      top: 50%;
-      transform: translateY(-50%);
+      top: 0;
       width: rem(20px);
       height: rem(20px);
-      border-radius: 50%;
+      border-radius: rem(4px);
       border: $light-border;
-      box-sizing: border-box;
     }
 
     &:after {
-      content: '';
+      content: url('../components/checkbox-button/img/check-icon.svg');
+      box-sizing: border-box;
       position: absolute;
-      left: rem(4px);
-      top: 50%;
-      transform: translateY(-50%);
-      width: rem(12px);
-      height: rem(12px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      left: 0;
+      top: 0;
+      width: rem(20px);
+      height: rem(20px);
       border-radius: 50%;
-      background: $primary-gradient;
+      color: red;
       opacity: 0;
       transition: all 0.3s;
-      box-sizing: border-box;
     }
-  }
-  &__input:checked + &__label {
-    color: $dark-color-op75;
-  }
-  &__input:checked + &__label:after {
-    opacity: 1;
   }
   &__input:checked + &__label:before {
     border-color: $primary-color;
   }
+  &__input:checked + &__label:after {
+    opacity: 1;
+  }
 }
-
-

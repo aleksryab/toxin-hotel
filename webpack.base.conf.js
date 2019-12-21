@@ -80,11 +80,18 @@ module.exports = {
         }
       ]
     }, {
-      test: /\.(png|jpe?g|gif|svg)$/i,
+      test: /\.(png|jpe?g|gif)$/i,
       exclude: /fonts/,
       loader: 'file-loader',
       options: {
         name: 'img/[folder]/[name].[ext]',
+      }
+    },{
+      test: /\.svg/,
+      exclude: /fonts/,
+      use: {
+          loader: 'svg-url-loader',
+          options: {}
       }
     }, {
       test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,

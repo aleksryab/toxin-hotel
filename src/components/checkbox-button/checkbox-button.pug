@@ -1,0 +1,10 @@
+//-
+    options.name - name (string)
+    options.value - value (string)
+    options.label - подпись кнопки (string)
+    options.checked - checked (boolean)
+
+mixin checkbox-button(options = {})
+  label.checkbox-button
+    input.checkbox-button__input(type= "checkbox", name= options.name, value= options.value, checked= options.checked)
+    span.checkbox-button__label !{options.label}

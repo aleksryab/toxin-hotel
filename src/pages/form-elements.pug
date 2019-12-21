@@ -2,6 +2,7 @@ extends ./layout/head
 include ../components/ui-logo/ui-logo
 include ../components/input/input
 include ../components/button/button
+include ../components/checkbox-button/checkbox-button
 include ../components/dropdown/dropdown
 include ../components/date-picker/date-picker
 
@@ -52,7 +53,13 @@ block content
           .form-elements__item.form-elements__item_large-indent
             +date-picker({singleInput: true, label: 'filter date dropdown', range: '19 авг - 23 авг'})
 
-        .form-elements__column column 2
+        .form-elements__column
+          .form-elements__item.form-elements__item_large-indent
+            .form-elements__header
+              .form-elements__title Checkbox Buttons
+            +checkbox-button({label: 'Можно курить', name: 'smoking-allowed'})
+            +checkbox-button({label: 'Можно с питомцами', name: 'animals-allowed', checked: true})
+            +checkbox-button({label: 'Можно пригласить гостей<br>(до 10 человек)', name: 'guests-allowed', checked: true})
         .form-elements__column column 3
 
 

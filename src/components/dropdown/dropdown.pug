@@ -9,7 +9,7 @@
 include ../input/input
 
 mixin dropdown(options = {})
-  - options.items = options.items ? options.items : [];
+  - if (!options.items) options.items = [];
 
   .dropdown.js-dropdown
     +input({label: options.label,
