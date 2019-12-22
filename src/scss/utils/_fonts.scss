@@ -1,15 +1,3 @@
-/* quicksand-700 - latin */
-@font-face {
-  font-family: 'Quicksand';
-  font-style: normal;
-  font-weight: bold;
-  src: url('../fonts/Quicksand-Bold.eot');
-  src: url('../fonts/Quicksand-Bold.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/Quicksand-Bold.woff') format('woff'),
-       url('../fonts/Quicksand-Bold.ttf') format('truetype'),
-       url('../fonts/Quicksand-Bold.svg#Quicksand-Bold') format('svg');
-}
-
 /* quicksand-regular - latin */
 @font-face {
   font-family: 'Quicksand';
@@ -21,6 +9,17 @@
        url('../fonts/Quicksand-Regular.svg#Quicksand-Regular') format('svg');
 }
 
+/* quicksand-700 - latin */
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: bold;
+  src: url('../fonts/Quicksand-Bold.eot');
+  src: url('../fonts/Quicksand-Bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Quicksand-Bold.woff') format('woff'),
+       url('../fonts/Quicksand-Bold.ttf') format('truetype'),
+       url('../fonts/Quicksand-Bold.svg#Quicksand-Bold') format('svg');
+}
 
 /* montserrat-regular - cyrillic_latin */
 @font-face {
@@ -73,6 +72,7 @@
        url('../fonts/open-sans-v17-latin_cyrillic-ext-regular.ttf') format('truetype'), /* Safari, Android, iOS */
        url('../fonts/open-sans-v17-latin_cyrillic-ext-regular.svg#OpenSans') format('svg'); /* Legacy iOS */
 }
+
 /* open-sans-700 - latin_cyrillic-ext */
 @font-face {
   font-family: 'Open Sans';

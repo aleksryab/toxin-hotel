@@ -1,0 +1,51 @@
+.subscription-field {
+  position: relative;
+  width: 100%;
+
+  &__label {
+    @include small-subtitle;
+  }
+
+  &__input {
+    box-sizing: border-box;
+    width: 100%;
+    height: rem(44px);
+    padding: 0 rem(45px) 0 rem(15px);
+    color: $dark-color-op75;
+    font-size: rem(14px);
+    border: $light-border;
+    border-radius: 4px;
+    outline: none;
+
+    &::placeholder {
+      color: $dark-color-op25;
+    }
+
+    &:hover, &:focus {
+      border: $bold-border;
+    }
+  }
+
+  &__button {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    width: rem(44px);
+    height: rem(44px);
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__icon {
+    background: $primary-gradient;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+}

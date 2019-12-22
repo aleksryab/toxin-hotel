@@ -1,0 +1,15 @@
+//-
+    options.label (string)
+    options.placeholder (string)
+
+mixin subscription-field(options = {})
+  form.subscription-field(action="/")
+    if options.label
+      label.subscription-field__label !{options.label}
+        input(type="email", name="email", class="subscription-field__input", required, placeholder= options.placeholder)
+        button.subscription-field__button
+          i.material-icons.subscription-field__icon arrow_forward
+    else
+      input(type="email", name="email", class="subscription-field__input", required, placeholder= options.placeholder)
+      button.subscription-field__button
+        i.material-icons.subscription-field__icon arrow_forward

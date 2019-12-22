@@ -9,6 +9,7 @@ include ../components/like-button/like-button
 include ../components/rate-button/rate-button
 include ../components/dropdown/dropdown
 include ../components/date-picker/date-picker
+include ../components/subscription-field/subscription-field
 
 block title
   title= "Form Elements"
@@ -57,8 +58,10 @@ block content
           .form-elements__item.form-elements__item_large-indent.form-elements__item_thin
             +date-picker({singleInput: true, label: 'filter date dropdown', range: '19 авг - 23 авг'})
 
-        .form-elements__column.form-elements__column_middle
+          .form-elements__item.form-elements__item_large-indent.form-elements__item_thin
+            +subscription-field({placeholder: 'Email', label: 'subscription text field'})
 
+        .form-elements__column.form-elements__column_middle
           .form-elements__item.form-elements__item_large-indent
             .form-elements__header.form-elements__header_large-indent
               .form-elements__title Checkbox Buttons
@@ -104,9 +107,6 @@ block content
                 +rate-button({rate: 4})
               .form-elements__box
                 +rate-button({rate: 5})
-
-
-
 
         .form-elements__column column 3
 
