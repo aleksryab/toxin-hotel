@@ -1,0 +1,7 @@
+//- options.labe (string)
+
+mixin range-slider(options = {})
+  .range-slider
+    label.range-slider__label !{options.label}
+      input.range-slider__value(type="text" readonly)
+    .range-slider__slider.js-range-slider

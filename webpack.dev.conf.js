@@ -13,7 +13,6 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     hot: true,
     inline: true,
     watchContentBase: true,
-    writeToDisk: true,
     overlay: {
       warnings: true,
       errors: true

@@ -10,6 +10,7 @@ include ../components/rate-button/rate-button
 include ../components/dropdown/dropdown
 include ../components/date-picker/date-picker
 include ../components/subscription-field/subscription-field
+include ../components/range-slider/range-slider
 
 block title
   title= "Form Elements"
@@ -108,7 +109,23 @@ block content
               .form-elements__box
                 +rate-button({rate: 5})
 
-        .form-elements__column column 3
+        .form-elements__column
+          .form-elements__item.form-elements__item_large-indent.form-elements__item_thin
+            +range-slider({label: 'Range Slider'})
+
+          .form-elements__item.form-elements__item_large-indent
+            .form-elements__header.form-elements__header_large-indent
+              .form-elements__title Buttons
+            .form-elements__subitem.form-elements__subitem_big-indent
+              .form-elements__box
+                +button({name: 'CLICK ME'})
+              .form-elements__box
+                +button({name: 'CLICK ME'})
+            .form-elements__subitem.form-elements__subitem_big-indent
+              .form-elements__box
+                +button({name: 'CLICK ME', inverted: true})
+              .form-elements__box
+                +button({name: 'CLICK ME', inverted: true})
 
 
     script(src="js/main.js")

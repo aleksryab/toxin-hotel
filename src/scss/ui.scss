@@ -61,7 +61,7 @@
 }
 
 .form-elements {
-  margin-top: 65px;
+  margin-top: 66px;
   padding: 0 111px;
   display: flex;
   justify-content: space-between;
@@ -112,6 +112,9 @@
 
     &_large-indent {
       margin-bottom: 14px;
+    }
+    &_big-indent {
+      margin-bottom: 30px;
     }
   }
 

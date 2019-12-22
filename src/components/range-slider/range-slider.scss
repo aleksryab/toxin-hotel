@@ -1,0 +1,50 @@
+.range-slider {
+  min-height: rem(47px);
+
+  &__label {
+    display: flex;
+    justify-content: space-between;
+    @include small-subtitle();
+    margin-bottom: rem(22px);
+  }
+
+  &__value {
+    width: 50%;
+    text-align: right;
+    cursor: default;
+    @include font-rem(12, 15, normal);
+    color: $dark-color-op25;
+    outline: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  & &__slider {
+    box-sizing: border-box;
+    width: 100%;
+    height: rem(6px);
+    border-radius: rem(3px);
+    border: $light-border;
+  }
+
+  & &__slider &__handle {
+    width: rem(12px);
+    height: rem(12px);
+    position: absolute;
+    margin-left: rem(-6px);
+    top: rem(-6px);
+    background: $secondary-gradient;
+    border-radius: rem(10px);
+    border: rem(2px) solid #fff;
+    outline: none;
+    cursor: pointer;
+  }
+
+  & &__slider &__range {
+    position: absolute;
+    top: rem(-1px);
+    height: inherit;
+    background: $secondary-gradient;
+  }
+}
