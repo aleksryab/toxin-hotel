@@ -4,6 +4,10 @@
   text-decoration: none;
   cursor: pointer;
 
+  &:hover, &:focus {
+    opacity: 0.5;
+  }
+
   &_inverted {
     color: $dark-color-op50;
   }

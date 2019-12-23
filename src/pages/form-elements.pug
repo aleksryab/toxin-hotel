@@ -11,6 +11,7 @@ include ../components/dropdown/dropdown
 include ../components/date-picker/date-picker
 include ../components/subscription-field/subscription-field
 include ../components/range-slider/range-slider
+include ../components/pagination/pagination
 
 block title
   title= "Form Elements"
@@ -22,119 +23,138 @@ block content
     .ui-page__wrapper
       +ui-logo()
       .form-elements
+        section.form-elements__section
+          .form-elements__column
+
+            .form-elements__item
+              .form-elements__header
+                .form-elements__title Text Field
+                .form-elements__descr Default
+              +input({type: 'email', placeholder: 'Email'})
+
+            .form-elements__item
+              .form-elements__header
+                .form-elements__title Text Field
+                .form-elements__descr Hover / Focus
+              +input({value: 'This is pretty awesome'})
+
+            .form-elements__item
+              .form-elements__header
+                .form-elements__title Dropdown
+                .form-elements__descr Default
+              +dropdown({label: ' ', inputName: 'total-guests', placeholder: 'Сколько гостей',
+                        items: [
+                          {title: 'Взрослые', inputName: 'adults', value: 0},
+                          {title: 'Дети', inputName: 'children', value: 0},
+                          {title: 'Младенцы', inputName: 'infants', value: 0}
+                        ]})
+
+            .form-elements__item.form-elements__item_large-indent
+              .form-elements__header
+                .form-elements__title masked text field
+                .form-elements__descr Default
+              +input({placeholder: 'ДД.ММ.ГГГГ', date: true})
+
+            .form-elements__item.form-elements__item_large-indent
+              +date-picker()
+
+            .form-elements__item.form-elements__item_large-indent.form-elements__item_thin
+              +date-picker({singleInput: true, label: 'filter date dropdown', range: '19 авг - 23 авг'})
+
+            .form-elements__item.form-elements__item_large-indent.form-elements__item_thin
+              +subscription-field({placeholder: 'Email', label: 'subscription text field'})
+          //- end left column
+
+          .form-elements__column.form-elements__column_middle
+            .form-elements__item.form-elements__item_large-indent
+              .form-elements__header.form-elements__header_large-indent
+                .form-elements__title Checkbox Buttons
+              .form-elements__subitem
+                +checkbox-button({label: 'Можно курить', name: 'smoking-allowed'})
+              .form-elements__subitem
+                +checkbox-button({label: 'Можно с питомцами', name: 'animals-allowed', checked: true})
+              .form-elements__subitem
+                +checkbox-button({label: 'Можно пригласить гостей<br>(до 10 человек)', name: 'guests-allowed', checked: true})
+
+            .form-elements__item.form-elements__item_large-indent
+              .form-elements__header.form-elements__header_large-indent
+                .form-elements__title Radio Buttons
+              .form-elements__subitem
+                .form-elements__box
+                  +radio-button({name: 'sex', value: 'male', checked: true, label: 'Мужчина'})
+                .form-elements__box
+                  +radio-button({name: 'sex', value: 'female', label: 'Женщина'})
+
+            .form-elements__item.form-elements__item_large-indent
+              .form-elements__header.form-elements__header_large-indent
+                .form-elements__title Toggle
+              .form-elements__subitem.form-elements__subitem_large-indent
+                +toggle-button({name: 'subscription', label: 'Получать спецпредложения', checked: true})
+              .form-elements__subitem.form-elements__subitem_large-indent
+                +toggle-button({name: 'subscription', label: 'Получать спецпредложения'})
+
+            .form-elements__item.form-elements__item_large-indent
+              .form-elements__header.form-elements__header_large-indent
+                .form-elements__title like button
+              .form-elements__subitem.form-elements__subitem_large-indent
+                .form-elements__box.form-elements__box_small-margin
+                  +like-button({value: 2})
+                .form-elements__box.form-elements__box_small-margin
+                  +like-button({value: 12, liked: true})
+
+
+            .form-elements__item.form-elements__item_large-indent
+              .form-elements__header.form-elements__header_large-indent
+                .form-elements__title Rate button
+              .form-elements__subitem
+                .form-elements__box
+                  +rate-button({rate: 4})
+                .form-elements__box
+                  +rate-button({rate: 5})
+          //- end middle column
+
+          .form-elements__column
+            .form-elements__item.form-elements__item_large-indent.form-elements__item_thin
+              +range-slider({label: 'Range Slider'})
+
+            .form-elements__item.form-elements__item_large-indent
+              .form-elements__header.form-elements__header_large-indent
+                .form-elements__title Buttons
+              .form-elements__subitem.form-elements__subitem_big-indent
+                .form-elements__box
+                  +button({name: 'CLICK ME'})
+                .form-elements__box
+                  +button({name: 'CLICK ME'})
+              .form-elements__subitem.form-elements__subitem_big-indent
+                .form-elements__box
+                  +button({name: 'CLICK ME', inverted: true})
+                .form-elements__box
+                  +button({name: 'CLICK ME', inverted: true})
+              .form-elements__subitem.form-elements__subitem_big-indent
+                .form-elements__box
+                  span.icon-link CLICK ME
+                .form-elements__box
+                  a.icon-link.icon-link_inverted CLICK ME
+              .form-elements__subitem
+                +button({name: 'Перейти к оплате', type: 'submit'})
+
+            .form-elements__item
+              .form-elements__header.form-elements__header_large-indent
+                .form-elements__title pagination
+              +pagination()
+          //- end right column
+      //- end left column
+
+      section.form-elements__section
         .form-elements__column
-
-          .form-elements__item
-            .form-elements__header
-              .form-elements__title Text Field
-              .form-elements__descr Default
-            +input({type: 'email', placeholder: 'Email'})
-
-          .form-elements__item
-            .form-elements__header
-              .form-elements__title Text Field
-              .form-elements__descr Hover / Focus
-            +input({value: 'This is pretty awesome'})
-
-          .form-elements__item
-            .form-elements__header
-              .form-elements__title Dropdown
-              .form-elements__descr Default
-            +dropdown({label: ' ', inputName: 'total-guests', placeholder: 'Сколько гостей',
-                      items: [
-                        {title: 'Взрослые', inputName: 'adults', value: 0},
-                        {title: 'Дети', inputName: 'children', value: 0},
-                        {title: 'Младенцы', inputName: 'infants', value: 0}
-                      ]})
-
-          .form-elements__item.form-elements__item_large-indent
-            .form-elements__header
-              .form-elements__title masked text field
-              .form-elements__descr Default
-            +input({placeholder: 'ДД.ММ.ГГГГ', date: true})
-
-          .form-elements__item.form-elements__item_large-indent
-            +date-picker()
-
-          .form-elements__item.form-elements__item_large-indent.form-elements__item_thin
-            +date-picker({singleInput: true, label: 'filter date dropdown', range: '19 авг - 23 авг'})
-
-          .form-elements__item.form-elements__item_large-indent.form-elements__item_thin
-            +subscription-field({placeholder: 'Email', label: 'subscription text field'})
+        //- end left column
 
         .form-elements__column.form-elements__column_middle
-          .form-elements__item.form-elements__item_large-indent
-            .form-elements__header.form-elements__header_large-indent
-              .form-elements__title Checkbox Buttons
-            .form-elements__subitem
-              +checkbox-button({label: 'Можно курить', name: 'smoking-allowed'})
-            .form-elements__subitem
-              +checkbox-button({label: 'Можно с питомцами', name: 'animals-allowed', checked: true})
-            .form-elements__subitem
-              +checkbox-button({label: 'Можно пригласить гостей<br>(до 10 человек)', name: 'guests-allowed', checked: true})
-
-          .form-elements__item.form-elements__item_large-indent
-            .form-elements__header.form-elements__header_large-indent
-              .form-elements__title Radio Buttons
-            .form-elements__subitem
-              .form-elements__box
-                +radio-button({name: 'sex', value: 'male', checked: true, label: 'Мужчина'})
-              .form-elements__box
-                +radio-button({name: 'sex', value: 'female', label: 'Женщина'})
-
-          .form-elements__item.form-elements__item_large-indent
-            .form-elements__header.form-elements__header_large-indent
-              .form-elements__title Toggle
-            .form-elements__subitem.form-elements__subitem_large-indent
-              +toggle-button({name: 'subscription', label: 'Получать спецпредложения', checked: true})
-            .form-elements__subitem.form-elements__subitem_large-indent
-              +toggle-button({name: 'subscription', label: 'Получать спецпредложения'})
-
-          .form-elements__item.form-elements__item_large-indent
-            .form-elements__header.form-elements__header_large-indent
-              .form-elements__title like button
-            .form-elements__subitem.form-elements__subitem_large-indent
-              .form-elements__box.form-elements__box_small-margin
-                +like-button({value: 2})
-              .form-elements__box.form-elements__box_small-margin
-                +like-button({value: 12, liked: true})
-
-
-          .form-elements__item.form-elements__item_large-indent
-            .form-elements__header.form-elements__header_large-indent
-              .form-elements__title Rate button
-            .form-elements__subitem
-              .form-elements__box
-                +rate-button({rate: 4})
-              .form-elements__box
-                +rate-button({rate: 5})
+        //- end middle column
 
         .form-elements__column
-          .form-elements__item.form-elements__item_large-indent.form-elements__item_thin
-            +range-slider({label: 'Range Slider'})
-
-          .form-elements__item.form-elements__item_large-indent
-            .form-elements__header.form-elements__header_large-indent
-              .form-elements__title Buttons
-            .form-elements__subitem.form-elements__subitem_big-indent
-              .form-elements__box
-                +button({name: 'CLICK ME'})
-              .form-elements__box
-                +button({name: 'CLICK ME'})
-            .form-elements__subitem.form-elements__subitem_big-indent
-              .form-elements__box
-                +button({name: 'CLICK ME', inverted: true})
-              .form-elements__box
-                +button({name: 'CLICK ME', inverted: true})
-            .form-elements__subitem
-              .form-elements__box
-                span.icon-link CLICK ME
-              .form-elements__box
-                a.icon-link.icon-link_inverted CLICK ME
-
-          .form-elements__item
-            .form-elements__header.form-elements__header_large-indent
-              .form-elements__title pagination
+        //- end right column
+      //- end bottom section
 
 
     script(src="js/main.js")

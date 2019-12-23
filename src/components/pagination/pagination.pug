@@ -1,0 +1,18 @@
+mixin pagination()
+  .pagination
+    nav.pagination__pages
+      ul.pagination__list
+        li.pagination__item.pagination__item_active
+          span 1
+        li.pagination__item
+          a(href="#").pagination__link 2
+        li.pagination__item
+          a(href="#").pagination__link 3
+        li.pagination__item.pagination__item_disabled
+          span ...
+        li.pagination__item
+          a(href="#").pagination__link 15
+        li.pagination__item.pagination__item_nav
+          a.pagination__link.material-icons(title="next") arrow_forward
+    .pagination__descr
+      | 1 – 12 из 100+ вариантов аренды

@@ -17,253 +17,276 @@
   <body class="ui-page">
     <div class="ui-page__wrapper"><img class="ui-logo" src="data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M23.9989 32.4712C23.2224 32.4712 22.5871 31.8359 22.5871 31.0594C22.5871 25.6241 18.14 21.177 12.7047 21.177C11.9283 21.177 11.293 20.5418 11.293 19.7653C11.293 18.9888 11.9283 18.3535 12.7047 18.3535C19.7283 18.3535 25.4106 24.0359 25.4106 31.0594C25.4106 31.8359 24.7753 32.4712 23.9989 32.4712Z' fill='%231F2041' fill-opacity='0.25'/%3E %3Cpath d='M36.7068 19.7653C36.7068 20.5418 36.0715 21.177 35.295 21.177C31.9421 21.177 28.9421 22.8712 27.1774 25.4476C26.7892 24.4594 26.3303 23.5418 25.7656 22.6947C28.095 20.0123 31.5186 18.3535 35.295 18.3535C36.0715 18.3535 36.7068 18.9888 36.7068 19.7653Z' fill='%231F2041' fill-opacity='0.25'/%3E %3Cpath d='M24 48C10.7647 48 0 37.2353 0 24C0 10.7647 10.7647 0 24 0C37.2353 0 48 10.7647 48 24C48 37.2353 37.2353 48 24 48ZM24 2.82353C12.3176 2.82353 2.82353 12.3176 2.82353 24C2.82353 35.6824 12.3176 45.1765 24 45.1765C35.6824 45.1765 45.1765 35.6824 45.1765 24C45.1765 12.3176 35.6824 2.82353 24 2.82353Z' fill='%231F2041' fill-opacity='0.25'/%3E %3C/svg%3E">
       <div class="form-elements">
-        <div class="form-elements__column">
-          <div class="form-elements__item">
-            <div class="form-elements__header">
-              <div class="form-elements__title">Text Field</div>
-              <div class="form-elements__descr">Default</div>
-            </div>
-            <div class="input">
-              <input class="input__field" type="email" placeholder="Email">
-            </div>
-          </div>
-          <div class="form-elements__item">
-            <div class="form-elements__header">
-              <div class="form-elements__title">Text Field</div>
-              <div class="form-elements__descr">Hover / Focus</div>
-            </div>
-            <div class="input">
-              <input class="input__field" type="text" value="This is pretty awesome">
-            </div>
-          </div>
-          <div class="form-elements__item">
-            <div class="form-elements__header">
-              <div class="form-elements__title">Dropdown</div>
-              <div class="form-elements__descr">Default</div>
-            </div>
-            <div class="dropdown js-dropdown">
+        <section class="form-elements__section">
+          <div class="form-elements__column">
+            <div class="form-elements__item">
+              <div class="form-elements__header">
+                <div class="form-elements__title">Text Field</div>
+                <div class="form-elements__descr">Default</div>
+              </div>
               <div class="input">
-                <label class="input__label"> 
-                  <div class="input__inner">
-                    <input class="input__field input__field_dropdown" type="text" autocomplete="off" name="total-guests" placeholder="Сколько гостей" required readonly><span class="input__button"><i class="material-icons">expand_more</i></span>
-                  </div>
-                </label>
-              </div>
-              <div class="dropdown__content">
-                <div class="dropdown__item">
-                  <div class="dropdown__title">Взрослые</div>
-                  <div class="dropdown__controls"><span class="dropdown__button" data-action="minus">-</span>
-                    <input class="dropdown__value" type="text" name="adults" value="0" readonly><span class="dropdown__button" data-action="plus">+</span>
-                  </div>
-                </div>
-                <div class="dropdown__item">
-                  <div class="dropdown__title">Дети</div>
-                  <div class="dropdown__controls"><span class="dropdown__button" data-action="minus">-</span>
-                    <input class="dropdown__value" type="text" name="children" value="0" readonly><span class="dropdown__button" data-action="plus">+</span>
-                  </div>
-                </div>
-                <div class="dropdown__item">
-                  <div class="dropdown__title">Младенцы</div>
-                  <div class="dropdown__controls"><span class="dropdown__button" data-action="minus">-</span>
-                    <input class="dropdown__value" type="text" name="infants" value="0" readonly><span class="dropdown__button" data-action="plus">+</span>
-                  </div>
-                </div>
-                <div class="dropdown__menu"><span class="dropdown__menu-button dropdown__menu-button_inverted" data-action="clear">oчистить</span><span class="dropdown__menu-button" data-action="apply">применить</span></div>
+                <input class="input__field" type="email" placeholder="Email">
               </div>
             </div>
-          </div>
-          <div class="form-elements__item form-elements__item_large-indent">
-            <div class="form-elements__header">
-              <div class="form-elements__title">masked text field</div>
-              <div class="form-elements__descr">Default</div>
+            <div class="form-elements__item">
+              <div class="form-elements__header">
+                <div class="form-elements__title">Text Field</div>
+                <div class="form-elements__descr">Hover / Focus</div>
+              </div>
+              <div class="input">
+                <input class="input__field" type="text" value="This is pretty awesome">
+              </div>
             </div>
-            <div class="input">
-              <input class="input__field js-date" type="text" placeholder="ДД.ММ.ГГГГ" pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}">
-            </div>
-          </div>
-          <div class="form-elements__item form-elements__item_large-indent">
-            <div class="date-picker js-date-picker">
-              <div class="date-picker__box">
+            <div class="form-elements__item">
+              <div class="form-elements__header">
+                <div class="form-elements__title">Dropdown</div>
+                <div class="form-elements__descr">Default</div>
+              </div>
+              <div class="dropdown js-dropdown">
                 <div class="input">
-                  <label class="input__label">Прибытие
+                  <label class="input__label"> 
                     <div class="input__inner">
-                      <input class="input__field js-date" type="text" autocomplete="off" name="check-in" placeholder="ДД.ММ.ГГГГ" required pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}"><span class="input__button"><i class="material-icons">expand_more</i></span>
+                      <input class="input__field input__field_dropdown" type="text" autocomplete="off" name="total-guests" placeholder="Сколько гостей" required readonly><span class="input__button"><i class="material-icons">expand_more</i></span>
+                    </div>
+                  </label>
+                </div>
+                <div class="dropdown__content">
+                  <div class="dropdown__item">
+                    <div class="dropdown__title">Взрослые</div>
+                    <div class="dropdown__controls"><span class="dropdown__button" data-action="minus">-</span>
+                      <input class="dropdown__value" type="text" name="adults" value="0" readonly><span class="dropdown__button" data-action="plus">+</span>
+                    </div>
+                  </div>
+                  <div class="dropdown__item">
+                    <div class="dropdown__title">Дети</div>
+                    <div class="dropdown__controls"><span class="dropdown__button" data-action="minus">-</span>
+                      <input class="dropdown__value" type="text" name="children" value="0" readonly><span class="dropdown__button" data-action="plus">+</span>
+                    </div>
+                  </div>
+                  <div class="dropdown__item">
+                    <div class="dropdown__title">Младенцы</div>
+                    <div class="dropdown__controls"><span class="dropdown__button" data-action="minus">-</span>
+                      <input class="dropdown__value" type="text" name="infants" value="0" readonly><span class="dropdown__button" data-action="plus">+</span>
+                    </div>
+                  </div>
+                  <div class="dropdown__menu"><span class="dropdown__menu-button dropdown__menu-button_inverted" data-action="clear">oчистить</span><span class="dropdown__menu-button" data-action="apply">применить</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="form-elements__item form-elements__item_large-indent">
+              <div class="form-elements__header">
+                <div class="form-elements__title">masked text field</div>
+                <div class="form-elements__descr">Default</div>
+              </div>
+              <div class="input">
+                <input class="input__field js-date" type="text" placeholder="ДД.ММ.ГГГГ" pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}">
+              </div>
+            </div>
+            <div class="form-elements__item form-elements__item_large-indent">
+              <div class="date-picker js-date-picker">
+                <div class="date-picker__box">
+                  <div class="input">
+                    <label class="input__label">Прибытие
+                      <div class="input__inner">
+                        <input class="input__field js-date" type="text" autocomplete="off" name="check-in" placeholder="ДД.ММ.ГГГГ" required pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}"><span class="input__button"><i class="material-icons">expand_more</i></span>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                <div class="date-picker__box">
+                  <div class="input">
+                    <label class="input__label">Выезд
+                      <div class="input__inner">
+                        <input class="input__field js-date" type="text" autocomplete="off" name="check-out" placeholder="ДД.ММ.ГГГГ" required pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}"><span class="input__button"><i class="material-icons">expand_more</i></span>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-elements__item form-elements__item_large-indent form-elements__item_thin">
+              <div class="date-picker js-date-picker-single">
+                <div class="input">
+                  <label class="input__label">filter date dropdown
+                    <div class="input__inner">
+                      <input class="input__field input__field_dropdown" type="text" autocomplete="off" name="date-range" placeholder="ДД.ММ.ГГГГ" required readonly value="19 авг - 23 авг"><span class="input__button"><i class="material-icons">expand_more</i></span>
                     </div>
                   </label>
                 </div>
               </div>
-              <div class="date-picker__box">
-                <div class="input">
-                  <label class="input__label">Выезд
-                    <div class="input__inner">
-                      <input class="input__field js-date" type="text" autocomplete="off" name="check-out" placeholder="ДД.ММ.ГГГГ" required pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}"><span class="input__button"><i class="material-icons">expand_more</i></span>
-                    </div>
+            </div>
+            <div class="form-elements__item form-elements__item_large-indent form-elements__item_thin">
+              <form class="subscription-field" action="/">
+                <label class="subscription-field__label">subscription text field
+                  <input class="subscription-field__input" type="email" name="email" required placeholder="Email">
+                  <button class="subscription-field__button"><i class="material-icons subscription-field__icon">arrow_forward</i></button>
+                </label>
+              </form>
+            </div>
+          </div>
+          <div class="form-elements__column form-elements__column_middle">
+            <div class="form-elements__item form-elements__item_large-indent">
+              <div class="form-elements__header form-elements__header_large-indent">
+                <div class="form-elements__title">Checkbox Buttons</div>
+              </div>
+              <div class="form-elements__subitem">
+                <label class="checkbox-button">
+                  <input class="checkbox-button__input" type="checkbox" name="smoking-allowed"><span class="checkbox-button__label">Можно курить</span>
+                </label>
+              </div>
+              <div class="form-elements__subitem">
+                <label class="checkbox-button">
+                  <input class="checkbox-button__input" type="checkbox" name="animals-allowed" checked><span class="checkbox-button__label">Можно с питомцами</span>
+                </label>
+              </div>
+              <div class="form-elements__subitem">
+                <label class="checkbox-button">
+                  <input class="checkbox-button__input" type="checkbox" name="guests-allowed" checked><span class="checkbox-button__label">Можно пригласить гостей<br>(до 10 человек)</span>
+                </label>
+              </div>
+            </div>
+            <div class="form-elements__item form-elements__item_large-indent">
+              <div class="form-elements__header form-elements__header_large-indent">
+                <div class="form-elements__title">Radio Buttons</div>
+              </div>
+              <div class="form-elements__subitem">
+                <div class="form-elements__box">
+                  <label class="radio-button">
+                    <input class="radio-button__input" type="radio" name="sex" value="male" checked><span class="radio-button__label">Мужчина</span>
+                  </label>
+                </div>
+                <div class="form-elements__box">
+                  <label class="radio-button">
+                    <input class="radio-button__input" type="radio" name="sex" value="female"><span class="radio-button__label">Женщина</span>
                   </label>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="form-elements__item form-elements__item_large-indent form-elements__item_thin">
-            <div class="date-picker js-date-picker-single">
-              <div class="input">
-                <label class="input__label">filter date dropdown
-                  <div class="input__inner">
-                    <input class="input__field input__field_dropdown" type="text" autocomplete="off" name="date-range" placeholder="ДД.ММ.ГГГГ" required readonly value="19 авг - 23 авг"><span class="input__button"><i class="material-icons">expand_more</i></span>
+            <div class="form-elements__item form-elements__item_large-indent">
+              <div class="form-elements__header form-elements__header_large-indent">
+                <div class="form-elements__title">Toggle</div>
+              </div>
+              <div class="form-elements__subitem form-elements__subitem_large-indent">
+                <label class="toggle-button">
+                  <input class="toggle-button__input" type="checkbox" name="subscription" checked><span class="toggle-button__label">Получать спецпредложения</span>
+                </label>
+              </div>
+              <div class="form-elements__subitem form-elements__subitem_large-indent">
+                <label class="toggle-button">
+                  <input class="toggle-button__input" type="checkbox" name="subscription"><span class="toggle-button__label">Получать спецпредложения</span>
+                </label>
+              </div>
+            </div>
+            <div class="form-elements__item form-elements__item_large-indent">
+              <div class="form-elements__header form-elements__header_large-indent">
+                <div class="form-elements__title">like button</div>
+              </div>
+              <div class="form-elements__subitem form-elements__subitem_large-indent">
+                <div class="form-elements__box form-elements__box_small-margin">
+                  <button class="like-button js-like-button"><span class="like-button__inner">2</span></button>
+                </div>
+                <div class="form-elements__box form-elements__box_small-margin">
+                  <button class="like-button js-like-button  like-button_liked"><span class="like-button__inner">12</span></button>
+                </div>
+              </div>
+            </div>
+            <div class="form-elements__item form-elements__item_large-indent">
+              <div class="form-elements__header form-elements__header_large-indent">
+                <div class="form-elements__title">Rate button</div>
+              </div>
+              <div class="form-elements__subitem">
+                <div class="form-elements__box">
+                  <div class="rate-button">
+                    <form>
+                      <fieldset class="rate-button__inner">
+                        <input class="rate-button__input" type="radio" name="rating" value="5"><span class="rate-button__label"></span>
+                        <input class="rate-button__input" type="radio" name="rating" value="4" checked="checked"><span class="rate-button__label"></span>
+                        <input class="rate-button__input" type="radio" name="rating" value="3"><span class="rate-button__label"></span>
+                        <input class="rate-button__input" type="radio" name="rating" value="2"><span class="rate-button__label"></span>
+                        <input class="rate-button__input" type="radio" name="rating" value="1"><span class="rate-button__label"></span>
+                      </fieldset>
+                    </form>
                   </div>
-                </label>
-              </div>
-            </div>
-          </div>
-          <div class="form-elements__item form-elements__item_large-indent form-elements__item_thin">
-            <form class="subscription-field" action="/">
-              <label class="subscription-field__label">subscription text field
-                <input class="subscription-field__input" type="email" name="email" required placeholder="Email">
-                <button class="subscription-field__button"><i class="material-icons subscription-field__icon">arrow_forward</i></button>
-              </label>
-            </form>
-          </div>
-        </div>
-        <div class="form-elements__column form-elements__column_middle">
-          <div class="form-elements__item form-elements__item_large-indent">
-            <div class="form-elements__header form-elements__header_large-indent">
-              <div class="form-elements__title">Checkbox Buttons</div>
-            </div>
-            <div class="form-elements__subitem">
-              <label class="checkbox-button">
-                <input class="checkbox-button__input" type="checkbox" name="smoking-allowed"><span class="checkbox-button__label">Можно курить</span>
-              </label>
-            </div>
-            <div class="form-elements__subitem">
-              <label class="checkbox-button">
-                <input class="checkbox-button__input" type="checkbox" name="animals-allowed" checked><span class="checkbox-button__label">Можно с питомцами</span>
-              </label>
-            </div>
-            <div class="form-elements__subitem">
-              <label class="checkbox-button">
-                <input class="checkbox-button__input" type="checkbox" name="guests-allowed" checked><span class="checkbox-button__label">Можно пригласить гостей<br>(до 10 человек)</span>
-              </label>
-            </div>
-          </div>
-          <div class="form-elements__item form-elements__item_large-indent">
-            <div class="form-elements__header form-elements__header_large-indent">
-              <div class="form-elements__title">Radio Buttons</div>
-            </div>
-            <div class="form-elements__subitem">
-              <div class="form-elements__box">
-                <label class="radio-button">
-                  <input class="radio-button__input" type="radio" name="sex" value="male" checked><span class="radio-button__label">Мужчина</span>
-                </label>
-              </div>
-              <div class="form-elements__box">
-                <label class="radio-button">
-                  <input class="radio-button__input" type="radio" name="sex" value="female"><span class="radio-button__label">Женщина</span>
-                </label>
-              </div>
-            </div>
-          </div>
-          <div class="form-elements__item form-elements__item_large-indent">
-            <div class="form-elements__header form-elements__header_large-indent">
-              <div class="form-elements__title">Toggle</div>
-            </div>
-            <div class="form-elements__subitem form-elements__subitem_large-indent">
-              <label class="toggle-button">
-                <input class="toggle-button__input" type="checkbox" name="subscription" checked><span class="toggle-button__label">Получать спецпредложения</span>
-              </label>
-            </div>
-            <div class="form-elements__subitem form-elements__subitem_large-indent">
-              <label class="toggle-button">
-                <input class="toggle-button__input" type="checkbox" name="subscription"><span class="toggle-button__label">Получать спецпредложения</span>
-              </label>
-            </div>
-          </div>
-          <div class="form-elements__item form-elements__item_large-indent">
-            <div class="form-elements__header form-elements__header_large-indent">
-              <div class="form-elements__title">like button</div>
-            </div>
-            <div class="form-elements__subitem form-elements__subitem_large-indent">
-              <div class="form-elements__box form-elements__box_small-margin">
-                <button class="like-button js-like-button"><span class="like-button__inner">2</span></button>
-              </div>
-              <div class="form-elements__box form-elements__box_small-margin">
-                <button class="like-button js-like-button  like-button_liked"><span class="like-button__inner">12</span></button>
-              </div>
-            </div>
-          </div>
-          <div class="form-elements__item form-elements__item_large-indent">
-            <div class="form-elements__header form-elements__header_large-indent">
-              <div class="form-elements__title">Rate button</div>
-            </div>
-            <div class="form-elements__subitem">
-              <div class="form-elements__box">
-                <div class="rate-button">
-                  <form>
-                    <fieldset class="rate-button__inner">
-                      <input class="rate-button__input" type="radio" name="rating" value="5"><span class="rate-button__label"></span>
-                      <input class="rate-button__input" type="radio" name="rating" value="4" checked="checked"><span class="rate-button__label"></span>
-                      <input class="rate-button__input" type="radio" name="rating" value="3"><span class="rate-button__label"></span>
-                      <input class="rate-button__input" type="radio" name="rating" value="2"><span class="rate-button__label"></span>
-                      <input class="rate-button__input" type="radio" name="rating" value="1"><span class="rate-button__label"></span>
-                    </fieldset>
-                  </form>
                 </div>
-              </div>
-              <div class="form-elements__box">
-                <div class="rate-button">
-                  <form>
-                    <fieldset class="rate-button__inner">
-                      <input class="rate-button__input" type="radio" name="rating" value="5" checked="checked"><span class="rate-button__label"></span>
-                      <input class="rate-button__input" type="radio" name="rating" value="4"><span class="rate-button__label"></span>
-                      <input class="rate-button__input" type="radio" name="rating" value="3"><span class="rate-button__label"></span>
-                      <input class="rate-button__input" type="radio" name="rating" value="2"><span class="rate-button__label"></span>
-                      <input class="rate-button__input" type="radio" name="rating" value="1"><span class="rate-button__label"></span>
-                    </fieldset>
-                  </form>
+                <div class="form-elements__box">
+                  <div class="rate-button">
+                    <form>
+                      <fieldset class="rate-button__inner">
+                        <input class="rate-button__input" type="radio" name="rating" value="5" checked="checked"><span class="rate-button__label"></span>
+                        <input class="rate-button__input" type="radio" name="rating" value="4"><span class="rate-button__label"></span>
+                        <input class="rate-button__input" type="radio" name="rating" value="3"><span class="rate-button__label"></span>
+                        <input class="rate-button__input" type="radio" name="rating" value="2"><span class="rate-button__label"></span>
+                        <input class="rate-button__input" type="radio" name="rating" value="1"><span class="rate-button__label"></span>
+                      </fieldset>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="form-elements__column">
-          <div class="form-elements__item form-elements__item_large-indent form-elements__item_thin">
-            <div class="range-slider">
-              <label class="range-slider__label">Range Slider
-                <input class="range-slider__value" type="text" readonly>
-              </label>
-              <div class="range-slider__slider js-range-slider"></div>
+          <div class="form-elements__column">
+            <div class="form-elements__item form-elements__item_large-indent form-elements__item_thin">
+              <div class="range-slider">
+                <label class="range-slider__label">Range Slider
+                  <input class="range-slider__value" type="text" readonly>
+                </label>
+                <div class="range-slider__slider js-range-slider"></div>
+              </div>
+            </div>
+            <div class="form-elements__item form-elements__item_large-indent">
+              <div class="form-elements__header form-elements__header_large-indent">
+                <div class="form-elements__title">Buttons</div>
+              </div>
+              <div class="form-elements__subitem form-elements__subitem_big-indent">
+                <div class="form-elements__box">
+                  <button class="button"><span class="button__inner">CLICK ME</span></button>
+                </div>
+                <div class="form-elements__box">
+                  <button class="button"><span class="button__inner">CLICK ME</span></button>
+                </div>
+              </div>
+              <div class="form-elements__subitem form-elements__subitem_big-indent">
+                <div class="form-elements__box">
+                  <button class="button button_inverted"><span class="button__inner">CLICK ME</span></button>
+                </div>
+                <div class="form-elements__box">
+                  <button class="button button_inverted"><span class="button__inner">CLICK ME</span></button>
+                </div>
+              </div>
+              <div class="form-elements__subitem form-elements__subitem_big-indent">
+                <div class="form-elements__box"><span class="icon-link">CLICK ME</span></div>
+                <div class="form-elements__box"><a class="icon-link icon-link_inverted">CLICK ME</a></div>
+              </div>
+              <div class="form-elements__subitem">
+                <button class="button button_submit">Перейти к оплате<i class="button__icon material-icons">arrow_forward</i></button>
+              </div>
+            </div>
+            <div class="form-elements__item">
+              <div class="form-elements__header form-elements__header_large-indent">
+                <div class="form-elements__title">pagination</div>
+              </div>
+              <div class="pagination">
+                <nav class="pagination__pages">
+                  <ul class="pagination__list">
+                    <li class="pagination__item pagination__item_active"><span>1</span></li>
+                    <li class="pagination__item"><a class="pagination__link" href="#">2</a></li>
+                    <li class="pagination__item"><a class="pagination__link" href="#">3</a></li>
+                    <li class="pagination__item pagination__item_disabled"><span>...</span></li>
+                    <li class="pagination__item"><a class="pagination__link" href="#">15</a></li>
+                    <li class="pagination__item pagination__item_nav"><a class="pagination__link material-icons" title="next">arrow_forward</a></li>
+                  </ul>
+                </nav>
+                <div class="pagination__descr">1 – 12 из 100+ вариантов аренды</div>
+              </div>
             </div>
           </div>
-          <div class="form-elements__item form-elements__item_large-indent">
-            <div class="form-elements__header form-elements__header_large-indent">
-              <div class="form-elements__title">Buttons</div>
-            </div>
-            <div class="form-elements__subitem form-elements__subitem_big-indent">
-              <div class="form-elements__box">
-                <button class="button"><span class="button__inner">CLICK ME</span></button>
-              </div>
-              <div class="form-elements__box">
-                <button class="button"><span class="button__inner">CLICK ME</span></button>
-              </div>
-            </div>
-            <div class="form-elements__subitem form-elements__subitem_big-indent">
-              <div class="form-elements__box">
-                <button class="button button_inverted"><span class="button__inner">CLICK ME</span></button>
-              </div>
-              <div class="form-elements__box">
-                <button class="button button_inverted"><span class="button__inner">CLICK ME</span></button>
-              </div>
-            </div>
-            <div class="form-elements__subitem">
-              <div class="form-elements__box"><span class="icon-link">CLICK ME</span></div>
-              <div class="form-elements__box"><a class="icon-link icon-link_inverted">CLICK ME</a></div>
-            </div>
-          </div>
-          <div class="form-elements__item">
-            <div class="form-elements__header form-elements__header_large-indent">
-              <div class="form-elements__title">pagination</div>
-            </div>
-          </div>
-        </div>
+        </section>
       </div>
+      <section class="form-elements__section">
+        <div class="form-elements__column"></div>
+        <div class="form-elements__column form-elements__column_middle"></div>
+        <div class="form-elements__column"></div>
+      </section>
     </div>
     <script src="js/main.js"></script>
   </body>

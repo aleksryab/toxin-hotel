@@ -3,6 +3,7 @@
   align-items: center;
   min-height: rem(20px);
   line-height: 1;
+  user-select: none;
 
   &__input {
     display: none;
