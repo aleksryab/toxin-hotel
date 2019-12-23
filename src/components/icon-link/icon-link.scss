@@ -1,0 +1,10 @@
+.icon-link {
+  @include small-subtitle();
+  color: $primary-color;
+  text-decoration: none;
+  cursor: pointer;
+
+  &_inverted {
+    color: $dark-color-op50;
+  }
+}

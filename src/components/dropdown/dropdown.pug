@@ -21,8 +21,8 @@ mixin dropdown(options = {})
           })
     .dropdown__content
       each item in options.items
-        .dropdown__item= item.title
-          .dropdown__title
+        .dropdown__item
+          .dropdown__title= item.title
           .dropdown__controls
             span.dropdown__button(data-action="minus") -
             input.dropdown__value(type="text" name= item.inputName value=item.value readonly)
