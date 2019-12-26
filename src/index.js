@@ -2,7 +2,7 @@ import 'normalize.css';
 import './scss/main.scss';
 
 import './components/input/input.js';
-import './components/date-picker/date-picker.js';
+import './components/date-dropdown/date-dropdown.js';
 import './components/dropdown/dropdown.js';
 import './components/like-button/like-button.js';
 import './components/range-slider/range-slider.js';

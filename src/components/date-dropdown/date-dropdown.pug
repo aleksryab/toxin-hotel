@@ -1,0 +1,34 @@
+//-
+    options.checkIn - дата прибытия (string)
+    options.checkOut - дата выезда (string)
+    options.label - label (string)
+    options.singleInput - вывод в один инпут (boolean)
+
+mixin date-dropdown(options = {})
+
+  mixin input-dropdown(inputOptions)
+    label.date-dropdown__label !{inputOptions.label}
+      .date-dropdown__field-wrapper
+        input(  name = inputOptions.name,
+                placeholder = 'ДД.ММ.ГГГГ',
+                autocomplete= "off",
+                required = true,
+                readonly = inputOptions.readonly,
+                value = inputOptions.value,
+                class = inputOptions.date && 'js-date'
+              ).date-dropdown__field
+        span.date-dropdown__icon
+          i.material-icons expand_more
+
+  if options.singleInput
+    .date-dropdown.js-date-dropdown-single
+      +input-dropdown({label: options.label, name: 'data-range', readonly: true, value: options.range})
+
+  else
+    .date-dropdown.js-date-dropdown
+      .date-dropdown__box
+        - let labelMin = options.labelMin ? options.labelMin : 'Прибытие';
+        +input-dropdown({label: labelMin, name: 'check-in', value: options.checkIn, date: true})
+      .date-dropdown__box
+        - let labelMax = options.labelMax ? options.labelMax : 'Выезд';
+        +input-dropdown({label: labelMax, name: 'check-out', value: options.checkOut, date: true})

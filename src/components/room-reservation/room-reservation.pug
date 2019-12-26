@@ -1,5 +1,6 @@
 include ../input/input
 include ../button/button
+include ../date-dropdown/date-dropdown
 include ../dropdown/dropdown
 
 mixin room-reservation()
@@ -15,7 +16,7 @@ mixin room-reservation()
         span.room-reservation__price-descr &nbsp;в сутки
 
     div.room-reservation__dates
-      +date-picker({checkIn: '19.08.2020', checkOut: '23.08.2020'})
+      +date-dropdown({checkIn: '19.08.2020', checkOut: '23.08.2020'})
     div.room-reservation__guests
       +dropdown({label: 'Гости', inputName: 'total-guests', placeholder: 'Сколько гостей', role: 'guests',
                 items: [

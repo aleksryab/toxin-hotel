@@ -1,9 +1,11 @@
 .dropdown {
   position: relative;
+  width: 100%;
 
   &__label {
     @include small-subtitle;
     display: block;
+    width: 100%;
   }
 
   &__field-wrapper {

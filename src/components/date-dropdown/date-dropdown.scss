@@ -1,0 +1,68 @@
+.date-dropdown {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+
+  &__box {
+    width: 47%;
+  }
+
+  &__label {
+    @include small-subtitle;
+    display: block;
+    width: 100%;
+  }
+
+  &__field-wrapper {
+    display: block;
+    position: relative;
+    margin-top: rem(5px);
+  }
+
+  &__field {
+    box-sizing: border-box;
+    width: 100%;
+    height: rem(44px);
+    padding: 0 rem(30px) 0 rem(14px);
+    @include text;
+    border: $light-border;
+    border-radius: $border-radius;
+    outline: none;
+    user-select : none;
+
+    &:read-only {
+      cursor: pointer;
+    }
+
+    &::placeholder {
+      color: $dark-color-op25;
+      @include font-rem(14, 18, normal);
+    }
+
+    &:hover, &:focus {
+      border: $bold-border;
+    }
+
+    &_expanded {
+      border: $bold-border;
+      border-radius: $border-radius $border-radius 0 0;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: rem(44px);
+    height: rem(44px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $dark-color-op50;
+    cursor: pointer;
+    user-select: none;
+  }
+}
+
+

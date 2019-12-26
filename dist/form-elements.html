@@ -78,36 +78,30 @@
               </div>
             </div>
             <div class="form-elements__item form-elements__item_large-indent">
-              <div class="date-picker js-date-picker">
-                <div class="date-picker__box">
-                  <div class="input">
-                    <label class="input__label">Прибытие
-                      <div class="input__inner">
-                        <input class="input__field js-date" type="text" name="check-in" placeholder="ДД.ММ.ГГГГ" required pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}"><span class="input__button"><i class="material-icons">expand_more</i></span>
-                      </div>
-                    </label>
-                  </div>
+              <div class="date-dropdown js-date-dropdown">
+                <div class="date-dropdown__box">
+                  <label class="date-dropdown__label">date Dropdown
+                    <div class="date-dropdown__field-wrapper">
+                      <input class="js-date date-dropdown__field" name="check-in" placeholder="ДД.ММ.ГГГГ" autocomplete="off" required><span class="date-dropdown__icon"><i class="material-icons">expand_more</i></span>
+                    </div>
+                  </label>
                 </div>
-                <div class="date-picker__box">
-                  <div class="input">
-                    <label class="input__label">Выезд
-                      <div class="input__inner">
-                        <input class="input__field js-date" type="text" name="check-out" placeholder="ДД.ММ.ГГГГ" required pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}"><span class="input__button"><i class="material-icons">expand_more</i></span>
-                      </div>
-                    </label>
-                  </div>
+                <div class="date-dropdown__box">
+                  <label class="date-dropdown__label">date Dropdown
+                    <div class="date-dropdown__field-wrapper">
+                      <input class="js-date date-dropdown__field" name="check-out" placeholder="ДД.ММ.ГГГГ" autocomplete="off" required><span class="date-dropdown__icon"><i class="material-icons">expand_more</i></span>
+                    </div>
+                  </label>
                 </div>
               </div>
             </div>
             <div class="form-elements__item form-elements__item_large-indent form-elements__item_thin">
-              <div class="date-picker js-date-picker-single">
-                <div class="input">
-                  <label class="input__label">filter date dropdown
-                    <div class="input__inner">
-                      <input class="input__field" type="text" name="date-range" placeholder="ДД.ММ.ГГГГ" required readonly value="19 авг - 23 авг"><span class="input__button"><i class="material-icons">expand_more</i></span>
-                    </div>
-                  </label>
-                </div>
+              <div class="date-dropdown js-date-dropdown-single">
+                <label class="date-dropdown__label">filter date dropdown
+                  <div class="date-dropdown__field-wrapper">
+                    <input class="date-dropdown__field" name="data-range" placeholder="ДД.ММ.ГГГГ" autocomplete="off" required readonly value="19 авг - 23 авг"><span class="date-dropdown__icon"><i class="material-icons">expand_more</i></span>
+                  </div>
+                </label>
               </div>
             </div>
             <div class="form-elements__item form-elements__item_large-indent form-elements__item_thin">
@@ -287,13 +281,13 @@
                 <label class="dropdown__label"><span class="dropdown__field-wrapper">
                     <input class="dropdown__field" name="room-room" placeholder="Удобства номера" autocomplete="off" required readonly><span class="dropdown__icon"><i class="material-icons">expand_more</i></span></span></label>
                 <div class="dropdown__content">
-                  <div class="dropdown__item" data-role="bedrooms" data-max="4" data-min="1">
+                  <div class="dropdown__item" data-role="bedrooms" data-min="1" data-max="4">
                     <div class="dropdown__title">Cпальни</div>
                     <div class="dropdown__controls"><span class="dropdown__button" data-action="minus">-</span>
                       <input class="dropdown__item-value" type="text" name="bedrooms" value="2" readonly><span class="dropdown__button" data-action="plus">+</span>
                     </div>
                   </div>
-                  <div class="dropdown__item" data-role="beds" data-max="4" data-min="1">
+                  <div class="dropdown__item" data-role="beds" data-min="1" data-max="4">
                     <div class="dropdown__title">Кровати</div>
                     <div class="dropdown__controls"><span class="dropdown__button" data-action="minus">-</span>
                       <input class="dropdown__item-value" type="text" name="beds" value="2" readonly><span class="dropdown__button" data-action="plus">+</span>
@@ -318,13 +312,13 @@
                 <label class="dropdown__label"><span class="dropdown__field-wrapper">
                     <input class="dropdown__field_expanded dropdown__field" name="room-room" placeholder="Удобства номера" autocomplete="off" required readonly><span class="dropdown__icon"><i class="material-icons">expand_more</i></span></span></label>
                 <div class="dropdown__content dropdown_expanded">
-                  <div class="dropdown__item" data-role="bedrooms" data-max="4" data-min="1">
+                  <div class="dropdown__item" data-role="bedrooms" data-min="1" data-max="4">
                     <div class="dropdown__title">Cпальни</div>
                     <div class="dropdown__controls"><span class="dropdown__button" data-action="minus">-</span>
                       <input class="dropdown__item-value" type="text" name="bedrooms" value="2" readonly><span class="dropdown__button" data-action="plus">+</span>
                     </div>
                   </div>
-                  <div class="dropdown__item" data-role="beds" data-max="4" data-min="1">
+                  <div class="dropdown__item" data-role="beds" data-min="1" data-max="4">
                     <div class="dropdown__title">Кровати</div>
                     <div class="dropdown__controls"><span class="dropdown__button" data-action="minus">-</span>
                       <input class="dropdown__item-value" type="text" name="beds" value="2" readonly><span class="dropdown__button" data-action="plus">+</span>

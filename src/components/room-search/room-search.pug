@@ -1,13 +1,13 @@
 include ../input/input
 include ../button/button
-include ../date-picker/date-picker
+include ../date-dropdown/date-dropdown
 include ../dropdown/dropdown
 
 mixin room-search()
   form.room-search
     h2.room-search__title Найдём номера под ваши пожелания
     div.room-search__dates
-      +date-picker()
+      +date-dropdown()
     div.room-search__guests
       +dropdown({label: 'Гости', inputName: 'total-guests', placeholder: 'Сколько гостей', role: 'guests',
                 items: [

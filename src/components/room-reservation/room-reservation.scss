@@ -48,25 +48,27 @@
 
 /* dates */
   &__dates {
-    margin-top: rem(16px);
+    margin-top: rem(20px);
   }
 
 /* guests */
   &__guests {
-    margin-top: rem(16px);
+    margin-top: rem(20px);
   }
 
 /* bill */
   &__bill {
-    padding-top: rem(22px);
-    @include font-rem(14, 18, normal);
+    padding-top: rem(21px);
+    font-size: rem(14px);
+    line-height: 1.3;
+    font-weight: normal;
   }
 
   &__bill-item {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    margin-bottom: rem(16px);
+    margin-bottom: rem(15px);
   }
 
   &__bill-descr {

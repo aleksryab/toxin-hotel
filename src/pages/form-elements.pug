@@ -8,7 +8,7 @@ include ../components/toggle-button/toggle-button
 include ../components/like-button/like-button
 include ../components/rate-button/rate-button
 include ../components/dropdown/dropdown
-include ../components/date-picker/date-picker
+include ../components/date-dropdown/date-dropdown
 include ../components/subscription-field/subscription-field
 include ../components/range-slider/range-slider
 include ../components/pagination/pagination
@@ -57,10 +57,10 @@ block content
               +input({placeholder: 'ДД.ММ.ГГГГ', date: true})
 
             .form-elements__item.form-elements__item_large-indent
-              +date-picker()
+              +date-dropdown({labelMin: 'date Dropdown', labelMax: 'date Dropdown'})
 
             .form-elements__item.form-elements__item_large-indent.form-elements__item_thin
-              +date-picker({singleInput: true, label: 'filter date dropdown', range: '19 авг - 23 авг'})
+              +date-dropdown({singleInput: true, label: 'filter date dropdown', range: '19 авг - 23 авг'})
 
             .form-elements__item.form-elements__item_large-indent.form-elements__item_thin
               +subscription-field({placeholder: 'Email', label: 'subscription text field'})

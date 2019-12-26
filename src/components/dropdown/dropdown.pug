@@ -2,10 +2,13 @@
     options.label - label для основного input (string)
     options.inputName - name основного поля (string)
     options.expanded - отображать dropdown раскрытым (boolean)
+    options.role - задает data-role для js (string: 'room', 'guests')
     options.items - (array)
       options.items[0].title - заголовок (string)
       options.items[0].inputName - название для input (string)
-      options.items[0].value - количество (string or number)
+      options.items[0].value - количество (string or number), default = 0
+      options.items[0].minValue - минимальное возможное количество, задается data-min (string or number)
+      options.items[0].maxValue - максимальное возможное количество, задается data-max (string or number)
 
 mixin dropdown(options = {})
   - if (!options.items) options.items = [];
@@ -18,7 +21,6 @@ mixin dropdown(options = {})
               autocomplete= "off",
               required = true,
               readonly = true,
-              value = options.totalValue,
               class = options.expanded && 'dropdown__field_expanded'
             ).dropdown__field
         span.dropdown__icon
@@ -26,7 +28,7 @@ mixin dropdown(options = {})
 
     .dropdown__content(class = options.expanded && 'dropdown_expanded')
       each item in options.items
-        .dropdown__item(data-role = item.inputName, data-max = item.maxValue, data-min = item.minValue)
+        .dropdown__item(data-role = item.inputName, data-min = item.minValue, data-max = item.maxValue)
           .dropdown__title= item.title
           .dropdown__controls
             - let itemValue = item.value ? item.value : 0;

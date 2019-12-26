@@ -5,25 +5,12 @@
   &__label {
     @include small-subtitle;
     display: block;
+    width: 100%;
   }
 
   &__inner {
     margin-top: rem(5px);
     position: relative;
-  }
-
-  &__button {
-    position: absolute;
-    top:0;
-    right: 0;
-    width: rem(44px);
-    height: rem(44px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: $dark-color-op50;
-    cursor: pointer;
-    user-select: none;
   }
 
   &__field {
@@ -45,14 +32,5 @@
       border: $bold-border;
     }
 
-    &_dropdown {
-      cursor: pointer;
-      user-select : none;
-    }
-
-    &_expanded {
-      border: $bold-border;
-      border-radius: $border-radius $border-radius 0 0;
-    }
   }
 }
