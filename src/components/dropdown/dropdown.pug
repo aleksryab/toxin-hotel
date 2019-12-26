@@ -1,33 +1,39 @@
 //-
     options.label - label для основного input (string)
     options.inputName - name основного поля (string)
+    options.expanded - отображать dropdown раскрытым (boolean)
     options.items - (array)
       options.items[0].title - заголовок (string)
       options.items[0].inputName - название для input (string)
-      options.items[0].value - количество (string)
-
-include ../input/input
+      options.items[0].value - количество (string or number)
 
 mixin dropdown(options = {})
   - if (!options.items) options.items = [];
 
-  .dropdown.js-dropdown
-    +input({label: options.label,
-            name: options.inputName,
-            placeholder: options.placeholder,
-            required: true,
-            dropdown: true,
-            value: options.totalValue
-          })
-    .dropdown__content
+  .dropdown.js-dropdown(data-role = options.role)
+    label.dropdown__label !{options.label}
+      span.dropdown__field-wrapper
+        input(name = options.inputName,
+              placeholder = options.placeholder,
+              autocomplete= "off",
+              required = true,
+              readonly = true,
+              value = options.totalValue,
+              class = options.expanded && 'dropdown__field_expanded'
+            ).dropdown__field
+        span.dropdown__icon
+          i.material-icons expand_more
+
+    .dropdown__content(class = options.expanded && 'dropdown_expanded')
       each item in options.items
-        .dropdown__item
+        .dropdown__item(data-role = item.inputName, data-max = item.maxValue, data-min = item.minValue)
           .dropdown__title= item.title
           .dropdown__controls
+            - let itemValue = item.value ? item.value : 0;
             span.dropdown__button(data-action="minus") -
-            input.dropdown__value(type="text" name= item.inputName value=item.value readonly)
+            input.dropdown__item-value(type="text", name = item.inputName, value = itemValue, readonly)
             span.dropdown__button(data-action="plus") +
 
       .dropdown__menu
-        span.dropdown__menu-button.dropdown__menu-button_inverted(data-action="clear") oчистить
-        span.dropdown__menu-button(data-action="apply") применить
+        span.dropdown__menu-button.icon-link.icon-link_inverted(data-action="clear") oчистить
+        span.dropdown__menu-button.icon-link(data-action="apply") применить

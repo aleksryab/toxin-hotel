@@ -12,6 +12,7 @@ include ../components/date-picker/date-picker
 include ../components/subscription-field/subscription-field
 include ../components/range-slider/range-slider
 include ../components/pagination/pagination
+include ../components/dropdown/dropdown
 
 block title
   title= "Form Elements"
@@ -42,7 +43,7 @@ block content
               .form-elements__header
                 .form-elements__title Dropdown
                 .form-elements__descr Default
-              +dropdown({label: ' ', inputName: 'total-guests', placeholder: 'Сколько гостей',
+              +dropdown({label: ' ', inputName: 'total-guests', placeholder: 'Сколько гостей', role: 'guests',
                         items: [
                           {title: 'Взрослые', inputName: 'adults', value: 0},
                           {title: 'Дети', inputName: 'children', value: 0},
@@ -143,18 +144,51 @@ block content
                 .form-elements__title pagination
               +pagination()
           //- end right column
-      //- end left column
+        //- end top section
 
-      section.form-elements__section
-        .form-elements__column
-        //- end left column
+        section.form-elements__section
+          .form-elements__column
+            .form-elements__item.form-elements__item_thin
+              .form-elements__header
+                .form-elements__title Dropdown
+                .form-elements__descr Default
+              +dropdown({inputName: 'room-room', placeholder: 'Удобства номера', role: 'room',
+                        items: [
+                          {title: 'Cпальни', inputName: 'bedrooms', value: 2, minValue: 1, maxValue: 4},
+                          {title: 'Кровати', inputName: 'beds', value: 2, minValue: 1, maxValue: 4},
+                          {title: 'Ванные комнаты', inputName: 'bathrooms', value: 0, maxValue: 2}
+                        ]})
 
-        .form-elements__column.form-elements__column_middle
-        //- end middle column
+            .form-elements__item.form-elements__item_thin
+              .form-elements__header
+                .form-elements__title Dropdown
+                .form-elements__descr expanded
+              +dropdown({inputName: 'room-room', placeholder: 'Удобства номера', role: 'room', expanded: true,
+                        items: [
+                          {title: 'Cпальни', inputName: 'bedrooms', value: 2, minValue: 1, maxValue: 4},
+                          {title: 'Кровати', inputName: 'beds', value: 2, minValue: 1, maxValue: 4},
+                          {title: 'Ванные комнаты', inputName: 'bathrooms', value: 0, maxValue: 2}
+                        ]})
+          //- end left column
 
-        .form-elements__column
-        //- end right column
-      //- end bottom section
+          .form-elements__column.form-elements__column_middle
+            +dropdown({label: 'Dropdown', inputName: 'total-guests', placeholder: 'Сколько гостей', role: 'guests', expanded: true,
+                        items: [
+                          {title: 'Взрослые', inputName: 'adults', value: 0},
+                          {title: 'Дети', inputName: 'children', value: 0},
+                          {title: 'Младенцы', inputName: 'infants', value: 0}
+                        ]})
+          //- end middle column
+
+          .form-elements__column
+            +dropdown({label: 'Dropdown', inputName: 'total-guests', placeholder: 'Сколько гостей', role: 'guests', expanded: true,
+                        items: [
+                          {title: 'Взрослые', inputName: 'adults', value: 2},
+                          {title: 'Дети', inputName: 'children', value: 1},
+                          {title: 'Младенцы', inputName: 'infants', value: 0}
+                        ]})
+          //- end right column
+        //- end bottom section
 
 
     script(src="js/main.js")

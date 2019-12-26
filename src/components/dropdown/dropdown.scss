@@ -1,10 +1,62 @@
 .dropdown {
   position: relative;
 
+  &__label {
+    @include small-subtitle;
+    display: block;
+  }
+
+  &__field-wrapper {
+    display: block;
+    position: relative;
+    margin-top: rem(5px);
+  }
+
+  &__field {
+    box-sizing: border-box;
+    width: 100%;
+    height: rem(44px);
+    padding: 0 rem(30px) 0 rem(14px);
+    @include text;
+    border: $light-border;
+    border-radius: $border-radius;
+    outline: none;
+    cursor: pointer;
+    user-select : none;
+
+    &::placeholder {
+      color: $dark-color-op25;
+      @include font-rem(14, 18, normal);
+    }
+
+    &:hover, &:focus {
+      border: $bold-border;
+    }
+
+    &_expanded {
+      border: $bold-border;
+      border-radius: $border-radius $border-radius 0 0;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: rem(44px);
+    height: rem(44px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $dark-color-op50;
+    cursor: pointer;
+    user-select: none;
+  }
+
   &__content {
     box-sizing: border-box;
     width: 100%;
-    padding: rem(7px) rem(7px) rem(13px) rem(15px);
+    padding: 0 rem(6px) rem(13px) rem(14px);
     border: $bold-border;
     box-shadow: $thin-shadow;
     border-radius: 0 0 4px 4px;
@@ -14,11 +66,6 @@
     display: none;
     z-index: 10;
   }
-
-  &_expanded {
-    display: block;
-  }
-
 
   &__item {
     display: flex;
@@ -35,7 +82,7 @@
     user-select: none;
   }
 
-  &__value {
+  &__item-value {
     width: 33%;
     border: none;
     outline: none;
@@ -52,7 +99,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-basis: 1;
     width: rem(30px);
     height: rem(30px);
     border-radius: 50%;
@@ -87,6 +133,10 @@
     &_disabled {
       visibility: hidden;
     }
+  }
+
+  &_expanded {
+    display: block;
   }
 
 }

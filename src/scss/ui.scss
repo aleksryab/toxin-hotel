@@ -63,8 +63,12 @@
 .form-elements {
   margin-top: 66px;
   padding: 0 111px;
-  display: flex;
-  justify-content: space-between;
+
+  &__section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 52px;
+  }
 
   &__column {
     width: 320px;

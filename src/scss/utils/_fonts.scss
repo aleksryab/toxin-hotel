@@ -3,6 +3,7 @@
   font-family: 'Quicksand';
   font-style: normal;
   font-weight: normal;
+  src: url('../fonts/Quicksand-Regular.eot');
   src: url('../fonts/Quicksand-Regular.eot?#iefix') format('embedded-opentype'),
        url('../fonts/Quicksand-Regular.woff') format('woff'),
        url('../fonts/Quicksand-Regular.ttf')  format('truetype'),
@@ -27,7 +28,7 @@
   font-style: normal;
   font-weight: normal;
 	src: url('../fonts/Montserrat-Regular.eot');
-  src: local('Montserrat'), local('Montserrat Regular'), local('Montserrat-Regular'),
+  src: local('Montserrat Regular'), local('Montserrat-Regular'),
        url('../fonts/Montserrat-Regular.woff') format('woff'),
        url('../fonts/Montserrat-Regular.ttf') format('truetype'),
        url('../fonts/Montserrat-Regular.svg') format('svg');
@@ -51,8 +52,7 @@
   font-style: normal;
   font-weight: 400;
   src: url('../fonts/MaterialIcons-Regular.eot'); /* For IE6-8 */
-  src: local('Material Icons'),
-       local('MaterialIcons-Regular'),
+  src: local('Material Icons'), local('MaterialIcons-Regular'),
        url('../fonts/MaterialIcons-Regular.woff2') format('woff2'),
        url('../fonts/MaterialIcons-Regular.woff') format('woff'),
        url('../fonts/MaterialIcons-Regular.ttf') format('truetype'),

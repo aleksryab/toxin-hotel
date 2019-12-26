@@ -32,12 +32,14 @@
   font-family: $title-font;
   @include font-rem(24, 30px, bold);
 }
+
 @mixin subtitle {
   margin: 0;
   color: $base-font-color;
   font-family: $title-font;
   @include font-rem(19, 24, bold);
 }
+
 @mixin small-subtitle {
   margin: 0;
   color: $base-font-color;
@@ -45,15 +47,19 @@
   text-transform: uppercase;
   @include font-rem(12, 15, bold);
 }
+
 @mixin text {
   margin: 0;
   color: $dark-color-op75;
   font-family: $base-font;
   @include font-rem(14, 24, normal);
 }
+
 @mixin link {
   color: $dark-color-op50;
   font-family: $base-font;
   @include font-rem(14, 1, normal);
   text-decoration: none;
 }
+
+

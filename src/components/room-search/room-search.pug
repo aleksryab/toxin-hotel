@@ -9,7 +9,7 @@ mixin room-search()
     div.room-search__dates
       +date-picker()
     div.room-search__guests
-      +dropdown({label: 'Гости', inputName: 'total-guests', placeholder: 'Сколько гостей',
+      +dropdown({label: 'Гости', inputName: 'total-guests', placeholder: 'Сколько гостей', role: 'guests',
                 items: [
                   {title: 'Взрослые', inputName: 'adults', value: 0},
                   {title: 'Дети', inputName: 'children', value: 0},

@@ -28,7 +28,7 @@
                   <div class="input">
                     <label class="input__label">Прибытие
                       <div class="input__inner">
-                        <input class="input__field js-date" type="text" autocomplete="off" name="check-in" placeholder="ДД.ММ.ГГГГ" required pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}"><span class="input__button"><i class="material-icons">expand_more</i></span>
+                        <input class="input__field js-date" type="text" name="check-in" placeholder="ДД.ММ.ГГГГ" required pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}"><span class="input__button"><i class="material-icons">expand_more</i></span>
                       </div>
                     </label>
                   </div>
@@ -37,7 +37,7 @@
                   <div class="input">
                     <label class="input__label">Выезд
                       <div class="input__inner">
-                        <input class="input__field js-date" type="text" autocomplete="off" name="check-out" placeholder="ДД.ММ.ГГГГ" required pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}"><span class="input__button"><i class="material-icons">expand_more</i></span>
+                        <input class="input__field js-date" type="text" name="check-out" placeholder="ДД.ММ.ГГГГ" required pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}"><span class="input__button"><i class="material-icons">expand_more</i></span>
                       </div>
                     </label>
                   </div>
@@ -45,34 +45,29 @@
               </div>
             </div>
             <div class="room-search__guests">
-              <div class="dropdown js-dropdown">
-                <div class="input">
-                  <label class="input__label">Гости
-                    <div class="input__inner">
-                      <input class="input__field input__field_dropdown" type="text" autocomplete="off" name="total-guests" placeholder="Сколько гостей" required readonly><span class="input__button"><i class="material-icons">expand_more</i></span>
-                    </div>
-                  </label>
-                </div>
+              <div class="dropdown js-dropdown" data-role="guests">
+                <label class="dropdown__label">Гости<span class="dropdown__field-wrapper">
+                    <input class="dropdown__field" name="total-guests" placeholder="Сколько гостей" autocomplete="off" required readonly><span class="dropdown__icon"><i class="material-icons">expand_more</i></span></span></label>
                 <div class="dropdown__content">
-                  <div class="dropdown__item">
+                  <div class="dropdown__item" data-role="adults">
                     <div class="dropdown__title">Взрослые</div>
                     <div class="dropdown__controls"><span class="dropdown__button" data-action="minus">-</span>
-                      <input class="dropdown__value" type="text" name="adults" value="0" readonly><span class="dropdown__button" data-action="plus">+</span>
+                      <input class="dropdown__item-value" type="text" name="adults" value="0" readonly><span class="dropdown__button" data-action="plus">+</span>
                     </div>
                   </div>
-                  <div class="dropdown__item">
+                  <div class="dropdown__item" data-role="children">
                     <div class="dropdown__title">Дети</div>
                     <div class="dropdown__controls"><span class="dropdown__button" data-action="minus">-</span>
-                      <input class="dropdown__value" type="text" name="children" value="0" readonly><span class="dropdown__button" data-action="plus">+</span>
+                      <input class="dropdown__item-value" type="text" name="children" value="0" readonly><span class="dropdown__button" data-action="plus">+</span>
                     </div>
                   </div>
-                  <div class="dropdown__item">
+                  <div class="dropdown__item" data-role="infants">
                     <div class="dropdown__title">Младенцы</div>
                     <div class="dropdown__controls"><span class="dropdown__button" data-action="minus">-</span>
-                      <input class="dropdown__value" type="text" name="infants" value="0" readonly><span class="dropdown__button" data-action="plus">+</span>
+                      <input class="dropdown__item-value" type="text" name="infants" value="0" readonly><span class="dropdown__button" data-action="plus">+</span>
                     </div>
                   </div>
-                  <div class="dropdown__menu"><span class="dropdown__menu-button dropdown__menu-button_inverted" data-action="clear">oчистить</span><span class="dropdown__menu-button" data-action="apply">применить</span></div>
+                  <div class="dropdown__menu"><span class="dropdown__menu-button icon-link icon-link_inverted" data-action="clear">oчистить</span><span class="dropdown__menu-button icon-link" data-action="apply">применить</span></div>
                 </div>
               </div>
             </div>
@@ -110,7 +105,7 @@
               <div class="input">
                 <label class="input__label">Дата рождения
                   <div class="input__inner">
-                    <input class="input__field js-date" type="text" autocomplete="off" name="birthday" placeholder="ДД.ММ.ГГГГ" required pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}">
+                    <input class="input__field js-date" type="text" name="birthday" placeholder="ДД.ММ.ГГГГ" required pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}">
                   </div>
                 </label>
               </div>
@@ -119,7 +114,7 @@
               <div class="input">
                 <label class="input__label">Данные для входа в сервис
                   <div class="input__inner">
-                    <input class="input__field" type="email" autocomplete="off" name="email" placeholder="Email" required>
+                    <input class="input__field" type="email" name="email" placeholder="Email" required>
                   </div>
                 </label>
               </div>
@@ -155,7 +150,7 @@
                   <div class="input">
                     <label class="input__label">Прибытие
                       <div class="input__inner">
-                        <input class="input__field js-date" type="text" autocomplete="off" name="check-in" placeholder="ДД.ММ.ГГГГ" required pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}" value="19.08.2020"><span class="input__button"><i class="material-icons">expand_more</i></span>
+                        <input class="input__field js-date" type="text" name="check-in" placeholder="ДД.ММ.ГГГГ" required pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}" value="19.08.2020"><span class="input__button"><i class="material-icons">expand_more</i></span>
                       </div>
                     </label>
                   </div>
@@ -164,7 +159,7 @@
                   <div class="input">
                     <label class="input__label">Выезд
                       <div class="input__inner">
-                        <input class="input__field js-date" type="text" autocomplete="off" name="check-out" placeholder="ДД.ММ.ГГГГ" required pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}" value="23.08.2020"><span class="input__button"><i class="material-icons">expand_more</i></span>
+                        <input class="input__field js-date" type="text" name="check-out" placeholder="ДД.ММ.ГГГГ" required pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}" value="23.08.2020"><span class="input__button"><i class="material-icons">expand_more</i></span>
                       </div>
                     </label>
                   </div>
@@ -172,34 +167,29 @@
               </div>
             </div>
             <div class="room-reservation__guests">
-              <div class="dropdown js-dropdown">
-                <div class="input">
-                  <label class="input__label">Гости
-                    <div class="input__inner">
-                      <input class="input__field input__field_dropdown" type="text" autocomplete="off" name="total-guests" placeholder="Сколько гостей" required readonly value="3 гостя"><span class="input__button"><i class="material-icons">expand_more</i></span>
-                    </div>
-                  </label>
-                </div>
+              <div class="dropdown js-dropdown" data-role="guests">
+                <label class="dropdown__label">Гости<span class="dropdown__field-wrapper">
+                    <input class="dropdown__field" name="total-guests" placeholder="Сколько гостей" autocomplete="off" required readonly><span class="dropdown__icon"><i class="material-icons">expand_more</i></span></span></label>
                 <div class="dropdown__content">
-                  <div class="dropdown__item">
+                  <div class="dropdown__item" data-role="adults">
                     <div class="dropdown__title">Взрослые</div>
                     <div class="dropdown__controls"><span class="dropdown__button" data-action="minus">-</span>
-                      <input class="dropdown__value" type="text" name="adults" value="1" readonly><span class="dropdown__button" data-action="plus">+</span>
+                      <input class="dropdown__item-value" type="text" name="adults" value="1" readonly><span class="dropdown__button" data-action="plus">+</span>
                     </div>
                   </div>
-                  <div class="dropdown__item">
+                  <div class="dropdown__item" data-role="children">
                     <div class="dropdown__title">Дети</div>
                     <div class="dropdown__controls"><span class="dropdown__button" data-action="minus">-</span>
-                      <input class="dropdown__value" type="text" name="children" value="1" readonly><span class="dropdown__button" data-action="plus">+</span>
+                      <input class="dropdown__item-value" type="text" name="children" value="1" readonly><span class="dropdown__button" data-action="plus">+</span>
                     </div>
                   </div>
-                  <div class="dropdown__item">
+                  <div class="dropdown__item" data-role="infants">
                     <div class="dropdown__title">Младенцы</div>
                     <div class="dropdown__controls"><span class="dropdown__button" data-action="minus">-</span>
-                      <input class="dropdown__value" type="text" name="infants" value="1" readonly><span class="dropdown__button" data-action="plus">+</span>
+                      <input class="dropdown__item-value" type="text" name="infants" value="1" readonly><span class="dropdown__button" data-action="plus">+</span>
                     </div>
                   </div>
-                  <div class="dropdown__menu"><span class="dropdown__menu-button dropdown__menu-button_inverted" data-action="clear">oчистить</span><span class="dropdown__menu-button" data-action="apply">применить</span></div>
+                  <div class="dropdown__menu"><span class="dropdown__menu-button icon-link icon-link_inverted" data-action="clear">oчистить</span><span class="dropdown__menu-button icon-link" data-action="apply">применить</span></div>
                 </div>
               </div>
             </div>
