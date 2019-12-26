@@ -14,6 +14,7 @@ include ../components/range-slider/range-slider
 include ../components/pagination/pagination
 include ../components/dropdown/dropdown
 include ../components/checkbox-list/checkbox-list
+include ../components/bullet-list/bullet-list
 
 block title
   title= "Form Elements"
@@ -236,6 +237,7 @@ block content
             .form-elements__item.form-elements__item_thin.form-elements__item_top-padding
               .form-elements__header.form-elements__header_large-indent
                 .form-elements__title bullet list
+              +bullet-list(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00,<br>а выезд до 12:00'])
           //- end right column
         //- end third section
 

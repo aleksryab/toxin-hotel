@@ -1,0 +1,25 @@
+.bullet-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  @include text();
+  color: $dark-color-op75;
+
+  &__item {
+    margin-bottom: rem(9px);
+    padding-left: rem(21px);
+    position: relative;
+
+    &:before {
+      content: '';
+      width: rem(10px);
+      height: rem(10px);
+      border-radius: 50%;
+      position: absolute;
+      left: 0;
+      top: rem(5px);
+      background: $dark-color-op25;
+    }
+  }
+
+}
