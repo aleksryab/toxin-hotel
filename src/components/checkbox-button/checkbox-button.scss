@@ -1,5 +1,5 @@
 .checkbox-button {
-  display: flex;
+  display: block;
   align-items: center;
   line-height: 1;
 
@@ -18,6 +18,11 @@
     line-height: 1.3;
     font-weight: normal;
     cursor: pointer;
+
+    &_bold {
+      color: $dark-color-op75;
+      font-weight: bold;
+    }
 
     &:before {
       content: '';
@@ -44,14 +49,23 @@
       width: rem(20px);
       height: rem(20px);
       border-radius: 50%;
-      color: red;
       opacity: 0;
       transition: all 0.3s;
     }
   }
+
+  &__descr {
+    display: block;
+    padding-left: rem(30px);
+    margin-top: rem(4px);
+    @include font-rem(12, 14, normal);
+    color: $dark-color-op50;
+  }
+
   &__input:checked + &__label:before {
     border-color: $primary-color;
   }
+
   &__input:checked + &__label:after {
     opacity: 1;
   }

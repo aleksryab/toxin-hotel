@@ -1,0 +1,45 @@
+.checkbox-list {
+
+  &__title {
+    @include small-subtitle;
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: rem(44px);
+    cursor: pointer;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: rem(44px);
+    height: rem(44px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $dark-color-op50;
+    user-select: none;
+  }
+
+  &__list {
+    list-style-type: none;
+    margin: rem(4px) 0 0;
+    padding: 0;
+    display: none;
+  }
+
+  &__item {
+    margin-bottom: rem(10px);
+  }
+
+  &_expanded {
+    .checkbox-list__icon {
+      transform: rotate(180deg);
+    }
+
+    .checkbox-list__list {
+      display: block;
+    }
+  }
+}

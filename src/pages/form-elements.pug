@@ -13,6 +13,7 @@ include ../components/subscription-field/subscription-field
 include ../components/range-slider/range-slider
 include ../components/pagination/pagination
 include ../components/dropdown/dropdown
+include ../components/checkbox-list/checkbox-list
 
 block title
   title= "Form Elements"
@@ -146,7 +147,7 @@ block content
           //- end right column
         //- end top section
 
-        section.form-elements__section
+        section.form-elements__section.form-elements__section_large-indent
           .form-elements__column
             .form-elements__item.form-elements__item_thin
               .form-elements__header
@@ -188,7 +189,58 @@ block content
                           {title: 'Младенцы', inputName: 'infants', value: 0}
                         ]})
           //- end right column
-        //- end bottom section
+        //- end second section
+
+        section.form-elements__section
+          .form-elements__column
+            .form-elements__item.form-elements__item_thin
+              +checkbox-list({title: 'expandable checkbox list',
+                              items: [
+                                      {label: 'Завтрак', name: 'breakfast'},
+                                      {label:'Письменный стол', name: 'desk', checked: true},
+                                      {label:'Стул для кормления', name: 'feeding-chair', checked: true},
+                                      {label:'Кроватка', name: 'crib', checked: true},
+                                      {label:'Телевизор', name: 'tv'},
+                                      {label:'Шампунь', name: 'shampoo'},
+                                      {label:'Телевизор'},
+                                      {label:'Шампунь'},
+                                     ]
+                            })
+            .form-elements__item.form-elements__item_thin
+              +checkbox-list({title: 'expandable checkbox list', expanded: true,
+                               items: [
+                                      {label: 'Завтрак', name: 'breakfast'},
+                                      {label:'Письменный стол', name: 'desk', checked: true},
+                                      {label:'Стул для кормления', name: 'feeding-chair', checked: true},
+                                      {label:'Кроватка', name: 'crib', checked: true},
+                                      {label:'Телевизор', name: 'tv'},
+                                      {label:'Шампунь', name: 'shampoo'},
+                                      {label:'Телевизор'},
+                                      {label:'Шампунь'},
+                                     ]
+                              })
+          //- end left column
+
+          .form-elements__column.form-elements__column_middle
+            .form-elements__item.form-elements__item_thin.form-elements__item_top-padding
+              .form-elements__header.form-elements__header_large-indent
+                .form-elements__title rich Checkbox Buttons
+              .form-elements__subitem
+                +checkbox-button({bold: true, label: 'Широкий коридор', descr: 'Ширина коридоров в номере не менее 91 см.'})
+              .form-elements__subitem
+                +checkbox-button({bold: true, label: 'Помощник для инвалидов', descr: 'На 1 этаже вас встретит специалист и проводит до номера.'})
+          //- end middle column
+
+          .form-elements__column
+            .form-elements__column.form-elements__column_middle
+            .form-elements__item.form-elements__item_thin.form-elements__item_top-padding
+              .form-elements__header.form-elements__header_large-indent
+                .form-elements__title bullet list
+          //- end right column
+        //- end third section
+
+
+
 
 
     script(src="js/main.js")

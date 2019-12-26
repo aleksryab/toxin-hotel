@@ -67,7 +67,11 @@
   &__section {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 52px;
+    margin-bottom: 60px;
+
+    &_large-indent {
+      margin-bottom: 137px;
+    }
   }
 
   &__column {
@@ -87,6 +91,10 @@
 
     &_thin {
       width: 266px;
+    }
+
+    &_top-padding {
+      padding-top: 15px;
     }
   }
 

@@ -6,6 +6,7 @@ import './components/date-dropdown/date-dropdown.js';
 import './components/dropdown/dropdown.js';
 import './components/like-button/like-button.js';
 import './components/range-slider/range-slider.js';
+import './components/checkbox-list/checkbox-list.js';
 
 
 import carousel from './components/room-preview/room-preview';

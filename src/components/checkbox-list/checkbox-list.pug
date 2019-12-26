@@ -1,0 +1,14 @@
+include ../checkbox-button/checkbox-button
+
+mixin checkbox-list(options = {})
+  - if (!options.items) options.items = [];
+
+  .checkbox-list.js-checkbox-list(class = options.expanded && 'checkbox-list_expanded')
+    .checkbox-list__title !{options.title}
+      span.checkbox-list__icon
+        i.material-icons expand_more
+    ul.checkbox-list__list
+      each item in options.items
+        li.checkbox-list__item
+          +checkbox-button({label: item.label, name: item.name, value: item.value, checked: item.checked})
+
