@@ -1,10 +1,10 @@
 import 'webpack-jquery-ui/slider';
 
-$( function() {
+$(function() {
 
   const  postfix = '\u20BD';
 
-  $( '.js-range-slider' ).slider({
+  $('.js-range-slider').slider({
     range: true,
     min: 0,
     max: 15000,
@@ -13,7 +13,7 @@ $( function() {
       "ui-slider-handle": "range-slider__handle",
       "ui-slider-range": "range-slider__range"
     },
-    slide: function( event, ui ) {
+    slide: (event, ui) => {
       $('.range-slider__value').val(checkDigit(ui.values[0]) + postfix + ' - ' + checkDigit(ui.values[1]) + postfix);
     }
   });

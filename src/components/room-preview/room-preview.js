@@ -1,4 +1,4 @@
-export default function carousel() {
+$(function() {
 
   const	carousels = document.querySelectorAll('.js-carousel');
 
@@ -63,4 +63,4 @@ export default function carousel() {
       showSlides(slideIndex = index+1);
     }
   });
-}
+});

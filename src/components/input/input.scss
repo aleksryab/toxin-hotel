@@ -1,6 +1,6 @@
 .input {
-  position: relative;
   width: 100%;
+  @include text;
 
   &__label {
     @include small-subtitle;
@@ -8,20 +8,18 @@
     width: 100%;
   }
 
-  &__inner {
-    margin-top: rem(5px);
-    position: relative;
-  }
-
   &__field {
     box-sizing: border-box;
     width: 100%;
     height: rem(44px);
-    padding: 0 rem(45px) 0 rem(14px);
-    @include text;
+    padding: 0 rem(14px);
     border: $light-border;
     border-radius: $border-radius;
     outline: none;
+
+    &_offset {
+      margin-top: rem(5px);
+    }
 
     &::placeholder {
       color: $dark-color-op25;

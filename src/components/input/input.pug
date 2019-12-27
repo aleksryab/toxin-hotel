@@ -1,10 +1,10 @@
 //-
-  options.type - type (string), default - 'text'
-  options.name - name (string)
-  options.label - label (string)
+  options.type - type of input (string), default - 'text'
+  options.label - text of label (string)
+  options.name - name, attr of input (string)
   options.required - required (boolean)
   options.placeholder - placeholder (string)
-  options.date - добавить классы и паттерн для даты (boolean)
+  options.date - добавить класс и паттерн для даты (boolean)
 
 mixin input(options = {})
   -
@@ -16,16 +16,15 @@ mixin input(options = {})
   .input
     if options.label
       label.input__label !{options.label}
-        .input__inner
-          input(
-                class = classes,
-                type = type,
-                name = options.name,
-                placeholder = options.placeholder,
-                required = options.required,
-                pattern = pattern,
-                value = options.value
-              )
+        input(
+              class = classes,
+              type = type,
+              name = options.name,
+              placeholder = options.placeholder,
+              required = options.required,
+              pattern = pattern,
+              value = options.value
+            ).input__field_offset
     else
       input(
             class = classes,

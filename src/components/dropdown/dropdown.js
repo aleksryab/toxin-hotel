@@ -205,4 +205,6 @@
   };
 }(jQuery));
 
-$('.js-dropdown').dropdown();
+$(function() {
+  $('.js-dropdown').dropdown();
+});
