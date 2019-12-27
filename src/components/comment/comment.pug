@@ -1,0 +1,31 @@
+include ../like-button/like-button
+
+mixin comment(index)
+  - if (!index) index = 0;
+  -
+    const data = [{
+        name: 'Мурад Сарафанов',
+        time: '5 дней назад',
+        img: 'user-1.jpg',
+        rate: 12,
+        liked: true,
+        text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
+      },{
+        name: 'Патрисия Стёклышкова',
+        time: 'Неделю назад',
+        img: 'user-2.jpg',
+        rate: 2,
+        liked: false,
+        text: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'
+      }];
+
+  .comment
+    .comment__user
+      img(src=require( '../components/comment/img/users/' + data[index].img )).comment__user-img
+      .comment__user-info
+        span.comment__user-name !{data[index].name}
+        span.comment__time !{data[index].time}
+    .comment__content
+      .comment__rate
+        +like-button({value: data[index].rate, liked: data[index].liked})
+      p.comment__text !{data[index].text}

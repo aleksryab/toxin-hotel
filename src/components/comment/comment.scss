@@ -1,0 +1,41 @@
+.comment {
+  @include text();
+
+  &__user {
+    margin-bottom: rem(10px);
+    display: flex;
+  }
+
+  &__user-img {
+    box-sizing: border-box;
+    width: rem(48px);
+    height: rem(48px);
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.1);
+  }
+
+  &__user-info {
+    padding-left: rem(10px);
+  }
+
+  &__user-name {
+    display: block;
+    font-weight: bold;
+  }
+
+  &__content {
+    display: flex;
+  }
+
+  &__rate {
+    width: 48px;
+    flex-shrink: 0;
+    text-align: center;
+  }
+
+  &__text {
+    margin: 0;
+    padding-left: rem(10px);
+  }
+}

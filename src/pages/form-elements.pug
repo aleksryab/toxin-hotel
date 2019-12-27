@@ -16,6 +16,7 @@ include ../components/dropdown/dropdown
 include ../components/checkbox-list/checkbox-list
 include ../components/bullet-list/bullet-list
 include ../components/room-info/room-info
+include ../components/comment/comment
 
 block title
   title= "Form Elements"
@@ -246,7 +247,8 @@ block content
           .form-elements__column
             +room-info([true, true])
           .form-elements__column.form-elements__column_middle.form-elements__column_wide
-            div skfjksjlkfjslkfj
+            +comment()
+            +comment(1)
 
 
 
