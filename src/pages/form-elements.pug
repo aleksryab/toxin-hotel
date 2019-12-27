@@ -15,6 +15,7 @@ include ../components/pagination/pagination
 include ../components/dropdown/dropdown
 include ../components/checkbox-list/checkbox-list
 include ../components/bullet-list/bullet-list
+include ../components/room-info/room-info
 
 block title
   title= "Form Elements"
@@ -52,25 +53,25 @@ block content
                           {title: 'Младенцы', inputName: 'infants', value: 0}
                         ]})
 
-            .form-elements__item.form-elements__item_large-indent
+            .form-elements__item.form-elements__item_large-offset
               .form-elements__header
                 .form-elements__title masked text field
                 .form-elements__descr Default
               +input({placeholder: 'ДД.ММ.ГГГГ', date: true})
 
-            .form-elements__item.form-elements__item_large-indent
+            .form-elements__item.form-elements__item_large-offset
               +date-dropdown({labelMin: 'date Dropdown', labelMax: 'date Dropdown'})
 
-            .form-elements__item.form-elements__item_large-indent.form-elements__item_thin
+            .form-elements__item.form-elements__item_large-offset.form-elements__item_thin
               +date-dropdown({singleInput: true, label: 'filter date dropdown', range: '19 авг - 23 авг'})
 
-            .form-elements__item.form-elements__item_large-indent.form-elements__item_thin
+            .form-elements__item.form-elements__item_large-offset.form-elements__item_thin
               +subscription-field({placeholder: 'Email', label: 'subscription text field'})
           //- end left column
 
           .form-elements__column.form-elements__column_middle
-            .form-elements__item.form-elements__item_large-indent
-              .form-elements__header.form-elements__header_large-indent
+            .form-elements__item.form-elements__item_large-offset
+              .form-elements__header.form-elements__header_large-offset
                 .form-elements__title Checkbox Buttons
               .form-elements__subitem
                 +checkbox-button({label: 'Можно курить', name: 'smoking-allowed'})
@@ -79,8 +80,8 @@ block content
               .form-elements__subitem
                 +checkbox-button({label: 'Можно пригласить гостей<br>(до 10 человек)', name: 'guests-allowed', checked: true})
 
-            .form-elements__item.form-elements__item_large-indent
-              .form-elements__header.form-elements__header_large-indent
+            .form-elements__item.form-elements__item_large-offset
+              .form-elements__header.form-elements__header_large-offset
                 .form-elements__title Radio Buttons
               .form-elements__subitem
                 .form-elements__box
@@ -88,26 +89,26 @@ block content
                 .form-elements__box
                   +radio-button({name: 'sex', value: 'female', label: 'Женщина'})
 
-            .form-elements__item.form-elements__item_large-indent
-              .form-elements__header.form-elements__header_large-indent
+            .form-elements__item.form-elements__item_large-offset
+              .form-elements__header.form-elements__header_large-offset
                 .form-elements__title Toggle
-              .form-elements__subitem.form-elements__subitem_large-indent
+              .form-elements__subitem.form-elements__subitem_large-offset
                 +toggle-button({name: 'subscription', label: 'Получать спецпредложения', checked: true})
-              .form-elements__subitem.form-elements__subitem_large-indent
+              .form-elements__subitem.form-elements__subitem_large-offset
                 +toggle-button({name: 'subscription', label: 'Получать спецпредложения'})
 
-            .form-elements__item.form-elements__item_large-indent
-              .form-elements__header.form-elements__header_large-indent
+            .form-elements__item.form-elements__item_large-offset
+              .form-elements__header.form-elements__header_large-offset
                 .form-elements__title like button
-              .form-elements__subitem.form-elements__subitem_large-indent
+              .form-elements__subitem.form-elements__subitem_large-offset
                 .form-elements__box.form-elements__box_small-margin
                   +like-button({value: 2})
                 .form-elements__box.form-elements__box_small-margin
                   +like-button({value: 12, liked: true})
 
 
-            .form-elements__item.form-elements__item_large-indent
-              .form-elements__header.form-elements__header_large-indent
+            .form-elements__item.form-elements__item_large-offset
+              .form-elements__header.form-elements__header_large-offset
                 .form-elements__title Rate button
               .form-elements__subitem
                 .form-elements__box
@@ -117,23 +118,23 @@ block content
           //- end middle column
 
           .form-elements__column
-            .form-elements__item.form-elements__item_large-indent.form-elements__item_thin
+            .form-elements__item.form-elements__item_large-offset.form-elements__item_thin
               +range-slider({label: 'Range Slider'})
 
-            .form-elements__item.form-elements__item_large-indent
-              .form-elements__header.form-elements__header_large-indent
+            .form-elements__item.form-elements__item_large-offset
+              .form-elements__header.form-elements__header_large-offset
                 .form-elements__title Buttons
-              .form-elements__subitem.form-elements__subitem_big-indent
+              .form-elements__subitem.form-elements__subitem_big-offset
                 .form-elements__box
                   +button({name: 'CLICK ME'})
                 .form-elements__box
                   +button({name: 'CLICK ME'})
-              .form-elements__subitem.form-elements__subitem_big-indent
+              .form-elements__subitem.form-elements__subitem_big-offset
                 .form-elements__box
                   +button({name: 'CLICK ME', inverted: true})
                 .form-elements__box
                   +button({name: 'CLICK ME', inverted: true})
-              .form-elements__subitem.form-elements__subitem_big-indent
+              .form-elements__subitem.form-elements__subitem_big-offset
                 .form-elements__box
                   span.icon-link CLICK ME
                 .form-elements__box
@@ -142,13 +143,13 @@ block content
                 +button({name: 'Перейти к оплате', type: 'submit'})
 
             .form-elements__item
-              .form-elements__header.form-elements__header_large-indent
+              .form-elements__header.form-elements__header_large-offset
                 .form-elements__title pagination
               +pagination()
           //- end right column
         //- end top section
 
-        section.form-elements__section.form-elements__section_large-indent
+        section.form-elements__section.form-elements__section_large-offset
           .form-elements__column
             .form-elements__item.form-elements__item_thin
               .form-elements__header
@@ -192,7 +193,7 @@ block content
           //- end right column
         //- end second section
 
-        section.form-elements__section
+        section.form-elements__section.form-elements__section_small-offset
           .form-elements__column
             .form-elements__item.form-elements__item_thin
               +checkbox-list({title: 'expandable checkbox list',
@@ -224,7 +225,7 @@ block content
 
           .form-elements__column.form-elements__column_middle
             .form-elements__item.form-elements__item_thin.form-elements__item_top-padding
-              .form-elements__header.form-elements__header_large-indent
+              .form-elements__header.form-elements__header_large-offset
                 .form-elements__title rich Checkbox Buttons
               .form-elements__subitem
                 +checkbox-button({bold: true, label: 'Широкий коридор', descr: 'Ширина коридоров в номере не менее 91 см.'})
@@ -235,7 +236,7 @@ block content
           .form-elements__column
             .form-elements__column.form-elements__column_middle
             .form-elements__item.form-elements__item_thin.form-elements__item_top-padding
-              .form-elements__header.form-elements__header_large-indent
+              .form-elements__header.form-elements__header_large-offset
                 .form-elements__title bullet list
               +bullet-list(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00,<br>а выезд до 12:00'])
           //- end right column
@@ -243,9 +244,13 @@ block content
 
         section.form-elements__section
           .form-elements__column
-          .form-elements__column.form-elements__column_middle
+            +room-info([true, true])
+          .form-elements__column.form-elements__column_middle.form-elements__column_wide
+            div skfjksjlkfjslkfj
 
 
+
+        //- end bottom section
 
 
     script(src="js/main.js")

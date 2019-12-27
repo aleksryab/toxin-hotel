@@ -69,7 +69,11 @@
     justify-content: space-between;
     margin-bottom: 60px;
 
-    &_large-indent {
+    &_small-offset {
+      margin-bottom: 20px;
+    }
+
+    &_large-offset {
       margin-bottom: 137px;
     }
   }
@@ -80,12 +84,17 @@
     &_middle {
       padding-left: 54px;
     }
+
+    &_wide {
+     flex-grow: 2;
+     padding-left: 102px;
+    }
   }
 
   &__item {
     margin-bottom: 20px;
 
-    &_large-indent {
+    &_large-offset {
       margin-bottom: 40px;
     }
 
@@ -103,7 +112,7 @@
     justify-content: space-between;
     margin-bottom: 5px;
 
-    &_large-indent {
+    &_large-offset {
       margin-bottom: 16px;
     }
   }
@@ -122,10 +131,10 @@
     margin-bottom: 10px;
     display: flex;
 
-    &_large-indent {
+    &_large-offset {
       margin-bottom: 14px;
     }
-    &_big-indent {
+    &_big-offset {
       margin-bottom: 28px;
     }
   }
