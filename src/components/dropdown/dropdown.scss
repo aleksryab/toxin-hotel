@@ -18,13 +18,14 @@
     box-sizing: border-box;
     width: 100%;
     height: rem(44px);
-    padding: 0 rem(30px) 0 rem(14px);
+    padding: 0 rem(44px) 0 rem(14px);
     @include text;
     border: $light-border;
     border-radius: $border-radius;
     outline: none;
     cursor: pointer;
     user-select : none;
+    text-overflow: ellipsis;
 
     &::placeholder {
       color: $dark-color-op25;

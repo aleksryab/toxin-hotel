@@ -42,15 +42,15 @@
     }
   }
 
-  &_login {
+  &_smaller {
     min-width: rem(79px);
     height: rem(34px);
-  }
-  &_reg {
 
-    min-width: rem(101px);
-    height: rem(34px);
+    & .button__inner {
+      padding: 0 rem(18px);
+    }
   }
+
   &_submit {
     width: 100%;
   }

@@ -3,6 +3,9 @@
   align-items: center;
   justify-content: flex-end;
   width: 80%;
+  font-family: $base-font;
+  color: $dark-color-op50;
+  @include font-rem(14, 1, normal);
 
   &__list {
     display: flex;
@@ -25,11 +28,44 @@
 
     &_with-more {
       margin-right: 0;
+      padding-right: rem(19px);
+      position: relative;
+
+
+      &:after {
+        content: 'expand_more';
+        font-family: 'Material Icons';
+        font-weight: normal;
+        font-style: normal;
+        font-size: rem(24px);
+        display: block;
+        line-height: 1;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+        /* Support for all WebKit browsers. */
+        -webkit-font-smoothing: antialiased;
+        /* Support for Safari and Chrome. */
+        text-rendering: optimizeLegibility;
+        /* Support for Firefox. */
+        -moz-osx-font-smoothing: grayscale;
+        /* Support for IE. */
+        font-feature-settings: 'liga';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        color: inherit;
+        cursor: pointer;
+      }
     }
   }
 
   &__link {
-    @include link;
+    color: $dark-color-op50;
+    text-decoration: none;
     display: flex;
     align-items: center;
     padding: rem(5px);

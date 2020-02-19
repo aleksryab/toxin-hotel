@@ -55,11 +55,4 @@
   @include font-rem(14, 24, normal);
 }
 
-@mixin link {
-  color: $dark-color-op50;
-  font-family: $base-font;
-  @include font-rem(14, 1, normal);
-  text-decoration: none;
-}
-
 

@@ -21,7 +21,6 @@ mixin menu(options)
           if item.submenu
             li.menu__item.menu__item_with-more
               a(href = item.href, class = linkClasses )= item.name
-                i.material-icons expand_more
               ul.menu__submenu
                 each subitem in item.submenu
                   li
@@ -37,6 +36,6 @@ mixin menu(options)
     else
       .menu__user-bar
         .menu__buttons
-            +button({name: 'login', type: 'login', inverted: true})
-            +button({name: 'register', type: 'reg'})
+            +button({name: 'login', size: 'smaller', inverted: true})
+            +button({name: 'register', size: 'smaller'})
 

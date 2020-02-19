@@ -10,8 +10,8 @@
     options.subscribe.placeholder - заглушка для инпута (string)
   options.copyright - текст копирайта (string)
 
-
 include ../logo/logo
+include ../subscription-field/subscription-field
 
 mixin footer(options)
 
@@ -37,10 +37,9 @@ mixin footer(options)
           .footer__right-column
             h3.footer__title= options.subscribe.title
             p.footer__subscribe-text= options.subscribe.text
-            form.footer__form(action="")
-              input(type="email", name="email", class="footer__email-input", required, placeholder= options.subscribe.placeholder)
-              button.footer__submit-button
-                i.material-icons arrow_forward
+            div.footer__subscribe-form
+             +subscription-field({placeholder: options.subscribe.placeholder})
+
 
     .footer__bottom-wrapper
       .container

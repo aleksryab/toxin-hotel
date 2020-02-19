@@ -1,14 +1,15 @@
 //-
   options.name - подпись на кнопке (string)
   options.inverted - инвертированаая тема (boolean)
-  options.type - тип кнопки (string): submit, login, reg, link
+  options.type - тип кнопки (string): submit, link
 
 
 mixin button(options= {})
   -
-    var classes = 'button'
-    classes += options.inverted ? ' button_inverted' : ''
-    classes += options.type ? ' button_' + options.type : ''
+    let classes = 'button';
+    classes += options.inverted ? ' button_inverted' : '';
+    classes += options.type ? ' button_' + options.type : '';
+    classes += options.size ? ' button_' + options.size : '';
 
   if options.type == 'link'
     a(href="/" class= classes)
