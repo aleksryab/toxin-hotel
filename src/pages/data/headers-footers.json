@@ -13,7 +13,8 @@
       {"name": "Careers", "href": "/"},
       {"name": "News", "href": "/"},
       {"name": "Documentation", "href": "/"}
-    ]
+    ],
+    "buttons": ["Login", "Register"]
   },
 
   "footer": {

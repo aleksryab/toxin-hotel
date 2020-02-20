@@ -105,5 +105,9 @@
     height: 24px;
     margin-left: rem(20px);
     text-decoration: none;
+
+    &:hover {
+      opacity: 0.5;
+    }
   }
 }

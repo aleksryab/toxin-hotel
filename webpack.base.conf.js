@@ -84,7 +84,16 @@ module.exports = {
       exclude: /fonts/,
       loader: 'file-loader',
       options: {
-        name: 'img/[folder]/[name].[ext]',
+        outputPath: 'img',
+        name: '[folder]/[name].[ext]',
+        publicPath: (url, resourcePath, context) => {
+          if(/_bg/.test(url)) {
+             return `../img/${url}`;
+          }else {
+            return `img/${url}`;
+          }
+        },
+
       }
     },{
       test: /\.svg/,
@@ -134,4 +143,3 @@ module.exports = {
     }),
   ]
 };
-

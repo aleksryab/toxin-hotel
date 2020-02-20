@@ -36,6 +36,6 @@ mixin menu(options)
     else
       .menu__user-bar
         .menu__buttons
-            +button({name: 'login', size: 'smaller', inverted: true})
-            +button({name: 'register', size: 'smaller'})
+            +button({name: options.buttons[0], size: 'smaller', inverted: true})
+            +button({name: options.buttons[1], size: 'smaller'})
 

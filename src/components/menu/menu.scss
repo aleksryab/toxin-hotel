@@ -17,7 +17,7 @@
 
   &__item {
     box-sizing: border-box;
-    margin: 0 rem(10px);
+    margin-left: rem(11px);
     list-style-type: none;
     transition: text-shadow .3s;
     position: relative;
@@ -27,10 +27,8 @@
     }
 
     &_with-more {
-      margin-right: 0;
-      padding-right: rem(19px);
+      padding-right: rem(20px);
       position: relative;
-
 
       &:after {
         content: 'expand_more';
@@ -64,11 +62,12 @@
   }
 
   &__link {
+    padding: rem(5px);
     color: $dark-color-op50;
     text-decoration: none;
     display: flex;
     align-items: center;
-    padding: rem(5px);
+    white-space: nowrap;
 
     &:hover {
       box-sizing:border-box;
@@ -104,8 +103,7 @@
 
   &__user-bar {
     min-width: rem(200px);
-    margin-left: rem(13px);
-    position: relative;
+    margin-left: rem(20px);
     z-index: 1;
 
     &_login {
@@ -113,7 +111,7 @@
       align-items: center;
       min-width: auto;
       min-height: rem(30px);
-      margin-left: rem(15px);
+      margin-left: rem(25px);
       padding-left: rem(25px);
       text-align: right;
       border-left: 1px solid rgba(31, 32, 65, 0.1);
@@ -128,5 +126,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
+    & button:last-of-type {
+      margin-left: rem(20px);
+    }
   }
+
 }

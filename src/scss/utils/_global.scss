@@ -1,11 +1,14 @@
 html {
   font-size: $default-font-size;
 }
+
 .container {
   box-sizing: border-box;
   max-width: 1190px;
+  height: 100%;
   margin: 0 auto;
   padding: 0 15px;
+  position: relative;
 }
 
 .material-icons {

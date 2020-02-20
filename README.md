@@ -4,4 +4,6 @@
 [Colors & type](https://aleksryab.github.io/toxin-hotel/dist/colors-type.html)<br />
 [Cards](https://aleksryab.github.io/toxin-hotel/dist/cards.html)<br />
 [Headers & footers](https://aleksryab.github.io/toxin-hotel/dist/headers-footers.html)<br />
-[Form Elements](https://aleksryab.github.io/toxin-hotel/dist/form-elements.html)<br />
+[Form elements](https://aleksryab.github.io/toxin-hotel/dist/form-elements.html)<br />
+## Страницы:
+[Landing page](https://aleksryab.github.io/toxin-hotel/dist/index.html)<br />

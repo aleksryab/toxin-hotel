@@ -25,7 +25,7 @@
               <ul class="menu__list">
                 <li class="menu__item"><a class="menu__link menu__link_active" href="/">Home</a></li>
                 <li class="menu__item"><a class="menu__link" href="/">About Us</a></li>
-                <li class="menu__item menu__item_with-more"><a class="menu__link" href="/">Services<i class="material-icons">expand_more</i></a>
+                <li class="menu__item menu__item_with-more"><a class="menu__link" href="/">Services</a>
                   <ul class="menu__submenu">
                     <li><a class="menu__link" href="/">Documentation</a></li>
                     <li><a class="menu__link" href="/">Community</a></li>
@@ -39,8 +39,8 @@
             </nav>
             <div class="menu__user-bar">
               <div class="menu__buttons">
-                <button class="button button_inverted button_login"><span class="button__inner">login</span></button>
-                <button class="button button_reg"><span class="button__inner">register</span></button>
+                <button class="button button_inverted button_smaller">Login</button>
+                <button class="button button_smaller">Register</button>
               </div>
             </div>
           </div>
@@ -55,7 +55,7 @@
               <ul class="menu__list">
                 <li class="menu__item"><a class="menu__link menu__link_active" href="/">Home</a></li>
                 <li class="menu__item"><a class="menu__link" href="/">About Us</a></li>
-                <li class="menu__item menu__item_with-more"><a class="menu__link" href="/">Services<i class="material-icons">expand_more</i></a>
+                <li class="menu__item menu__item_with-more"><a class="menu__link" href="/">Services</a>
                   <ul class="menu__submenu">
                     <li><a class="menu__link" href="/">Documentation</a></li>
                     <li><a class="menu__link" href="/">Community</a></li>
@@ -111,10 +111,12 @@
               <div class="footer__right-column">
                 <h3 class="footer__title">Subscribe to our newsletter</h3>
                 <p class="footer__subscribe-text">Receive our latest news and promotions in your inbox!</p>
-                <form class="footer__form" action="">
-                  <input class="footer__email-input" type="email" name="email" required placeholder="Your email address">
-                  <button class="footer__submit-button"><i class="material-icons">arrow_forward</i></button>
-                </form>
+                <div class="footer__subscribe-form">
+                  <form class="subscription-field" action="/">
+                    <input class="subscription-field__input" type="email" name="email" required placeholder="Your email address">
+                    <button class="subscription-field__button"><i class="material-icons subscription-field__icon">arrow_forward</i></button>
+                  </form>
+                </div>
               </div>
             </div>
           </div>

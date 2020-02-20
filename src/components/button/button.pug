@@ -21,8 +21,8 @@ mixin button(options= {})
       i.button__icon.material-icons arrow_forward
 
   else
-    button(class= classes)
-      span.button__inner= options.name
+    button(class= classes)= options.name
+      //-span.button__inner= options.name
 
 
 

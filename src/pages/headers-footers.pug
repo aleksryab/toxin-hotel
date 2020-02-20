@@ -15,9 +15,9 @@ block content
     .ui-page__header
       +ui-logo()
     section.ui-page__section
-      +header({menuItems: data.header.menuItems})
+      +header({menuItems: data.header.menuItems, buttons:data.header.buttons})
     section.ui-page__section
-      +header({menuItems: data.header.menuItems, login: true})
+      +header({menuItems: data.header.menuItems, buttons:data.header.buttons, login: true})
     section.ui-page__section
       +footer(data.footer)
 
