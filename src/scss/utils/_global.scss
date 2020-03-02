@@ -11,6 +11,32 @@ html {
   position: relative;
 }
 
+.page {
+  @include text();
+
+  &__title {
+    @include title();
+    margin-bottom: 20px;
+  }
+
+  &__main {
+    padding: 30px 0 72px;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  &__content {
+    flex-grow: 1;
+  }
+
+  &__left-block {
+    width: 266px;
+    margin-right: 60px;
+    flex-shrink: 0;
+  }
+
+}
+
 .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;

@@ -1,0 +1,21 @@
+extends ./layout/base
+include ../components/promo/promo
+include ../components/filter/filter
+include ../components/search-result/search-result
+
+block title
+  title= "Search room"
+
+block main
+  .container
+    .page__main
+      aside.page__left-block
+        +filter()
+      section.page__content
+        h1.page__title Номера, которые мы для вас подобрали
+        +search-result()
+
+
+
+
+

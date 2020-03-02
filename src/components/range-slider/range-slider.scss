@@ -47,4 +47,10 @@
     height: inherit;
     background: $secondary-gradient;
   }
+
+  &__descr {
+    @include font-rem(12, 14, normal);
+    color: $dark-color-op25;
+    margin-top: rem(15px);
+  }
 }

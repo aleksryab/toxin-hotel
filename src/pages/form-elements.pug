@@ -21,7 +21,7 @@ include ../components/comment/comment
 block title
   title= "Form Elements"
 block styles
-  link(rel="stylesheet", href="css/ui.css")
+  link(rel="stylesheet", href="../css/ui.css")
 
 block content
   body(class="ui-page")
@@ -156,7 +156,7 @@ block content
               .form-elements__header
                 .form-elements__title Dropdown
                 .form-elements__descr Default
-              +dropdown({inputName: 'room-room', placeholder: 'Удобства номера', role: 'room',
+              +dropdown({inputName: 'room', placeholder: 'Удобства номера', role: 'room',
                         items: [
                           {title: 'Cпальни', inputName: 'bedrooms', value: 2, minValue: 1, maxValue: 4},
                           {title: 'Кровати', inputName: 'beds', value: 2, minValue: 1, maxValue: 4},
@@ -167,7 +167,7 @@ block content
               .form-elements__header
                 .form-elements__title Dropdown
                 .form-elements__descr expanded
-              +dropdown({inputName: 'room-room', placeholder: 'Удобства номера', role: 'room', expanded: true,
+              +dropdown({inputName: 'room', placeholder: 'Удобства номера', role: 'room', expanded: true,
                         items: [
                           {title: 'Cпальни', inputName: 'bedrooms', value: 2, minValue: 1, maxValue: 4},
                           {title: 'Кровати', inputName: 'beds', value: 2, minValue: 1, maxValue: 4},
@@ -248,11 +248,6 @@ block content
             +room-info([true, true])
           .form-elements__column.form-elements__column_middle.form-elements__column_wide
             +comment()
-            +comment(1)
-
-
-
         //- end bottom section
-
 
     script(src="js/main.js")

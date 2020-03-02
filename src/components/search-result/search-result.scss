@@ -1,0 +1,19 @@
+.search-result {
+
+  &__list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__item {
+    margin-bottom: 21px;
+  }
+
+  &__pagination {
+    margin: 21px auto 0;
+    display: flex;
+    justify-content: center;
+  }
+
+}

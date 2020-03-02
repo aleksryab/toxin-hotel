@@ -1,19 +1,8 @@
-extends ./layout/head
-include ../components/ui-logo/ui-logo
-include ../components/header/header
+extends ./layout/base
 include ../components/promo/promo
-include ../components/footer/footer
 
 block title
   title= "Landing page"
 
-block content
-  - const data = self.htmlWebpackPlugin.options.getData()
-
-  body(class="page")
-    +header({menuItems: data.header.menuItems, buttons:data.header.buttons})
-    main
-      +promo()
-    +footer(data.footer)
-
-    script(src="js/main.js")
+block main
+  +promo()

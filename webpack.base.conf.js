@@ -69,9 +69,9 @@ module.exports = {
     }, {
       test: /\.css$/,
       use: [
-        'style-loader', {
-          loader: MiniCssExtractPlugin.loader,
-        }, {
+        'style-loader',
+        MiniCssExtractPlugin.loader,
+        {
           loader: 'css-loader',
           options: {sourceMap: true}
         }, {
@@ -82,18 +82,13 @@ module.exports = {
     }, {
       test: /\.(png|jpe?g|gif)$/i,
       exclude: /fonts/,
-      loader: 'file-loader',
-      options: {
-        outputPath: 'img',
-        name: '[folder]/[name].[ext]',
-        publicPath: (url, resourcePath, context) => {
-          if(/_bg/.test(url)) {
-             return `../img/${url}`;
-          }else {
-            return `img/${url}`;
-          }
-        },
-
+      use: {
+        loader: 'file-loader',
+        options: {
+          name: '[folder]/[name].[ext]',
+          outputPath: 'img',
+          publicPath: '../img/'
+        }
       }
     },{
       test: /\.svg/,
@@ -115,23 +110,23 @@ module.exports = {
   plugins: [
     new FixStyleOnlyEntriesPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'css/[name].css'
+      filename: 'css/[name].css',
     }),
     new CopyPlugin([
       { from: `${PATHS.src}/img`, to: 'img', ignore: ['_dev/**/*']},
       { from: `${PATHS.src}/static`, to: '' }
     ]),
     ...PAGES.map(page => new HtmlWebpackPlugin({
-      getData: () => {
-       try {
-         return JSON.parse(fs.readFileSync(`${PAGES_DIR}/data/${page.replace(/\.pug/,'')}.json`, 'utf8'));
-       } catch (e) {
-         console.warn(`${page}.json was not provided for this page`);
-         return {};
+      getData: (dataFile) => {
+        try {
+          return JSON.parse(fs.readFileSync(`${PAGES_DIR}/data/${dataFile}.json`, 'utf8'));
+        } catch (e) {
+          console.warn(`${page}.json was not provided for this page`);
+          return {};
        }
      },
        template: `${PAGES_DIR}/${page}`,
-       filename: `./${page.replace(/\.pug/,'.html')}`,
+       filename: `html/${page.replace(/\.pug/,'.html')}`,
        inject: false,
        minifyminify: false,
      })),

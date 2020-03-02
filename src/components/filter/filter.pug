@@ -1,0 +1,58 @@
+include ../date-dropdown/date-dropdown
+include ../dropdown/dropdown
+include ../range-slider/range-slider
+include ../checkbox-button/checkbox-button
+include ../checkbox-list/checkbox-list
+
+mixin filter()
+  form.filter(action="")
+    .filter__item.filter__item_small-margin
+      +date-dropdown({singleInput: true, label: 'даты пребывания в отеле', range: '19 авг - 23 авг'})
+
+    .filter__item
+      +dropdown({label: 'гости', inputName: 'total-guests', placeholder: 'Сколько гостей', role: 'guests',
+              items: [
+                {title: 'Взрослые', inputName: 'adults', value: 2},
+                {title: 'Дети', inputName: 'children', value: 1},
+                {title: 'Младенцы', inputName: 'infants', value: 1}
+              ]})
+
+    .filter__item
+      +range-slider({label: 'диапазон цены', descr: 'Стоимость за сутки пребывания в номере'})
+
+    .filter__item
+      span.filter__title Checkbox Buttons
+      .filter__subitem
+        +checkbox-button({label: 'Можно курить', name: 'smoking-allowed'})
+      .filter__subitem
+        +checkbox-button({label: 'Можно с питомцами', name: 'animals-allowed', checked: true})
+      .filter__subitem
+        +checkbox-button({label: 'Можно пригласить гостей<br>(до 10 человек)', name: 'guests-allowed', checked: true})
+
+    .filter__item
+      span.filter__title доступность
+      .filter__subitem
+        +checkbox-button({bold: true, label: 'Широкий коридор', descr: 'Ширина коридоров в номере<br> не менее 91 см.'})
+      .filter__subitem
+        +checkbox-button({bold: true, label: 'Помощник для инвалидов', descr: 'На 1 этаже вас встретит специалист и проводит до номера.'})
+
+    .filter__item.filter__item_small-margin
+      +dropdown({label: 'удобства номера', inputName: 'room', placeholder: 'Удобства номера', role: 'room',
+                items: [
+                  {title: 'Cпальни', inputName: 'bedrooms', value: 2, minValue: 1, maxValue: 4},
+                  {title: 'Кровати', inputName: 'beds', value: 2, minValue: 1, maxValue: 4},
+                  {title: 'Ванные комнаты', inputName: 'bathrooms', value: 0, maxValue: 2}
+                ]})
+
+    .filter__item
+      +checkbox-list({title: 'дополнительные удобства',
+                    items: [
+                      {label: 'Завтрак', name: 'breakfast'},
+                      {label:'Письменный стол', name: 'desk', checked: true},
+                      {label:'Стул для кормления', name: 'feeding-chair', checked: true},
+                      {label:'Кроватка', name: 'crib', checked: true},
+                      {label:'Телевизор', name: 'tv'},
+                      {label:'Шампунь', name: 'shampoo'},
+                      {label:'Телевизор'},
+                      {label:'Шампунь'},
+                    ]})
