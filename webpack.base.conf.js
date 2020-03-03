@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 const globImporter = require('node-sass-glob-importer');
 
-// const devMode = process.env.NODE_ENV !== 'production';
+// const isDev = process.env.NODE_ENV !== 'production';
 const PATHS = {
   src: path.join(__dirname, './src'),
   dist: path.join(__dirname, './dist')
@@ -15,8 +15,7 @@ const PATHS = {
 // Pages const for HtmlWebpackPlugin
 const fs = require('fs');
 const PAGES_DIR = `${PATHS.src}/pages/`;
-const PAGES = fs.readdirSync(PAGES_DIR).filter(file => file.endsWith('.pug'));
-
+const PAGES = fs.readdirSync(PAGES_DIR);
 
 module.exports = {
   externals: {
@@ -25,7 +24,6 @@ module.exports = {
   entry: {
     main: `${PATHS.src}/index.js`,
     ui: `${PATHS.src}/scss/ui.scss`
-
   },
   output: {
     path: PATHS.dist,
@@ -49,8 +47,12 @@ module.exports = {
       test: /\.(scss|sass)$/,
       use: [
         'style-loader',
-        MiniCssExtractPlugin.loader,
         {
+          loader: MiniCssExtractPlugin.loader,
+          options: {
+            publicPath: '../'
+          }
+        },{
           loader: 'css-loader',
           options: {sourceMap: true}
         }, {
@@ -70,8 +72,10 @@ module.exports = {
       test: /\.css$/,
       use: [
         'style-loader',
-        MiniCssExtractPlugin.loader,
         {
+          loader: MiniCssExtractPlugin.loader,
+          options: {}
+        },{
           loader: 'css-loader',
           options: {sourceMap: true}
         }, {
@@ -85,9 +89,7 @@ module.exports = {
       use: {
         loader: 'file-loader',
         options: {
-          name: '[folder]/[name].[ext]',
-          outputPath: 'img',
-          publicPath: '../img/'
+          name: 'img/[folder]/[name].[ext]',
         }
       }
     },{
@@ -117,24 +119,29 @@ module.exports = {
       { from: `${PATHS.src}/static`, to: '' }
     ]),
     ...PAGES.map(page => new HtmlWebpackPlugin({
-      getData: (dataFile) => {
-        try {
-          return JSON.parse(fs.readFileSync(`${PAGES_DIR}/data/${dataFile}.json`, 'utf8'));
-        } catch (e) {
-          console.warn(`${page}.json was not provided for this page`);
-          return {};
-       }
+     getData: (dataFile) => {
+      try {
+        return JSON.parse(fs.readFileSync(`${PATHS.src}/data/${dataFile}.json`, 'utf8'));
+      } catch (e) {
+        console.warn(`${page}.json was not provided for this page`);
+        return {};
+      }
      },
-       template: `${PAGES_DIR}/${page}`,
-       filename: `html/${page.replace(/\.pug/,'.html')}`,
-       inject: false,
-       minifyminify: false,
-     })),
+     template: `${PAGES_DIR}/${page}/${page}.pug`,
+     filename: `${page}.html`,
+     chunks: ['main'],
+     inject: true
+    })),
      new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
       'window.$': 'jquery',
       'window.jQuery': 'jquery'
     }),
-  ]
+  ],
+  resolve: {
+    alias: {
+      Components: `${PATHS.src}/components`,
+    }
+  }
 };

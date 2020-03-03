@@ -1,12 +1,12 @@
-extends ./layout/head
-include ../components/ui-logo/ui-logo
-include ../components/header/header
-include ../components/footer/footer
+extends ../../templates/head
+include ../../components/ui-logo/ui-logo
+include ../../components/header/header
+include ../../components/footer/footer
 
 block title
   title= "Headers & Footers"
 block styles
-  link(rel="stylesheet", href="../css/ui.css")
+  link(rel="stylesheet", href="css/ui.css")
 
 block content
   - const data = self.htmlWebpackPlugin.options.getData("eng")

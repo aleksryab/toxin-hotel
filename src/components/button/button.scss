@@ -18,6 +18,73 @@
   position: relative;
   text-decoration: none;
 
+  &:hover, &:focus {
+    opacity: 0.5;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0 rem(10px);
+    border-radius: inherit;
+  }
+
+
+  &_inverted {
+    color: $primary-color;
+    background: $primary-gradient;
+    padding: 2px;
+
+    & .button__inner {
+      background: #fff;
+    }
+  }
+
+  &_smaller {
+    min-width: rem(79px);
+    height: rem(34px);
+
+    & .button__inner {
+      padding: 0 rem(18px);
+    }
+  }
+
+  &_submit {
+    width: 100%;
+  }
+
+  &__icon {
+    position: absolute;
+    right: rem(10px);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+/** with before**/
+/*
+.button {
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  min-width: rem(99px);
+  height: rem(44px);
+  color: #fff;
+  font-family: $base-font;
+  @include font-rem(12, 1, bold);
+  text-align: center;
+  text-transform: uppercase;
+  background: $primary-gradient;
+  border-radius: rem(22px);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+
   &:hover {
     opacity: 0.5;
   }
@@ -55,72 +122,6 @@
     min-width: rem(79px);
     height: rem(34px);
     padding: 0 rem(19px);
-  }
-
-  &_submit {
-    width: 100%;
-  }
-
-  &__icon {
-    position: absolute;
-    right: rem(10px);
-    top: 50%;
-    transform: translateY(-50%);
-  }
-}
-
-/** with inner span **/
-/*.button {
-  box-sizing: border-box;
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-  min-width: rem(99px);
-  height: rem(44px);
-  color: #fff;
-  font-family: $base-font;
-  @include font-rem(12, 1, bold);
-  text-align: center;
-  text-transform: uppercase;
-  background: $primary-gradient;
-  border-radius: rem(22px);
-  border: none;
-  outline: none;
-  cursor: pointer;
-  position: relative;
-  text-decoration: none;
-
-  &:hover, &:focus {
-    opacity: 0.5;
-  }
-
-  &__inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    padding: 0 rem(10px);
-    border-radius: inherit;
-  }
-
-
-  &_inverted {
-    color: $primary-color;
-    background: $primary-gradient;
-    padding: 2px;
-
-    & .button__inner {
-      background: #fff;
-    }
-  }
-
-  &_smaller {
-    min-width: rem(79px);
-    height: rem(34px);
-
-    & .button__inner {
-      padding: 0 rem(18px);
-    }
   }
 
   &_submit {

@@ -37,7 +37,6 @@ $(function() {
 
 
     $checkOut.click( event => {
-      console.log(event);
       event.preventDefault();
       calendar.show();
     });

@@ -1,16 +1,16 @@
-extends ./layout/head
-include ../components/ui-logo/ui-logo
-include ../components/room-search/room-search
-include ../components/room-reservation/room-reservation
-include ../components/registration-form/registration-form
-include ../components/login-form/login-form
-include ../components/room-preview/room-preview
+extends ../../templates/head
+include ../../components/ui-logo/ui-logo
+include ../../components/room-search/room-search
+include ../../components/room-reservation/room-reservation
+include ../../components/registration-form/registration-form
+include ../../components/login-form/login-form
+include ../../components/room-preview/room-preview
 
 
 block title
   title= "Cards"
 block styles
-  link(rel="stylesheet", href="../css/ui.css")
+  link(rel="stylesheet", href="css/ui.css")
 
 block content
   body(class="ui-page ui-page_bg_gray")
@@ -33,7 +33,4 @@ block content
         div.ui-page__card
           +room-preview({number: '888', class: 'люкс', price: '9 990', rate: 5, numberReviews: 145})
         div.ui-page__card
-          +room-preview({number: '840', rate: 4, price: '9 900', numberReviews: 65, imgSet: 1})
-
-
-    script(src="js/main.js")
+          +room-preview({number: '840', rate: 4, price: '9 900', numberReviews: 65})

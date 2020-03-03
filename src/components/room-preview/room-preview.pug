@@ -4,7 +4,6 @@
     options.price - цена комнаты за сутки (string)
     options.rate - оценка комнаты (string or number)
     options.numberReviews - количество отзывов (string or number)
-    options.imgSet - набор картинок для превью (0 or 1)
 
 include ../rate-button/rate-button
 
@@ -13,14 +12,15 @@ mixin room-preview(options = {})
   - options.imgSet = options.imgSet ? options.imgSet : 0;
 
   div.room-preview
-
     div.room-preview__carousel.js-carousel
-      - let n = 1 + 4*options.imgSet;
-        while n < 5 + 4*options.imgSet
-          div.room-preview__slide
-            img(src=require('../components/room-preview/img/rooms/room-' + n + '.jpg'), alt="room photo")
-          - n++;
-
+      div.room-preview__slide
+        img(src=require('Components/room-preview/img/rooms/room-' + options.number + '.jpg'), alt="room photo")
+      div.room-preview__slide
+        img(src=require('Components/room-preview/img/rooms/room-example-1.jpg'), alt="room photo")
+      div.room-preview__slide
+        img(src=require('Components/room-preview/img/rooms/room-example-2.jpg'), alt="room photo")
+      div.room-preview__slide
+        img(src=require('Components/room-preview/img/rooms/room-example-3.jpg'), alt="room photo")
       div.room-preview__prev
         i.material-icons.room-preview__prev-icon expand_more
       div.room-preview__next

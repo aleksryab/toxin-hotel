@@ -1,27 +1,27 @@
-extends ./layout/head
-include ../components/ui-logo/ui-logo
-include ../components/input/input
-include ../components/button/button
-include ../components/checkbox-button/checkbox-button
-include ../components/radio-button/radio-button
-include ../components/toggle-button/toggle-button
-include ../components/like-button/like-button
-include ../components/rate-button/rate-button
-include ../components/dropdown/dropdown
-include ../components/date-dropdown/date-dropdown
-include ../components/subscription-field/subscription-field
-include ../components/range-slider/range-slider
-include ../components/pagination/pagination
-include ../components/dropdown/dropdown
-include ../components/checkbox-list/checkbox-list
-include ../components/bullet-list/bullet-list
-include ../components/room-info/room-info
-include ../components/comment/comment
+extends ../../templates/head
+include ../../components/ui-logo/ui-logo
+include ../../components/input/input
+include ../../components/button/button
+include ../../components/checkbox-button/checkbox-button
+include ../../components/radio-button/radio-button
+include ../../components/toggle-button/toggle-button
+include ../../components/like-button/like-button
+include ../../components/rate-button/rate-button
+include ../../components/dropdown/dropdown
+include ../../components/date-dropdown/date-dropdown
+include ../../components/subscription-field/subscription-field
+include ../../components/range-slider/range-slider
+include ../../components/pagination/pagination
+include ../../components/dropdown/dropdown
+include ../../components/checkbox-list/checkbox-list
+include ../../components/bullet-list/bullet-list
+include ../../components/room-info/room-info
+include ../../components/comment/comment
 
 block title
   title= "Form Elements"
 block styles
-  link(rel="stylesheet", href="../css/ui.css")
+  link(rel="stylesheet", href="css/ui.css")
 
 block content
   body(class="ui-page")
@@ -249,5 +249,3 @@ block content
           .form-elements__column.form-elements__column_middle.form-elements__column_wide
             +comment()
         //- end bottom section
-
-    script(src="js/main.js")

@@ -21,7 +21,7 @@ mixin comment(index)
 
   .comment
     .comment__user
-      img(src=require( '../components/comment/img/users/' + data[index].img )).comment__user-img
+      img(src=require( 'Components/comment/img/users/' + data[index].img )).comment__user-img
       .comment__user-info
         span.comment__user-name !{data[index].name}
         span.comment__time !{data[index].time}
