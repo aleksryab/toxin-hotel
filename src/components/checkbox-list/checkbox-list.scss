@@ -5,7 +5,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    min-height: rem(44px);
+    min-height: rem(15px);
     cursor: pointer;
   }
 
@@ -14,7 +14,7 @@
     top: 0;
     right: 0;
     width: rem(44px);
-    height: rem(44px);
+    height: rem(15px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,7 +24,7 @@
 
   &__list {
     list-style-type: none;
-    margin: rem(4px) 0 0;
+    margin: rem(17px) 0 0;
     padding: 0;
     display: none;
   }

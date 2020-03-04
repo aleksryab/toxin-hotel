@@ -47,66 +47,64 @@
         </div>
       </div>
     </header>
-    <main>
-      <section class="promo">
-        <div class="container">
-          <div class="promo__search">
-            <form class="room-search">
-              <h2 class="room-search__title">Найдём номера под ваши пожелания</h2>
-              <div class="room-search__dates">
-                <div class="date-dropdown js-date-dropdown">
-                  <div class="date-dropdown__box">
-                    <label class="date-dropdown__label">Прибытие
-                      <div class="date-dropdown__field-wrapper">
-                        <input class="js-date date-dropdown__field" name="check-in" placeholder="ДД.ММ.ГГГГ" autocomplete="off" required><span class="date-dropdown__icon"><i class="material-icons">expand_more</i></span>
-                      </div>
-                    </label>
-                  </div>
-                  <div class="date-dropdown__box">
-                    <label class="date-dropdown__label">Выезд
-                      <div class="date-dropdown__field-wrapper">
-                        <input class="js-date date-dropdown__field" name="check-out" placeholder="ДД.ММ.ГГГГ" autocomplete="off" required><span class="date-dropdown__icon"><i class="material-icons">expand_more</i></span>
-                      </div>
-                    </label>
-                  </div>
+    <section class="promo">
+      <div class="container">
+        <div class="promo__search">
+          <form class="room-search">
+            <h2 class="room-search__title">Найдём номера под ваши пожелания</h2>
+            <div class="room-search__dates">
+              <div class="date-dropdown js-date-dropdown">
+                <div class="date-dropdown__box">
+                  <label class="date-dropdown__label">Прибытие
+                    <div class="date-dropdown__field-wrapper">
+                      <input class="js-date date-dropdown__field" name="check-in" placeholder="ДД.ММ.ГГГГ" autocomplete="off" required><span class="date-dropdown__icon"><i class="material-icons">expand_more</i></span>
+                    </div>
+                  </label>
+                </div>
+                <div class="date-dropdown__box">
+                  <label class="date-dropdown__label">Выезд
+                    <div class="date-dropdown__field-wrapper">
+                      <input class="js-date date-dropdown__field" name="check-out" placeholder="ДД.ММ.ГГГГ" autocomplete="off" required><span class="date-dropdown__icon"><i class="material-icons">expand_more</i></span>
+                    </div>
+                  </label>
                 </div>
               </div>
-              <div class="room-search__guests">
-                <div class="dropdown js-dropdown" data-role="guests">
-                  <label class="dropdown__label">Гости<span class="dropdown__field-wrapper">
-                      <input class="dropdown__field" name="total-guests" placeholder="Сколько гостей" autocomplete="off" required readonly><span class="dropdown__icon"><i class="material-icons">expand_more</i></span></span></label>
-                  <div class="dropdown__content">
-                    <div class="dropdown__item" data-role="adults">
-                      <div class="dropdown__title">Взрослые</div>
-                      <div class="dropdown__controls"><span class="dropdown__button" data-action="minus">-</span>
-                        <input class="dropdown__item-value" type="text" name="adults" value="0" readonly><span class="dropdown__button" data-action="plus">+</span>
-                      </div>
+            </div>
+            <div class="room-search__guests">
+              <div class="dropdown js-dropdown" data-role="guests">
+                <label class="dropdown__label">Гости<span class="dropdown__field-wrapper">
+                    <input class="dropdown__field" name="total-guests" placeholder="Сколько гостей" autocomplete="off" required readonly><span class="dropdown__icon"><i class="material-icons">expand_more</i></span></span></label>
+                <div class="dropdown__content">
+                  <div class="dropdown__item" data-role="adults">
+                    <div class="dropdown__title">Взрослые</div>
+                    <div class="dropdown__controls"><span class="dropdown__button" data-action="minus">-</span>
+                      <input class="dropdown__item-value" type="text" name="adults" value="0" readonly><span class="dropdown__button" data-action="plus">+</span>
                     </div>
-                    <div class="dropdown__item" data-role="children">
-                      <div class="dropdown__title">Дети</div>
-                      <div class="dropdown__controls"><span class="dropdown__button" data-action="minus">-</span>
-                        <input class="dropdown__item-value" type="text" name="children" value="0" readonly><span class="dropdown__button" data-action="plus">+</span>
-                      </div>
-                    </div>
-                    <div class="dropdown__item" data-role="infants">
-                      <div class="dropdown__title">Младенцы</div>
-                      <div class="dropdown__controls"><span class="dropdown__button" data-action="minus">-</span>
-                        <input class="dropdown__item-value" type="text" name="infants" value="0" readonly><span class="dropdown__button" data-action="plus">+</span>
-                      </div>
-                    </div>
-                    <div class="dropdown__menu"><span class="dropdown__menu-button icon-link icon-link_inverted" data-action="clear">oчистить</span><span class="dropdown__menu-button icon-link" data-action="apply">применить</span></div>
                   </div>
+                  <div class="dropdown__item" data-role="children">
+                    <div class="dropdown__title">Дети</div>
+                    <div class="dropdown__controls"><span class="dropdown__button" data-action="minus">-</span>
+                      <input class="dropdown__item-value" type="text" name="children" value="0" readonly><span class="dropdown__button" data-action="plus">+</span>
+                    </div>
+                  </div>
+                  <div class="dropdown__item" data-role="infants">
+                    <div class="dropdown__title">Младенцы</div>
+                    <div class="dropdown__controls"><span class="dropdown__button" data-action="minus">-</span>
+                      <input class="dropdown__item-value" type="text" name="infants" value="0" readonly><span class="dropdown__button" data-action="plus">+</span>
+                    </div>
+                  </div>
+                  <div class="dropdown__menu"><span class="dropdown__menu-button icon-link icon-link_inverted" data-action="clear">oчистить</span><span class="dropdown__menu-button icon-link" data-action="apply">применить</span></div>
                 </div>
               </div>
-              <div class="room-search__button">
-                <button class="button button_submit">подобрать номер<i class="button__icon material-icons">arrow_forward</i></button>
-              </div>
-            </form>
-          </div>
-          <div class="promo__slogan">Лучшие номера для вашей работы,<br> отдыха и просто вдохновения</div>
+            </div>
+            <div class="room-search__button">
+              <button class="button button_submit">подобрать номер<i class="button__icon material-icons">arrow_forward</i></button>
+            </div>
+          </form>
         </div>
-      </section>
-    </main>
+        <div class="promo__slogan">Лучшие номера для вашей работы,<br> отдыха и просто вдохновения</div>
+      </div>
+    </section>
     <footer class="footer">
       <div class="footer__top-wrapper">
         <div class="container">

@@ -7,11 +7,11 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   devtool: 'cheap-module-eval-source-map',
   watch: true,
   devServer: {
-    //contentBase: './dist',
     port: 8081,
     open: true,
     hot: true,
     inline: true,
+    watchContentBase: true,
     overlay: {
       warnings: true,
       errors: true

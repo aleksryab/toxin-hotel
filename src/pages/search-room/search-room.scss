@@ -1,0 +1,41 @@
+.search-room {
+  &__container {
+    padding-top: 30px;
+    padding-bottom: 72px;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  &__title {
+    margin-bottom: rem(20px);
+  }
+
+  &__aside{
+    width: 266px;
+    margin-right: 60px;
+    flex-shrink: 0;
+  }
+
+  &__result {
+    flex-grow: 1;
+  }
+
+  &__list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__item {
+    margin-bottom: 21px;
+  }
+
+  &__pagination {
+    margin: 21px auto 0;
+    display: flex;
+    justify-content: center;
+  }
+
+
+}
+

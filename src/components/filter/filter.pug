@@ -36,7 +36,7 @@ mixin filter()
       .filter__subitem
         +checkbox-button({bold: true, label: 'Помощник для инвалидов', descr: 'На 1 этаже вас встретит специалист и проводит до номера.'})
 
-    .filter__item.filter__item_small-margin
+    .filter__item
       +dropdown({label: 'удобства номера', inputName: 'room', placeholder: 'Удобства номера', role: 'room',
                 items: [
                   {title: 'Cпальни', inputName: 'bedrooms', value: 2, minValue: 1, maxValue: 4},

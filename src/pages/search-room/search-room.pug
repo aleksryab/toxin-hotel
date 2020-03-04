@@ -1,20 +1,45 @@
 extends ../../templates/base
-include ../../components/promo/promo
 include ../../components/filter/filter
-include ../../components/search-result/search-result
+include ../../components/room-preview/room-preview
+include ../../components/pagination/pagination
 
 block title
   title= "Search room"
 
 block main
-  .container
-    .page__main
-      aside.page__left-block
+  main.search-room
+    .container.search-room__container
+      aside.search-room__aside
         +filter()
-      section.page__content
-        h1.page__title Номера, которые мы для вас подобрали
-        +search-result()
-
+      section.search-room__result
+        h1.page__title.search-room__title Номера, которые мы для вас подобрали
+        .search-room__list
+          .search-result__item
+            +room-preview({number: '888', rate: 5, price: '9 990', numberReviews: 145, class: 'люкс'})
+          .search-result__item
+            +room-preview({number: '840', rate: 4, price: '9 900', numberReviews: 65})
+          .search-result__item
+            +room-preview({number: '980', rate: 3, price: '8 500', numberReviews: 35, class: 'люкс',})
+          .search-result__item
+            +room-preview({number: '856', rate: 5, price: '7 300', numberReviews: 19})
+          .search-result__item
+            +room-preview({number: '740', rate: 4, price: '6 000', numberReviews: 44})
+          .search-result__item
+            +room-preview({number: '982', rate: 3, price: '5 800', numberReviews: 56})
+          .search-result__item
+            +room-preview({number: '678', rate: 5, price: '5 500', numberReviews: 45})
+          .search-result__item
+            +room-preview({number: '450', rate: 4, price: '5 300', numberReviews: 39})
+          .search-result__item
+            +room-preview({number: '350', rate: 3, price: '5 000', numberReviews: 77})
+          .search-result__item
+            +room-preview({number: '666', rate: 5, price: '5 000', numberReviews: 25})
+          .search-result__item
+            +room-preview({number: '444', rate: 3, price: '5 000', numberReviews: 15})
+          .search-result__item
+            +room-preview({number: '352', rate: 3, price: '5 000', numberReviews: 55})
+        .search-result__pagination
+          +pagination()
 
 
 
