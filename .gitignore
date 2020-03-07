@@ -8,7 +8,7 @@
 stats.json
 
 # temp
-/src/img/_dev
+/src/img/_temp
 
 # misc
 .DS_Store

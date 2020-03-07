@@ -1,4 +1,5 @@
 .room-info {
+
   &__item {
     display: flex;
     color: $dark-color-op75;
@@ -8,6 +9,10 @@
     &:first-child {
       border-top: none;
       padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
     }
   }
 

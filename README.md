@@ -8,3 +8,4 @@
 ## Страницы:
 [Landing page](https://aleksryab.github.io/toxin-hotel/dist/index.html)<br />
 [Search room](https://aleksryab.github.io/toxin-hotel/dist/search-room.html)<br />
+[Room details](https://aleksryab.github.io/toxin-hotel/dist/room-details.html)<br />

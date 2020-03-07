@@ -107,7 +107,10 @@ module.exports = {
         name: 'fonts/[name].[ext]',
         publicPath: '../'
       }
-    }]
+    },{
+      test: /\.(txt)|(xml)$/i,
+      use: 'raw-loader',
+    },]
   },
   plugins: [
     new FixStyleOnlyEntriesPlugin(),
@@ -115,7 +118,7 @@ module.exports = {
       filename: 'css/[name].css',
     }),
     new CopyPlugin([
-      { from: `${PATHS.src}/img`, to: 'img', ignore: ['_dev/**/*']},
+      { from: `${PATHS.src}/img`, to: 'img', ignore: ['_temp/**/*']},
       { from: `${PATHS.src}/static`, to: '' }
     ]),
     ...PAGES.map(page => new HtmlWebpackPlugin({
