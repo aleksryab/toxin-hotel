@@ -1,0 +1,51 @@
+extends ../../templates/base
+include ../../components/room-reservation/room-reservation
+include ../../components/bullet-list/bullet-list
+include ../../components/room-info/room-info
+include ../../components/comment/comment
+include ../../components/donut-chart/donut-chart
+
+block title
+  title= "Room details"
+
+block main
+  main.room-details
+    .room-details__gallery
+      .room-details__main-img
+        img(src=require('./img/room-details/room-details-1.jpg'), alt="room photo")
+      .room-details__slides
+        img(src=require('./img/room-details/room-details-2.jpg'), alt="room photo")
+        img(src=require('./img/room-details/room-details-3.jpg'), alt="room photo")
+
+    .container.room-details__container
+      .room-details__info
+        .room-details__raw
+          .room-details__item
+            h2.room-details__subtitle Сведения о номере
+            +room-info()
+          .room-details__item
+            h2.room-details__subtitle Впечатления от номера
+            +donut-chart()
+        .room-details__feedback
+          h2.room-details__subtitle Отзывы посетителей номера
+            span.room-details__feedback-amount 2 отзыва
+          .room-details__comment
+            +comment()
+          .room-details__comment
+            +comment(1)
+        .room-details__raw
+          .room-details__item
+            h2.room-details__subtitle.room-details__subtitle_with-left-space Правила
+            +bullet-list(['Нельзя с питомцами',
+                        'Без вечеринок и мероприятий',
+                        'Время прибытия — после 13:00,<br>а выезд до 12:00'
+                        ])
+          .room-details__item
+            h2.room-details__subtitle Отмена
+            div Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+
+      .room-details__reservation
+        +room-reservation()
+
+
+
