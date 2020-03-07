@@ -1,8 +1,13 @@
 extends ../../templates/base
-include ../../components/promo/promo
+include ../../components/room-search/room-search
 
 block title
   title= "Landing page"
 
 block main
-  +promo()
+  main.landing
+    .container.landing__container
+      .landing__search
+        +room-search()
+      .landing__slogan
+        |Лучшие номера для вашей работы,<br> отдыха и просто вдохновения

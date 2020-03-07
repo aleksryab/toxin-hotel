@@ -1,11 +1,10 @@
-.promo {
+.landing {
   box-sizing: border-box;
   padding-top: rem(70px);
   height: 830px;
-  background: url('../components/promo/img/bg/promo_bg.jpg') center/cover no-repeat;
+  background: url('../pages/index/img/bg/landing_bg.jpg') center/cover no-repeat;
 
   &__slogan {
-    width: 50%;
     @include text;
     text-align: right;
     position: absolute;
