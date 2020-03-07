@@ -1,0 +1,11 @@
+.sign-in {
+  height: 683px;
+  background: url('../pages/sign-in/img/bg/auth_bg.jpg') center/cover no-repeat;
+
+  &__container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

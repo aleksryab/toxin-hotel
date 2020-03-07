@@ -1,0 +1,10 @@
+extends ../../templates/base
+include ../../components/registration-form/registration-form
+
+block title
+  title= "Registration"
+
+block main
+  main.registration
+    .registration__container
+      +registration-form()

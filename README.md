@@ -9,3 +9,5 @@
 [Landing page](https://aleksryab.github.io/toxin-hotel/dist/index.html)<br />
 [Search room](https://aleksryab.github.io/toxin-hotel/dist/search-room.html)<br />
 [Room details](https://aleksryab.github.io/toxin-hotel/dist/room-details.html)<br />
+[Registration](https://aleksryab.github.io/toxin-hotel/dist/registration.html)<br />
+[Sign in](https://aleksryab.github.io/toxin-hotel/dist/sign-in.html)<br />

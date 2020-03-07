@@ -1,0 +1,10 @@
+.registration {
+  min-height: 702px;
+  background: url('../pages/registration/img/bg/auth_bg.jpg') center/cover no-repeat;
+
+  &__container {
+    padding: 30px 0 0;
+    display: flex;
+    justify-content: center;
+  }
+}

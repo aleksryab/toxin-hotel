@@ -1,0 +1,10 @@
+extends ../../templates/base
+include ../../components/login-form/login-form
+
+block title
+  title= "Sign in"
+
+block main
+  main.sign-in
+    .sign-in__container
+      +login-form()
