@@ -1,0 +1,19 @@
+<defs>
+  <linearGradient id="gradient_excellent" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#FFBA9C"/>
+    <stop offset="1" stop-color="#FFE39C"/>
+  </linearGradient>
+  <linearGradient id="gradient_good" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#66D2EA"/>
+    <stop offset="1" stop-color="#6FCF97"/>
+  </linearGradient>
+  <linearGradient id="gradient_fair" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#8BA4F9"/>
+    <stop offset="1" stop-color="#BC9CFF"/>
+  </linearGradient>
+  <linearGradient id="gradient_poor" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#3D4975"/>
+    <stop offset="1" stop-color="#919191"/>
+  </linearGradient>
+</defs>
+

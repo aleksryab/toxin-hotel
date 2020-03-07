@@ -1,0 +1,12 @@
+//- ! order in JSON data is matter
+
+mixin donut-chart()
+  .donut-chart
+    .donut-chart__donut
+      .donut-chart__donut.js-donut(data-donut = '[{"rate": "fair", "value": 65}, {"rate": "good", "value": 65}, {"rate": "excellent", "value": 130}]')
+    .donut-chart__descr
+      ul.donut-chart__list
+        li.donut-chart__list-item.donut-chart__list-item_excellent Великолепно
+        li.donut-chart__list-item.donut-chart__list-item_good Хорошо
+        li.donut-chart__list-item.donut-chart__list-item_fair Удовлетворительно
+        li.donut-chart__list-item.donut-chart__list-item_poor Разочарован

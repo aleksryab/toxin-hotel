@@ -1,0 +1,76 @@
+.donut-chart {
+  display: flex;
+
+  &__donut {
+    width: 120px;
+    height: 120px;
+  }
+
+  &__amount {
+    font-family: $title-font;
+    font-size: 24px;
+    line-height: 1;
+    fill: $primary-color;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-anchor: middle;
+  }
+
+  &__label {
+    font-family: $base-font;
+    font-size: 12px;
+    line-height: 1;
+    fill: $primary-color;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-anchor: middle;
+    transform: translateY(17px);
+  }
+
+  &__descr {
+    display: flex;
+    align-items: flex-end;
+    margin-left: rem(30px);
+  }
+
+  &__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    @include text();
+    color: $dark-color-op75;
+  }
+
+  &__list-item {
+    padding-left: rem(15px);
+    position: relative;
+
+    &:before {
+      content: '';
+      width: rem(10px);
+      height: rem(10px);
+      border-radius: 50%;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background: $dark-color-op25;
+    }
+
+    &_excellent:before {
+      background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+    }
+
+    &_good:before {
+      background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    }
+
+    &_fair:before {
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    }
+
+    &_poor:before {
+      background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
+    }
+  }
+}
