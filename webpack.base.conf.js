@@ -109,7 +109,7 @@ module.exports = {
       }
     },{
       test: /\.(txt)|(xml)$/i,
-      use: 'raw-loader',
+      use: 'raw-loader'
     },]
   },
   plugins: [
