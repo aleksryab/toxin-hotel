@@ -120,7 +120,7 @@ const donutChart = {
     }
 
     this.data.forEach(item => {
-      this.totalValues += item.value;
+      this.totalValues += +item.value;
     });
 
     this.circumference = 2 * Math.PI * this.options.radius;
@@ -136,5 +136,4 @@ $(document).ready(() => {
     objDonut.__proto__ = donutChart;
     objDonut.init(container);
   });
-
 });
