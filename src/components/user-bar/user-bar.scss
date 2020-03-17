@@ -1,0 +1,74 @@
+.user-bar {
+  font-family: $base-font;
+  color: $dark-color-op50;
+  @include font-rem(14, 1, normal);
+
+  &__user {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-height: rem(30px);
+    margin-left: rem(5px);
+    padding-left: rem(30px);
+    border-left: 1px solid rgba(31, 32, 65, 0.1);
+  }
+
+  &__link {
+    color: $dark-color-op50;
+    text-decoration: none;
+
+    &:hover {
+      box-sizing:border-box;
+      color: $dark-color-op75;
+      text-shadow: .25px 0px .1px, -.25px 0px .1px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    & button:last-of-type {
+      margin-left: rem(23px);
+    }
+
+    @media (max-width: $screen-md) {
+      display: none;
+    }
+  }
+
+  &__button {
+    font-size: rem(40px);
+    line-height: 1;
+    background: $primary-gradient;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    display: none;
+
+    &:hover {
+      opacity: 0.5;
+    }
+
+    @media (max-width: $screen-md) {
+      display: block;
+    }
+  }
+
+  &__form {
+    position: absolute;
+    display: none;
+    top: 100%;
+    right: -9999px;
+    transition: all 0.3s;
+    z-index: 100;
+
+    &_showed {
+      display: block;
+      right: 0;
+    }
+  }
+
+}

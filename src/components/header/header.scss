@@ -5,10 +5,37 @@
   &__container {
     box-sizing: border-box;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
-    min-height: 70px;
+    min-height: rem(70px);
+    line-height: 1;
   }
 
+  &__logo {
+    margin-right: auto;
+
+    @media (max-width: $screen-sm) {
+      margin-right: 0;
+    }
+  }
+
+  &__menu {
+
+    @media (max-width: $screen-sm) {
+      order: -1;
+    }
+  }
+
+  &__user-bar {
+    margin-left: rem(20px);
+  }
+
+  @media (max-width: $screen-sm) {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+
+  }
 }

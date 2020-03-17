@@ -1,11 +1,16 @@
 include ../logo/logo
 include ../menu/menu
+include ../user-bar/user-bar
 
 mixin header(options)
 
   header.header
     .container.header__container
-      +logo
-      +menu(options)
+      .header__logo
+        +logo()
+      .header__menu
+        +menu(options.menuItems)
+      .header__user-bar
+        +user-bar({login: options.login, buttons: options.buttons})
 
 

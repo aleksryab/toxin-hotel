@@ -1,41 +1,30 @@
 //-
-  options.login - вид меню для залогиненного пользоавателя (boolean)
-  options.menuItems - массив с элементами меню (array)
-  options.items[0].name - имя элемента меню (string)
-  options.items[0].href - ссылка элемента меню (string)
-  options.items[0].active - активная ссылка элемента меню (boolean)
+  options - массив с элементами меню (array)
+  options.item[0].name - имя элемента меню (string)
+  options.item[0].href - ссылка элемента меню (string)
+  options.item[0].active - активная ссылка элемента меню (boolean)
 
 include ../button/button
 
-mixin menu(options)
+mixin menu(options = [])
 
-  .menu
-    //- links
-    nav
-      ul.menu__list
-        each item in options.menuItems
-          -
-            var linkClasses = 'menu__link'
-            linkClasses += item.active ? ' menu__link_active' : ''
+  nav.menu
+    .menu__button.material-icons.js-menu__button menu
+    ul.menu__list
+      each item in options
+        -
+          let linkClasses = 'menu__link'
+          linkClasses += item.active ? ' menu__link_active' : ''
 
-          if item.submenu
-            li.menu__item.menu__item_with-more
-              a(href = item.href, class = linkClasses )= item.name
-              ul.menu__submenu
-                each subitem in item.submenu
-                  li
-                    a(href = subitem.href, class= "menu__link")= subitem.name
-          else
-            li.menu__item
-              a( href= item.href, class= linkClasses)= item.name
-
-    //- user-bar
-    if options.login
-      .menu__user-bar.menu__user-bar_login
-        a(href="/" class= "menu__link menu__user-link") Cosmin Negoita
-    else
-      .menu__user-bar
-        .menu__buttons
-            +button({name: options.buttons[0], size: 'smaller', inverted: true})
-            +button({name: options.buttons[1], size: 'smaller'})
+        if item.submenu
+          li.menu__item
+            a(href = item.href, class = linkClasses)= item.name
+            span.menu__expander.material-icons.js-menu__expander expand_more
+            ul.menu__submenu
+              each subitem in item.submenu
+                li
+                  a(href = subitem.href, class= "menu__link")= subitem.name
+        else
+          li.menu__item
+            a( href= item.href, class= linkClasses)= item.name
 

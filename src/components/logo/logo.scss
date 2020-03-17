@@ -2,10 +2,14 @@
   display: inline-block;
   width: 106px;
   height: 40px;
-  .logo__img{
+
+  &__img{
     max-width: 100%;
+    display: block;
   }
+
   & img {
     max-width: 100%;
+    display: block;
   }
 }

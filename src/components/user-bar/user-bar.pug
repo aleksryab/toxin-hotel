@@ -1,0 +1,19 @@
+//- options.login - вид меню для залогиненного пользоавателя (boolean)
+    options.buttons[0] - подпись кнопки
+
+include ../button/button
+include ../login-form/login-form
+
+mixin user-bar(options = {})
+
+  .user-bar
+    if options.login
+      .user-bar__user
+        a(href="/" class= "user-bar__link") Cosmin Negoita
+    else
+      .user-bar__buttons
+        +button({name: options.buttons[0], size: 'smaller', inverted: true})
+        +button({name: options.buttons[1], size: 'smaller'})
+      .user-bar__button.material-icons.js-user-bar__button account_box
+    .user-bar__form
+      +login-form()
