@@ -13,6 +13,7 @@
     width: 100%;
     height: rem(44px);
     padding: 0 rem(14px);
+    line-height: rem(44px);
     border: $light-border;
     border-radius: $border-radius;
     outline: none;
@@ -22,8 +23,11 @@
     }
 
     &::placeholder {
+      font-family: $base-font;
       color: $dark-color-op25;
-      @include font-rem(14, 18, normal);
+      font-style: normal;
+      font-size: rem(14px);
+      line-height: rem(44px);
     }
 
     &:hover, &:focus {

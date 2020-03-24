@@ -42,14 +42,11 @@
       content: url('../components/checkbox-button/img/check-icon.svg');
       box-sizing: border-box;
       position: absolute;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      left: 0;
+      display: block;
       top: 0;
-      width: rem(20px);
+      left: rem(5px);
+      width: rem(10px);
       height: rem(20px);
-      border-radius: 50%;
       opacity: 0;
       transition: all 0.3s;
     }

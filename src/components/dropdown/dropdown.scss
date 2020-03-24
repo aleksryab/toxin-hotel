@@ -28,8 +28,11 @@
     text-overflow: ellipsis;
 
     &::placeholder {
+      font-family: $base-font;
       color: $dark-color-op25;
-      @include font-rem(14, 18, normal);
+      font-style: normal;
+      font-size: rem(14px);
+      line-height: rem(44px);
     }
 
     &:hover, &:focus {

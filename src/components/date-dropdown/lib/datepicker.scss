@@ -17,6 +17,7 @@
     display: -ms-flexbox;
     display: flex;
     position: relative;
+    flex-shrink: 0;
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
@@ -118,8 +119,11 @@
 
     &:before {
       content: '';
+      display: block;
       box-sizing: border-box;
       padding-top: 100%;
+      width: 0;
+      height: 100%;
     }
   }
 
@@ -163,7 +167,7 @@
     font-family: $base-font;
     @include font-rem(12, 15, normal);
     color: $dark-color-op50;
-    width: rem(320px);
+    max-width: rem(320px);
     position: absolute;
     left: -100000px;
     opacity: 0;
