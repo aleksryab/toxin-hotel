@@ -1,7 +1,55 @@
 .filter {
-  margin: 0;
-  padding: 0;
-  width: 100%;
+
+  &_expanded {
+    @media (max-width: $screen-sm) {
+      height: calc(100vh - 48px);
+      overflow: auto;
+    }
+  }
+
+  &__button {
+    display: none;
+    font-family: $title-font;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0 15px;
+    line-height: 1;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+
+    @media (max-width: $screen-sm) {
+      display: flex;
+    }
+  }
+
+  &__icon {
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 8px;
+
+    &_expanded {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__form {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    @media (max-width: $screen-sm) {
+      display: none;
+    }
+
+    &_expanded {
+      display: block;
+      width: rem(320px);
+      margin: 0 auto;
+    }
+
+  }
 
   &__item {
     margin-bottom: rem(30px);

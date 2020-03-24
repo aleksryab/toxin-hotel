@@ -31,10 +31,28 @@
 
     & button:last-of-type {
       margin-left: rem(23px);
+      @media (max-width: $screen-sm) {
+        margin-left: 0;
+      }
     }
 
     @media (max-width: $screen-md) {
       display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      box-sizing: border-box;
+      padding: 0 15px 10px;
+      background: #fff;
+      justify-content: space-evenly;
+    }
+
+    @media (max-width: $screen-sm) {
+      width: 100%;
+    }
+
+    &_showed {
+      display: flex;
     }
   }
 

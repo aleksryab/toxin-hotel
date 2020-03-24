@@ -1,6 +1,12 @@
 .sign-in {
-  height: 683px;
+  box-sizing: border-box;
+  height: rem(684px);
+  padding: 10px;
   background: url('../pages/sign-in/img/bg/auth_bg.jpg') center/cover no-repeat;
+
+  @media (max-width: $screen-xs) {
+    height: auto;
+  }
 
   &__container {
     height: 100%;

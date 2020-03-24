@@ -1,19 +1,44 @@
 .search-room {
+
   &__container {
-    padding-top: 30px;
-    padding-bottom: 72px;
+    padding-top: rem(30px);
+    padding-bottom: rem(73px);
     display: flex;
     flex-wrap: nowrap;
+
+    @media (max-width: $screen-sm) {
+      padding-top: 40px;
+      display: block;
+    }
   }
 
   &__title {
     margin-bottom: rem(20px);
+
+    @media (max-width: $screen-sm) {
+     text-align: center;
+    }
   }
 
   &__aside{
-    width: 266px;
-    margin-right: 60px;
+    width: rem(266px);
+    margin-right: rem(60px);
     flex-shrink: 0;
+
+    @media (max-width: $screen-md) {
+      margin-right: rem(30px);
+    }
+
+    @media (max-width: $screen-sm) {
+      position: fixed;
+      top: 48px;
+      left:0;
+      box-sizing: border-box;
+      width: 100%;
+      margin-right: 0;
+      background: #fff;
+      z-index: 50;
+    }
   }
 
   &__result {
@@ -24,14 +49,27 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
+    @media (max-width: $screen-sm) {
+      justify-content: space-evenly;
+    }
   }
 
   &__item {
-    margin-bottom: 21px;
+    margin-bottom: rem(21px);
+    flex-shrink: 0;
+
+    @media (max-width: $screen-lg) {
+      width: 50%;
+    }
+
+    @media (max-width: $screen-md) {
+      width: auto;
+    }
   }
 
   &__pagination {
-    margin: 21px auto 0;
+    margin: rem(21px) auto 0;
     display: flex;
     justify-content: center;
   }

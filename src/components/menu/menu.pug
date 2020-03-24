@@ -22,7 +22,7 @@ mixin menu(options = [])
             span.menu__expander.material-icons.js-menu__expander expand_more
             ul.menu__submenu
               each subitem in item.submenu
-                li
+                li.menu__subitem
                   a(href = subitem.href, class= "menu__link")= subitem.name
         else
           li.menu__item

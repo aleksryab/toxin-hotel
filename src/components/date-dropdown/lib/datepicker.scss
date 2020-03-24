@@ -23,8 +23,7 @@
     -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
-    height: rem(40px);
-    z-index: 1; }
+    z-index: 1;}
     .datepicker--cell.-focus- {
       background: rgba(188, 156, 255, 0.25); }
     .datepicker--cell.-current- {
@@ -115,10 +114,17 @@
     }
 
   .datepicker--cell-day {
-    width: 14.28571%; }
+    width: 14.28571%;
+
+    &:before {
+      content: '';
+      box-sizing: border-box;
+      padding-top: 100%;
+    }
+  }
 
   .datepicker--cells-months {
-    height: 170px; }
+    height: rem(170px); }
 
   .datepicker--cell-month {
     width: 33.33%;
@@ -126,10 +132,10 @@
     border-radius: $border-radius;}
 
   .datepicker--years {
-    height: 170px; }
+    height: rem(170px); }
 
   .datepicker--cells-years {
-    height: 170px; }
+    height: rem(170px); }
 
   .datepicker--cell-year {
     width: 25%;

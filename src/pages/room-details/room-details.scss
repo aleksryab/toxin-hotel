@@ -16,29 +16,55 @@
   }
 
   &__container {
-    padding-top: 71px;
-    padding-bottom: 29px;
+    padding-top: rem(71px);
+    padding-bottom: rem(30px);
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
+
+    @media (max-width: $screen-md) {
+      display: block;
+      padding-top: rem(40px);
+    }
   }
 
   &__info {
     box-sizing: border-box;
-    max-width: 721px;
+    max-width: rem(721px);
     padding-right: 10px;
+
+    @media (max-width: $screen-md) {
+      max-width: 100%;
+      padding-right: 0;
+    }
+
+  }
+
+  &__reservation {
+    @media (max-width: $screen-md) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
   }
 
   &__raw {
     margin-bottom: rem(33px);
+    width: 100%;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   &__item {
     @include text();
     width: 48%;
     padding-right: 8px;
+
+    @media (max-width: $screen-xs) {
+      width: auto;
+      padding: 0;
+      margin-bottom: rem(20px);
+    }
   }
 
   &__subtitle {

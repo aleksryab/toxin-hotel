@@ -26,7 +26,7 @@ mixin footer(options)
 
           .footer__central-column
             each column in options.menuColumns
-                div.footer__munu-item
+                .footer__menu-item
                   h3.footer__title= column.title
                   ul.footer__list
                     each list in column.lists
@@ -36,16 +36,16 @@ mixin footer(options)
 
           .footer__right-column
             h3.footer__title= options.subscribe.title
-            p.footer__subscribe-text= options.subscribe.text
-            div.footer__subscribe-form
+            .footer__subscribe-text= options.subscribe.text
+            .footer__subscribe-form
              +subscription-field({placeholder: options.subscribe.placeholder})
 
 
     .footer__bottom-wrapper
       .container
        .footer__bottom-section
-          a.footer__link(href = "/")= options.copyright
-          div.footer__social-bar
+          a.footer__copyright(href = "/")= options.copyright
+          .footer__social-bar
             a.footer__social-link(href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer")
                include ./img/twitter_icon.svg
             a.footer__social-link(href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer")

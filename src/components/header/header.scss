@@ -1,6 +1,7 @@
 .header {
   background-color: #fff;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  line-height: 1;
 
   &__container {
     box-sizing: border-box;
@@ -8,8 +9,12 @@
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
-    min-height: rem(70px);
+    height: 70px;
     line-height: 1;
+
+    @media (max-width: $screen-sm) {
+      height: 50px;
+    }
   }
 
   &__logo {
@@ -29,13 +34,16 @@
 
   &__user-bar {
     margin-left: rem(20px);
+
+    @media (max-width: $screen-sm) {
+      margin-left: 0;
+    }
   }
 
   @media (max-width: $screen-sm) {
     position: fixed;
-    top: 0;
+    top: -1px;
     width: 100%;
-    z-index: 10;
-
+    z-index: 100;
   }
 }

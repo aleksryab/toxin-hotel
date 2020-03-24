@@ -1,5 +1,5 @@
 $(document).ready(() => {
-  $('.js-user-bar__button').click(event => {
-    $('.user-bar__form').toggleClass('user-bar__form_showed');
+  $('.js-user-bar__button').click(() => {
+    $('.user-bar__buttons').toggleClass('user-bar__buttons_showed');
   });
 });

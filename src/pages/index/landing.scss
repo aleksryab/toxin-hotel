@@ -1,14 +1,19 @@
 .landing {
   box-sizing: border-box;
   padding-top: rem(70px);
-  height: 830px;
+  height: rem(830px);
   background: url('../pages/index/img/bg/landing_bg.jpg') center/cover no-repeat;
+
+  @media (max-width: $screen-xs) {
+    display: flex;
+    justify-content: center;
+  }
 
   &__slogan {
     @include text;
     text-align: right;
     position: absolute;
     bottom: 21px;
-    right: 4px;
+    right: 8px;
   }
 }

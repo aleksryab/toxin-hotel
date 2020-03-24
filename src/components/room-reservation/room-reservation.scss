@@ -1,6 +1,7 @@
 .room-reservation {
   box-sizing: border-box;
-  width: rem(380px);
+  max-width: rem(380px);
+  width: 100%;
   padding: rem(39px) rem(29px) rem(29px);
   background: $default-color;
   border-radius: $border-radius;

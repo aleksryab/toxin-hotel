@@ -47,6 +47,7 @@
             twoInputs: false,
             minInput: '',
             maxInput: '',
+            container: '',
 
             todayButton: false,
             clearButton: false,
@@ -131,6 +132,9 @@
         }
         if (this.opts.maxInput) {
             this.$maxInput = typeof this.opts.maxInput == 'string' ? $(this.opts.maxInput) : this.opts.maxInput;
+        }
+        if (this.opts.container) {
+            this.$container = typeof this.opts.container == 'string' ? $(this.opts.container) : this.opts.container;
         }
 
         this.inited = false;
@@ -747,7 +751,7 @@
                 width: $el.outerWidth(),
                 height: $el.outerHeight(),
                 left: offset.left,
-                top: offset.top
+                top: offset.top,
             }
         },
 
@@ -779,7 +783,7 @@
             var dims = this._getDimensions(this.$el),
                 selfDims = this._getDimensions(this.$datepicker),
                 pos = position.split(' '),
-                top, left,
+                top, left, width,
                 offset = this.opts.offset,
                 main = pos[0],
                 secondary = pos[1];
@@ -820,11 +824,16 @@
                     }
             }
 
+            if(this.$container) {
+              width = this.$container.width();
+            }
+
             this.$datepicker
                 .css({
                     left: left,
-                    top: top
-                })
+                    top: top,
+                    width: width
+                });
         },
 
         show: function () {

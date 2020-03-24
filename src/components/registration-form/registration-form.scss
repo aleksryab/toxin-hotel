@@ -1,7 +1,8 @@
 .registration-form{
   box-sizing: border-box;
-  width: 380px;
-  padding: 39px 29px 29px;
+  max-width: rem(380px);
+  width: 100%;
+  padding: rem(39px) rem(29px) rem(29px);
   background: $default-color;
   border-radius: $border-radius;
   border: $thin-border;
@@ -42,7 +43,5 @@
     color: #000;
     @include font-rem(14, 18, normal);
   }
-
-
 }
 

@@ -23,6 +23,7 @@ $(function() {
       twoInputs: true,
       minInput: $checkIn,
       maxInput: $checkOut,
+      container: $(this),
       dateFormat: 'dd.mm.yyyy',
       keyboardNav: false,
       offset: 5,
@@ -34,7 +35,6 @@ $(function() {
     });
 
     const calendar = $checkIn.data('datepicker');
-
 
     $checkOut.click( event => {
       event.preventDefault();
@@ -69,22 +69,25 @@ $(function() {
   });
 
 
-  $('.js-date-dropdown-single').find('.date-dropdown__field').datepicker({
-    language: 'ru',
-    minDate: new Date(),
-    range: true,
-    clearButton: true,
-    applyButton: true,
-    keyboardNav: false,
-    multipleDates: 2,
-    offset: 5,
-    multipleDatesSeparator: ' - ',
-    dateFormat: 'dd M',
-    navTitles: {
-      days: 'MM yyyy'
-    },
-    prevHtml: '<i class="material-icons">arrow_back</i>',
-    nextHtml: '<i class="material-icons">arrow_forward</i>'
-  });
+  $('.js-date-dropdown-single').each(function () {
 
+    $(this).find('.date-dropdown__field').datepicker({
+      language: 'ru',
+      minDate: new Date(),
+      range: true,
+      clearButton: true,
+      applyButton: true,
+      keyboardNav: false,
+      container: $(this),
+      multipleDates: 2,
+      offset: 5,
+      multipleDatesSeparator: ' - ',
+      dateFormat: 'dd M',
+      navTitles: {
+        days: 'MM yyyy'
+      },
+      prevHtml: '<i class="material-icons">arrow_back</i>',
+      nextHtml: '<i class="material-icons">arrow_forward</i>'
+    });
+  });
 });
