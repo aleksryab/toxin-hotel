@@ -43,6 +43,7 @@
 
   &__result {
     flex-grow: 1;
+    width: 100%;
   }
 
   &__list{
@@ -51,7 +52,7 @@
     justify-content: space-between;
 
     @media (max-width: $screen-sm) {
-      justify-content: space-evenly;
+      justify-content: space-around;
     }
   }
 

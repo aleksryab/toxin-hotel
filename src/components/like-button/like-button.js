@@ -1,6 +1,6 @@
 $('.js-like-button').click(function(event) {
-  const valueBox = $(this).find('.like-button__inner');
-  let value = valueBox.text();
+  const valueBox = $(this).find('.like-button__value');
+  let value = +valueBox.text();
 
   if ($(this).hasClass('like-button_liked')) {
     valueBox.text(--value);

@@ -71,6 +71,13 @@
       background-clip: text;
       color: transparent;
       -webkit-text-fill-color: transparent;
+
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        /* IE10+  */
+        color: $primary-color;
+        background: #fff;
+        background-clip: none;
+      }
     }
   }
 }

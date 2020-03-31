@@ -4,4 +4,6 @@
 
 mixin like-button(options = {})
   button.like-button.js-like-button(class = options.liked && 'like-button_liked')
-    span.like-button__inner= options.value
+    .like-button__inner
+      .like-button__icon.material-icons
+      .like-button__value= options.value

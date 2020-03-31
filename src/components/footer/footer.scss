@@ -1,6 +1,6 @@
 .footer {
-  background-color: #fff;
   @include text;
+  background-color: #fff;
   border-top: $light-border;
 
   &__top-wrapper {
@@ -101,7 +101,7 @@
   }
 
   &__bottom-section {
-    min-height: rem(71px);
+    height: rem(71px);
     display: flex;
     justify-content: space-between;
     align-items: center;

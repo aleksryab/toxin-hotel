@@ -1,9 +1,8 @@
 .registration {
-  min-height: rem(701px);
   background: url('../pages/registration/img/bg/auth_bg.jpg') center/cover no-repeat;
 
   &__container {
-    padding: rem(30px) 0 0;
+    padding: rem(30px) 0 rem(25px);
     display: flex;
     justify-content: center;
   }

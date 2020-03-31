@@ -12,4 +12,4 @@ mixin rate-button(options = {})
           while v > 0
             - check = v == +options.rate ? 'checked' : false
             input.rate-button__input(type="radio", name="rating", value= v--, checked= check)
-            span.rate-button__label
+            span.rate-button__label.material-icons

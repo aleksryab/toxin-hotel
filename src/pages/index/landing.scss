@@ -4,9 +4,11 @@
   height: rem(830px);
   background: url('../pages/index/img/bg/landing_bg.jpg') center/cover no-repeat;
 
-  @media (max-width: $screen-xs) {
-    display: flex;
-    justify-content: center;
+  &__search {
+    @media (max-width: $screen-xs) {
+      display: flex;
+      justify-content: center;
+    }
   }
 
   &__slogan {

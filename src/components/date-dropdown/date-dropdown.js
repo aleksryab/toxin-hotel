@@ -41,7 +41,7 @@ $(function() {
       calendar.show();
     });
 
-    $checkOut.focus( function() {
+    $checkOut.focus( event => {
       event.preventDefault();
       calendar.show();
     });

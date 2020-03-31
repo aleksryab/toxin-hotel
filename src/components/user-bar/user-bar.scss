@@ -73,6 +73,13 @@
     @media (max-width: $screen-md) {
       display: block;
     }
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      /* IE10+  */
+      color: $primary-color;
+      background: #fff;
+      background-clip: none;
+    }
   }
 
   &__form {

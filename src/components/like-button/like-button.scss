@@ -20,7 +20,7 @@
     color: $primary-color;
     background: $primary-gradient;
 
-    & .like-button__inner:before {
+    & .like-button__icon:before {
       content: 'favorite';
     }
   }
@@ -32,13 +32,25 @@
     height: 100%;
     border-radius: inherit;
     background: $default-color;
+  }
+
+  &__icon {
+    width: rem(21px);
+    height: 100%;
+    position: relative;
 
     &:before {
       content: 'favorite_border';
       font-family: 'Material Icons';
       font-size: rem(10px);
-      width: rem(20px);
-      text-align: center;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
   }
 

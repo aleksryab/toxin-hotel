@@ -9,7 +9,7 @@ const donutChart = {
     radius: 56,
     strokeWidth: 4,
     gap: 3,
-    labelDeclensions: ['голосов', 'голос', 'голоса'],
+    labelDeclension: ['голосов', 'голос', 'голоса'],
     colors: {
       excellent: 'url(#gradient_excellent)',
       good: 'url(#gradient_good)',
@@ -22,12 +22,14 @@ const donutChart = {
   svg: null,
   group: null,
   data: [],
-  totalValues: 0,
+  totalValue: 0,
   offset: 0,
   circumference: 0,
 
   createSvg() {
-    this.svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    // because IE 11 doesn't support innerHtml for svg
+    let docForSvg = new DOMParser().parseFromString('<svg xmlns="http://www.w3.org/2000/svg">' + gradients + '</svg>', 'text/html');
+    this.svg = docForSvg.documentElement.querySelector('svg');
     this.svg.setAttribute('width', '100%');
     this.svg.setAttribute('height', '100%');
     this.svg.setAttribute('viewBox', this.options.viewBox);
@@ -54,8 +56,8 @@ const donutChart = {
 
   createLegend() {
     let textGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-    textGroup.appendChild(this.createText('donut-chart__amount', this.totalValues));
-    textGroup.appendChild(this.createText('donut-chart__label', this.declension(this.totalValues)));
+    textGroup.appendChild(this.createText('donut-chart__amount', this.totalValue));
+    textGroup.appendChild(this.createText('donut-chart__label', this.makeDeclension(this.totalValue)));
     this.svg.appendChild(textGroup);
   },
 
@@ -64,12 +66,12 @@ const donutChart = {
     textElement.setAttribute('x', '50%');
     textElement.setAttribute('y', '50%');
     textElement.classList.add(cssClass);
-    textElement.innerHTML = text;
+    textElement.textContent = text;
     return textElement;
   },
 
   calculateSegment(dataVal) {
-    let dash = dataVal/this.totalValues * this.circumference;
+    let dash = dataVal/this.totalValue * this.circumference;
     this.offset -= dash;
     return `${dash - this.options.gap} ${this.circumference - dash + this.options.gap}`;
   },
@@ -82,30 +84,34 @@ const donutChart = {
       this.createSegment(item);
     });
 
-    this.svg.innerHTML = gradients;
+    //let parser = new DOMParser();
+    //let defs = parser.parseFromString(gradients, "text/html");
+    //console.log(gradients);
+    //this.svg.textContent = gradients;
+    //this.svg.appendChild(defs);
     this.svg.appendChild(this.group);
     this.createLegend();
     this.container.appendChild(this.svg);
   },
 
-  declension(val) {
+  makeDeclension(val) {
     switch (val) {
       case 0:
-        return this.options.labelDeclensions[0];
+        return this.options.labelDeclension[0];
       case 1:
-        return this.options.labelDeclensions[1];
+        return this.options.labelDeclension[1];
       case 2:
       case 3:
       case 4:
-        return this.options.labelDeclensions[2];
+        return this.options.labelDeclension[2];
       default:
         if (val > 20) {
           if(val > 99) {
-            return this.declension(val % 100);
+            return this.makeDeclension(val % 100);
           }
-          return this.declension(val % 10);
+          return this.makeDeclension(val % 10);
         }
-        return this.options.labelDeclensions[0];
+        return this.options.labelDeclension[0];
     }
   },
 
@@ -120,7 +126,7 @@ const donutChart = {
     }
 
     this.data.forEach(item => {
-      this.totalValues += +item.value;
+      this.totalValue += +item.value;
     });
 
     this.circumference = 2 * Math.PI * this.options.radius;
@@ -132,8 +138,7 @@ const donutChart = {
 $(document).ready(() => {
   const donuts = document.querySelectorAll('.js-donut');
   donuts.forEach(container => {
-    let objDonut = new Object;
-    objDonut.__proto__ = donutChart;
+    let objDonut = Object.create(donutChart);
     objDonut.init(container);
   });
 });

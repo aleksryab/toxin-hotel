@@ -41,7 +41,10 @@
     align-items: center;
 
     @media (min-width: $screen-sm + 1) {
-      &:hover .menu__submenu, &:focus-within .menu__submenu{
+      &:hover .menu__submenu {
+        display: block;
+      }
+      &:focus-within .menu__submenu{
         display: block;
       }
     }
@@ -87,6 +90,7 @@
     list-style: none;
     position: absolute;
     top: 100%;
+    left: 0;
     margin: 0;
     padding: rem(10px);
     background: #fff;
@@ -138,6 +142,13 @@
 
     @media (max-width: $screen-sm) {
       display: block;
+    }
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      /* IE10+  */
+      color: $primary-color;
+      background: #fff;
+      background-clip: none;
     }
   }
 }
