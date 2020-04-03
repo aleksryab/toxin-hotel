@@ -170,6 +170,7 @@
     max-width: rem(320px);
     position: absolute;
     left: -100000px;
+    top: 100%;
     opacity: 0;
     transition: opacity 0.3s ease, left 0s 0.3s, -webkit-transform 0.3s ease;
     transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0.3s;
@@ -189,11 +190,14 @@
               transform: translateX(-8px); }
     .datepicker.active {
       opacity: 1;
+      left: 0 !important;
       -webkit-transform: translate(0);
               transform: translate(0);
       transition: opacity 0.3s ease, left 0s 0s, -webkit-transform 0.3s ease;
       transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0s;
       transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0s, -webkit-transform 0.3s ease; }
+    .datepicker.-bottom-left- {
+      margin-top: 5px;}
 
   .datepicker-inline .datepicker {
     position: static;

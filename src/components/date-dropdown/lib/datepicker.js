@@ -161,7 +161,7 @@
         viewIndexes: ['days', 'months', 'years'],
 
         init: function () {
-            if (!containerBuilt && !this.opts.inline && this.elIsInput) {
+            if (!containerBuilt && !this.opts.inline && this.elIsInput && !this.opts.container) {
                 this._buildDatepickersContainer();
             }
             this._buildBaseHtml();
@@ -287,12 +287,16 @@
 
             if(this.el.nodeName == 'INPUT') {
                 if (!this.opts.inline) {
+                  if(this.opts.container) {
+                    $appendTarget = this.opts.container;
+                  } else {
                     $appendTarget = $datepickersContainer;
+                  }
                 } else {
-                    $appendTarget = $inline.insertAfter(this.$el)
+                    $appendTarget = $inline.insertAfter(this.$el);
                 }
             } else {
-                $appendTarget = $inline.appendTo(this.$el)
+                $appendTarget = $inline.appendTo(this.$el);
             }
 
             this.$datepicker = $(baseTemplate).appendTo($appendTarget);
@@ -778,12 +782,20 @@
         },
 
         setPosition: function (position) {
+            if (this.opts.container) {
+              this.$datepicker
+                .css({
+                    left: 0
+                });
+              return;
+            }
+
             position = position || this.opts.position;
 
             var dims = this._getDimensions(this.$el),
                 selfDims = this._getDimensions(this.$datepicker),
                 pos = position.split(' '),
-                top, left, width,
+                top, left,
                 offset = this.opts.offset,
                 main = pos[0],
                 secondary = pos[1];
@@ -824,15 +836,10 @@
                     }
             }
 
-            if(this.$container) {
-              width = this.$container.width();
-            }
-
             this.$datepicker
                 .css({
                     left: left,
-                    top: top,
-                    width: width
+                    top: top
                 });
         },
 
