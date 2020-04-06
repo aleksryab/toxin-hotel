@@ -3,7 +3,7 @@ include ../components/header/header
 include ../components/footer/footer
 
 block content
-  - const data = self.htmlWebpackPlugin.options.getData("rus")
+  - const data = require('../../data/rus.json');
 
   body(class="page")
     +header({menuItems: data.header.menuItems, buttons:data.header.buttons})

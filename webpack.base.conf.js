@@ -54,10 +54,10 @@ module.exports = {
         },{
           loader: 'css-loader',
           options: {sourceMap: true}
-        }, {
+        },{
           loader: 'postcss-loader',
           options: {sourceMap: true, config: {path: './postcss.config.js'}}
-        }, {
+        },{
           loader: 'sass-loader',
           options: {
             sourceMap: true,
@@ -67,7 +67,7 @@ module.exports = {
           }
         }
       ]
-    }, {
+    },{
       test: /\.css$/,
       use: [
         {
@@ -76,12 +76,12 @@ module.exports = {
         },{
           loader: 'css-loader',
           options: {sourceMap: true}
-        }, {
+        },{
           loader: 'postcss-loader',
           options: {sourceMap: true, config: {path: './postcss.config.js'}}
         }
       ]
-    }, {
+    },{
       test: /\.(png|jpe?g|gif)$/i,
       exclude: /fonts/,
       use: {
@@ -97,7 +97,7 @@ module.exports = {
           loader: 'svg-url-loader',
           options: {}
       }
-    }, {
+    },{
       test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
       include: /fonts/,
       loader: 'file-loader',
@@ -108,8 +108,8 @@ module.exports = {
     },{
       test: /\.(txt)|(xml)$/i,
       use: 'raw-loader'
-    },]
-  },
+    },
+  ]},
   plugins: [
     new FixStyleOnlyEntriesPlugin(),
     new MiniCssExtractPlugin({
@@ -120,14 +120,6 @@ module.exports = {
       { from: `${PATHS.src}/static`, to: '' }
     ]),
     ...PAGES.map(page => new HtmlWebpackPlugin({
-     getData: (dataFile) => {
-      try {
-        return JSON.parse(fs.readFileSync(`${PATHS.src}/data/${dataFile}.json`, 'utf8'));
-      } catch (e) {
-        console.warn(`${page}.json was not provided for this page`);
-        return {};
-      }
-     },
      template: `${PAGES_DIR}/${page}/${page}.pug`,
      filename: `${page}.html`,
      chunks: ['main'],

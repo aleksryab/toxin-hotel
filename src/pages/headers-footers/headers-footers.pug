@@ -9,7 +9,7 @@ block styles
   link(rel="stylesheet", href="css/ui.css")
 
 block content
-  - const data = self.htmlWebpackPlugin.options.getData("eng")
+  - const data = require('../../data/eng.json');
 
   body(class="ui-page ui-page_bg_gray")
     .ui-page__header
