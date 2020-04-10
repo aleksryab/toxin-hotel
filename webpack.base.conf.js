@@ -27,60 +27,54 @@ module.exports = {
   },
   output: {
     path: PATHS.dist,
-    filename: 'js/[name].js',
-    // publicPath: '/'
+    filename: 'js/[name].js'
   },
   module: {
     rules: [{
       test: /\.js$/,
       exclude: /node_modules/,
       loader: 'babel-loader',
-      options: { presets: ['@babel/preset-env'] }
+      options: {presets: ['@babel/preset-env']}
     },{
       test: /\.pug$/,
       loader: 'pug-loader',
       options: {
-        pretty: true,
-        self: true
+        pretty: true
       }
     },{
       test: /\.(scss|sass)$/,
-      use: [
-        {
-          loader: MiniCssExtractPlugin.loader,
-          options: {
-            publicPath: '../'
-          }
-        },{
-          loader: 'css-loader',
-          options: {sourceMap: true}
-        },{
-          loader: 'postcss-loader',
-          options: {sourceMap: true, config: {path: './postcss.config.js'}}
-        },{
-          loader: 'sass-loader',
-          options: {
-            sourceMap: true,
-            sassOptions: {
-              importer: globImporter()
-            }
+      use: [{
+        loader: MiniCssExtractPlugin.loader,
+        options: {
+          publicPath: '../'
+        }
+      },{
+        loader: 'css-loader',
+        options: {sourceMap: true}
+      },{
+        loader: 'postcss-loader',
+        options: {sourceMap: true, config: {path: './postcss.config.js'}}
+      },{
+        loader: 'sass-loader',
+        options: {
+          sourceMap: true,
+          sassOptions: {
+            importer: globImporter()
           }
         }
-      ]
+      }]
     },{
       test: /\.css$/,
-      use: [
-        {
-          loader: MiniCssExtractPlugin.loader,
-          options: {}
-        },{
-          loader: 'css-loader',
-          options: {sourceMap: true}
-        },{
-          loader: 'postcss-loader',
-          options: {sourceMap: true, config: {path: './postcss.config.js'}}
-        }
-      ]
+      use: [{
+        loader: MiniCssExtractPlugin.loader,
+        options: {}
+      },{
+        loader: 'css-loader',
+        options: {sourceMap: true}
+      },{
+        loader: 'postcss-loader',
+        options: {sourceMap: true, config: {path: './postcss.config.js'}}
+      }]
     },{
       test: /\.(png|jpe?g|gif)$/i,
       exclude: /fonts/,
@@ -98,12 +92,11 @@ module.exports = {
           options: {}
       }
     },{
-      test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+      test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/i,
       include: /fonts/,
       loader: 'file-loader',
       options: {
-        name: 'fonts/[name].[ext]',
-        publicPath: '../'
+        name: 'fonts/[name].[ext]'
       }
     },{
       test: /\.(txt)|(xml)$/i,
@@ -116,8 +109,8 @@ module.exports = {
       filename: 'css/[name].css',
     }),
     new CopyPlugin([
-      { from: `${PATHS.src}/img`, to: 'img', ignore: ['_temp/**/*']},
-      { from: `${PATHS.src}/static`, to: '' }
+      {from: `${PATHS.src}/img`, to: 'img', ignore: ['_temp/**/*']},
+      {from: `${PATHS.src}/static`, to: ''}
     ]),
     ...PAGES.map(page => new HtmlWebpackPlugin({
      template: `${PAGES_DIR}/${page}/${page}.pug`,
